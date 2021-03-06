@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+  <display-name>jsp6</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <servlet>
+  	<servlet-name>addcost</servlet-name>
+  	<servlet-class>web.AddCostServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>addcost</servlet-name>
+  	<url-pattern>/addcost</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>delcost</servlet-name>
+  	<servlet-class>web.DelCostServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>delcost</servlet-name>
+  	<url-pattern>/delcost</url-pattern>
+  </servlet-mapping>
+  
+  <!-- 
+  	Filter由tomcat进行管理,tomcat会在启动时,
+  	直接实例化Filter,在关闭时直接销毁Filter.
+  	并且会在用户访问此处所配置的路径时调用Filter.
+   -->
+  <filter>
+  	<filter-name>log</filter-name>
+  	<filter-class>web.LogFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>log</filter-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  <!-- 
+  	tomcat启动时对Filter作出如下处理:
+  	GuolvFilter f = new GuolvFilter();
+  	//config构造器或静态块中有代码加载了参数
+  	FilterConfig c = new FilterConfig();
+  	f.init(c);
+   -->
+  <filter>
+  	<filter-name>guolv</filter-name>
+  	<filter-class>web.GuolvFilter</filter-class>
+  	<init-param>
+  		<param-name>city</param-name>
+  		<param-value>北京</param-value>
+  	</init-param>
+  </filter>
+  <filter-mapping>
+  	<filter-name>guolv</filter-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  <listener>
+  	<listener-class>
+  		web.MyListener
+  	</listener-class>
+  </listener>
+  
+</web-app>
+
+
+
+
+
+
+
+

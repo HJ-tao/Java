@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-1.11.1.js"></script>
+<script>
+	$(function(){
+		//1.html() == innerHTML
+		console.log($("p:eq(0)").html());
+		$("p:eq(0)").html("jQuery可以<u>查询</u>节点");
+		//2.text() == innerText
+		console.log($("p:eq(1)").text());
+		$("p:eq(1)").text("jQuery可以<u>读写</u>节点");
+		//3.val() == value
+		console.log($(":button:first").val());
+		console.log($(":radio:last").val());
+		$(":button:first").val("BBB");
+		//4.attr() == getAttribute(),setAttribute()
+		console.log($("img:first").attr("src"));
+		$("img:eq(0)").attr("src","../images/02.jpg");
+	});
+</script>
+</head>
+<body>
+	<p>jQuery可以<b>查询</b>节点</p>
+	<p>jQuery可以<b>读写</b>节点</p>
+	<p>jQuery可以<b>增删</b>节点</p>
+	<p>
+		<input type="button" value="AAA"/>
+	</p>
+	<p>
+		<input type="radio" name="sex"/>男
+		<input type="radio" name="sex"/>女
+	</p>
+	<p>
+		<img src="../images/01.jpg"/>
+	</p>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
