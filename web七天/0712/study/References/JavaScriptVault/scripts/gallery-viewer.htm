@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<LINK href="general.css" rel="stylesheet" type="text/css">
+
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Jenny Blewitt (webmaster@webdesignsdirect.com) -->
+<!-- Web Site:  http://www.webdesignsdirect.com -->
+<!-- Begin
+browserName = navigator.appName;
+browserVer = parseInt(navigator.appVersion);
+
+ns3up = (browserName == "Netscape" && browserVer >= 3);
+ie4up = (browserName.indexOf("Microsoft") >= 0 && browserVer >= 4);
+
+function doPic(imgName) {
+if (ns3up || ie4up) {
+imgOn = ("" + imgName);
+document.mainpic.src = imgOn;
+   }
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR>
+<table width=360 border=1 cellspacing=0 cellpadding=0>
+<tr>
+<td><a href="javascript:doPic('toad.jpg');"><img src="toad.jpg" width=90 height=60 border=0></a></td>
+<td><a href="javascript:doPic('lizard.jpg');"><img src="lizard.jpg" width=90 height=60 border=0></a></td>
+<td><a href="javascript:doPic('gecko.jpg');"><img src="gecko.jpg" width=90 height=60 border=0></a></td>
+<td><a href="javascript:doPic('chameleon.jpg');"><img src="chameleon.jpg" width=90 height=60 border=0></a></td>
+</tr>
+<tr>
+<td colspan=4 align=center><img name="mainpic" src="toad.jpg" width=365 height=190 border=0></td>
+</tr>
+</table>
+
+
+</center>
+</BODY>
+</HTML>

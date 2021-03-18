@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<LINK href="general.css" rel="stylesheet" type="text/css">
+
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Andy Lad (mandy.beams@virgin.net) -->
+<!-- Begin
+counter = 0;
+html = true;
+mp3list = "#EXTM3U";
+if(html) {
+mp3list += "<br>";
+}
+mp3list += "\n";
+file = "";
+songs = new Array();
+function addsong() {
+file = document.forms[0].file.value;
+file = file.toLowerCase();
+if(file == "") {
+alert("Enter a file name or click BROWSE");
+}
+else {
+fn = file;
+char = unescape("%5C");
+while(fn.indexOf(char) != -1) {
+pos = fn.indexOf(char);
+fn = fn.substring(pos + 1, fn.length);
+}
+if(fn.indexOf('.mp3') == -1) {
+alert("MP3 files only!");
+}
+else {
+songs[counter] = file;
+document.forms[0].sofar[counter] = new Option((counter+1) + ": " + fn, file, false, true);
+counter++;
+}
+document.forms[0].file.value = "";
+   }
+}
+function finish() {
+if(counter == 0) {
+alert("Please add some songs to the list!");
+}
+else {
+mp3l = songs.length;
+for(i = 0; i < mp3l; i++) {
+if(songs[i] != "") {
+mp3list += songs[i];
+if(html) {
+mp3list += "<br>"
+}
+mp3list += "\n"
+   }
+}
+document.write(mp3list);
+if(html) {
+document.write("<scr"+"ipt>");
+document.write("alert('Create a blank text file, copy the WHOLE code onto it and then rename the file to <playlist name>.m3u\\n\\nClick BACK to make another playlist')");
+document.write("</scr"+"ipt>");
+   }
+}
+document.forms[0].sofar.blur();
+}
+function deletethis() {
+if(counter > 0) {
+counter--;
+document.forms[0].sofar[counter] = null;
+songs[counter] = "";
+}
+else {
+alert("List is Empty!");
+   }
+}
+//  End -->
+</script>
+
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR>
+Instructions for use:
+<br>First of all, Click Browse, Locate an MP3 file you would like to add to your playlist.
+<br>Double-Click this and then click "ADD"
+<br>Repeat this for as many MP3 files as you want
+<br>When you have finished, click the "I've Finished" button and follow instructions
+
+<form>
+<input type=file name=file value=""> <input type=button value="Add" onClick="addsong()"><br>
+<br>
+<br><select name=sofar style="width:350;" size=20 multiple></select>
+<br>
+<br>
+<input type=button value="I've finished" onClick="finish();"> <input type=button onClick="deletethis()" value="Delete Latest Song">
+</form>
+
+
+</center>
+</BODY>
+</HTML>

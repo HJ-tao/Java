@@ -1,0 +1,82 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Mike Maloney -->
+<!-- Web Site:  http://nfg.natfuel.com -->
+
+<!-- Begin
+var hex = new Array("0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F");
+function CKparseInt(n, r) {
+for (var i = 0; i < n.length; ++i)
+if (n.charAt(i) >= r) {
+alert("Invalid digit");
+return 0;
+}
+if (isNaN(M = parseInt(n, r)))
+alert ("Invalid number");
+return M;
+}
+// decimal to any other base 2 to 16
+function DecimaltoAnother(A, radix) {
+s = "";
+while (A >= radix) {
+s += hex[A % radix];  // remainder
+A = Math.floor(A / radix); // quotient, rounded down
+}
+return transpose(s += hex[A]);
+}
+// string reversal
+function transpose(s) {
+N = s.length;
+for (i = 0,t = ""; i < N; i++)
+t += s.substring(N-i-1, N-i); // s.substring(from, to)
+return t;
+}
+// convert item.value using radix
+function EvalAny(item, r) {
+M = CKparseInt(item.value, r); // check this one
+for (var i = 0, MyForm = document.forms[0]; i < MyForm.length; ++i) // re-evaluate all
+MyForm.elements[i].value = DecimaltoAnother(M, MyForm.elements[i].name.substr(1,3));
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<h3>Base Conversion Function</h3><br>
+<form method="post">
+<table border=0 align=center>
+<tr>
+<td align=right><p>Binary:</p></td>
+<td><input name="b002" value="0" onChange="EvalAny(this, 2)" size=27></input></td>
+</tr>
+<tr>
+<td align=right>Ternary:</td>
+<td><input name="t003" value="0" onChange="EvalAny(this, 3)" size=21></input></td>
+</tr>
+<tr><td align=right>Quintal:</td>
+<td><input name="q005" value="0" onChange="EvalAny(this, 5)" size=16></input></td>
+</tr>
+<tr>
+<td align=right>Octal:</td>
+<td><input name="o008" value="0" onChange="EvalAny(this, 8)" size=12></input></td>
+</tr>
+<tr>
+<td align=right>Decimal:</td>
+<td><input name="d010" value="0" onChange="EvalAny(this, 10)" size=11></input></td>
+</tr>
+<tr>
+<td align=right>Hexadecimal:</td>
+<td><input name="h016" value="0" onChange="EvalAny(this, 16)" size=8></input></td>
+</tr>
+</table>
+</form>
+
+</center>
+</BODY>
+</HTML>

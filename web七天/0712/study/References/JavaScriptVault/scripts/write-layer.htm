@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Gregor (legreg@legreg.de) -->
+<!-- Begin
+var ie4 = (document.all) ? true : false;
+var ns4 = (document.layers) ? true : false;
+var ns6 = (document.getElementById && !document.all) ? true : false;
+function hidelayer(lay) {
+if (ie4) {document.all[lay].style.visibility = "hidden";}
+if (ns4) {document.layers[lay].visibility = "hide";}
+if (ns6) {document.getElementById([lay]).style.display = "none";}
+}
+function showlayer(lay) {
+if (ie4) {document.all[lay].style.visibility = "visible";}
+if (ns4) {document.layers[lay].visibility = "show";}
+if (ns6) {document.getElementById([lay]).style.display = "block";}
+}
+function writetolayer(lay,txt) {
+if (ie4) {
+document.all[lay].innerHTML = txt;
+}
+if (ns4) {
+document[lay].document.write(txt);
+document[lay].document.close();
+}
+if (ns6) {
+over = document.getElementById([lay]);
+range = document.createRange();
+range.setStartBefore(over);
+domfrag = range.createContextualFragment(txt);
+while (over.hasChildNodes()) {
+over.removeChild(over.lastChild);
+}
+over.appendChild(domfrag);
+   }
+}
+//  End -->
+</script>
+
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<SPAN ID="newlayer" style="position:absolute;">layer-text</SPAN>
+<br><br><br>
+<a href="javascript:hidelayer('newlayer');">hide layer</a> | 
+<a href="javascript:showlayer('newlayer');">show layer</a> | 
+<a href="javascript:writetolayer('newlayer','layer-text #1');">layer-text #1</a> | 
+<a href="javascript:writetolayer('newlayer','layer-text #2');">layer-text #2</a>
+
+</center>
+</BODY>
+</HTML>

@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<LINK href="general.css" rel="stylesheet" type="text/css">
+
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  K. Rama Moorthy -->
+<!-- Web Site:   http://www.suyambhu.bizhosting.com -->
+<!-- Begin
+text = "JavaScript Rules"; // The text to scroll
+color1 = "blue"; // original text color
+color2 = "red"; // new character color
+fontsize = "8"; // font size of text
+speed = 200; // how fast to rotate to next character
+// time is in milliseconds, (i.e. 1000 = 1 second)
+
+i = 0;
+if (navigator.appName == "Netscape") {
+document.write("<layer id=a visibility=show></layer><br><br><br>");
+}
+else {
+document.write("<div id=a></div>");
+}
+function changeCharColor()  {
+if (navigator.appName == "Netscape") {
+document.a.document.write("<center><font size =" + fontsize + "><font color=" + color1 + ">");
+for (var j = 0; j < text.length; j++) {
+if(j == i) {
+document.a.document.write("<font color=" + color2 + ">" + text.charAt(i) + "</font>");
+}
+else {
+document.a.document.write(text.charAt(j));
+   }
+}
+document.a.document.write('</font></font></center>');
+document.a.document.close();
+}
+if (navigator.appName == "Microsoft Internet Explorer") {
+str = "<center><font size=" + fontsize + "><font color=" + color1 + ">";
+for (var j = 0; j < text.length; j++) {
+if( j == i) {
+str += "<font color=" + color2 + ">" + text.charAt(i) + "</font>";
+}
+else {
+str += text.charAt(j);
+   }
+}
+str += "</font></font></center>";
+a.innerHTML = str;
+}
+(i == text.length) ? i=0 : i++; // reset after going through all letters
+}
+setInterval("changeCharColor()", speed);
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+
+</center>
+</BODY>
+</HTML>

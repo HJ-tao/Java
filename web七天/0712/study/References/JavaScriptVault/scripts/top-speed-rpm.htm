@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Shai Peer (killerpoop@telocity.com) -->
+<!-- Web Site:  http://shaipic.8m.com/ -->
+
+
+<!-- Begin
+function calculate() {
+var pi = 3.14159265359;
+var radius = document.rpmForm.diameter.value / 2;
+var circ = 2 * pi * radius;
+var totlength = circ * .00001578;
+var totrpm = document.rpmForm.rpm.value * 60;
+var total = totrpm * totlength;
+document.rpmForm.topSpeed.value = total;
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<form name="rpmForm">
+<table border=0>
+<tr>
+<td>
+Diameter of Tire (in Inches)
+</td>
+<td>
+<input type=text name=diameter value=18>
+</td>
+</tr>
+<tr>
+<td>
+RPM Value
+</td>
+<td>
+<input type=text name=rpm value=2000>
+</td>
+</tr>
+<tr>
+<td colspan=2>
+<input type=button value="Calculate Top Speed" onClick="calculate()"> 
+</td>
+</tr>
+<tr>
+<td>
+Top Speed with no Weight
+</td>
+<td>
+<input type=text name=topSpeed>
+</td>
+</tr>
+</table>
+</form>
+
+</center>
+</BODY>
+</HTML>

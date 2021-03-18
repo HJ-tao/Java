@@ -1,0 +1,45 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<LINK href="general.css" rel="stylesheet" type="text/css">
+
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Begin
+var key = new Array();  // Define key launcher pages here
+key['l'] = "../left.htm";
+key['t'] = "../top.htm";
+key['i'] = "../index.htm";
+key['c'] = "../contents.htm";
+
+function getKey(keyStroke) {
+isNetscape=(document.layers);
+// Cross-browser key capture routine couresty
+// of Randy Bennett (rbennett@thezone.net)
+eventChooser = (isNetscape) ? keyStroke.which : event.keyCode;
+which = String.fromCharCode(eventChooser).toLowerCase();
+for (var i in key) if (which == i) window.location = key[i];
+}
+document.onkeypress = getKey;
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<table border=0><tr><td>
+<pre>
+This site equipped with Key Launcher!
+
+The following launcher keys are available:
+
+Press the letter 'l' for: Left Page
+Press the letter 't' for: Top Page
+Press the letter 'i' for: Index Page
+Press the letter 'c' for: Contents Page
+</pre>
+</td></tr></table>
+
+</center>
+</BODY>
+</HTML>

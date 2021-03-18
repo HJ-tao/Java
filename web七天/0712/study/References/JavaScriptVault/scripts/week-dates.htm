@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Jonathan Hurshman (jhurshman@rocketmail.com) -->
+<!-- Web Site:  http://www.pilgrim.f2s.com -->
+<!-- Begin
+function formatDate(date) {
+var mymonth = date.getMonth()+1;
+var myweekday = date.getDate();
+return (mymonth + "/" + myweekday);
+}
+function printWeek() {
+var now = new Date();
+var nowDayOfWeek = now.getDay();
+var nowDay = now.getDate();
+var nowMonth = now.getMonth();
+var nowYear = now.getYear();
+nowYear += (nowYear < 2000) ? 1900 : 0;
+var weekStartDate = new Date(nowYear, nowMonth, nowDay - nowDayOfWeek);
+var weekEndDate = new Date(nowYear, nowMonth, nowDay + (6 - nowDayOfWeek));
+document.write("Current Week:  " + formatDate(weekStartDate) + " - " + formatDate(weekEndDate));
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<script>
+printWeek();
+</script>
+
+</center>
+</BODY>
+</HTML>

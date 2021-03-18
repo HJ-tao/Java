@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+
+<!-- Begin
+function calctan(form) {
+var opp = eval(form.opp.value);
+var adj = eval(form.adj.value);
+form.tan.value = opp/adj;
+}
+// End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<form>
+<table border=3 cellspacing=2 cellpadding=5>
+<tr>
+<td align=center><i>Opposite Angle</i></td>
+<td align=center><i>Adjacent Angle</i></td>
+<td align=center><i>Tangent Angle</i></td>
+</tr>
+<tr>
+<td align=center><input type=text name=opp size=15></td>
+<td align=center><input type=text name=adj size=15></td>
+<td align=center><input type=text name=tan size=15></td>
+</tr>
+<tr>
+<td colspan=3 align=center><input type=button value="Calculate!" onclick="calctan(this.form)"></td>
+</tr>
+</table>
+</form>
+
+</center>
+</BODY>
+</HTML>

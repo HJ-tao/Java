@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Randy Bennett (rbennett@thezone.net) -->
+<!-- Web Site:  http//home.thezone.net/~rbennett/utility/javahead.htm -->
+
+<!-- Begin
+function setVariables() {
+imgwidth=30;  // logo width, in pixels
+imgheight=30;  // logo height, in pixels
+if (navigator.appName == "Netscape") {
+horz=".left";
+vert=".top";
+docStyle="document.";
+styleDoc="";
+innerW="window.innerWidth";
+innerH="window.innerHeight";
+offsetX="window.pageXOffset";
+offsetY="window.pageYOffset";
+}
+else {
+horz=".pixelLeft";
+vert=".pixelTop";
+docStyle="";
+styleDoc=".style";
+innerW="document.body.clientWidth";
+innerH="document.body.clientHeight";
+offsetX="document.body.scrollLeft";
+offsetY="document.body.scrollTop";
+   }
+}
+function checkLocation() {
+objectXY="branding";
+var availableX=eval(innerW);
+var availableY=eval(innerH);
+var currentX=eval(offsetX);
+var currentY=eval(offsetY);
+x=availableX-(imgwidth+30)+currentX;
+y=availableY-(imgheight+20)+currentY;
+evalMove();
+setTimeout("checkLocation()",10);
+}
+function evalMove() {
+eval(docStyle + objectXY + styleDoc + horz + "=" + x);
+eval(docStyle + objectXY + styleDoc + vert + "=" + y);
+}
+// End -->
+</SCRIPT>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg onload="setVariables(); checkLocation();">
+<center><BR><BR><BR>
+dummy text<br>
+dummy text<br>
+dummy text<br>
+dummy text<br>
+dummy text<br>
+dummy text<br>
+dummy text<br>
+dummy text<br>
+dummy text<br>
+dummy text<br>
+dummy text<br>
+dummy text<br>
+dummy text<br>
+dummy text<br>
+dummy text<br>
+dummy text<br>
+dummy text<br>
+dummy text<br>
+dummy text<br>
+dummy text<br>
+dummy text<br>
+<div id="branding" style="position:absolute; visibility:show; left:235px; top:-50px; z-index:2">
+<table width=10 bgcolor=#ffffff><td>
+<a href="../javapage-details.htm" onmouseover="window.status='Thanks for visiting!';return true" onmouseout="window.status='';return true"><center><img src="ball.gif" width="30" height="30" border="0"></center></a></font></td>
+</table>
+</div>
+
+</center>
+</BODY>
+</HTML>

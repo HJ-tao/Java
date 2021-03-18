@@ -1,0 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Ronnie T. Moore -->
+<!-- Web Site:  The JavaScript Source -->
+
+<!-- Begin
+var text = "";
+function getActiveText(e) {
+
+// Sets text MSIE or Netscape active
+// text based on browser, puts text in form
+text = (document.all) ? document.selection.createRange().text : document.getSelection();
+
+document.theform.text.value = text;
+return true;
+}
+
+document.onmouseup = getActiveText;
+if (!document.all) document.captureEvents(Event.MOUSEUP);
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR>Try highlighting some of this text.<BR><br>
+<form name=theform>
+Selected text:  <input type=text name=text value="">
+</form>
+
+</center>
+</BODY>
+</HTML>

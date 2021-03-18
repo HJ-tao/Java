@@ -1,0 +1,69 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Begin
+var letterArray = new Array("A","B","C","D","E");
+
+function addElement(array) {
+size = array.length;
+addindex = parseInt(prompt("Please enter the element index where you would like to add an item.",""));
+validNo = (addindex != "NaN");
+inRange = ( (addindex >= 0) && (addindex <= array.length+1) );
+if (validNo && inRange) {
+addvalue = prompt("Please enter the value to be added as element index " + addindex + ".","");
+for (var i=array.length+1; i>addindex; i--) array[i] = array[i-1];
+array[addindex] = addvalue;
+array.length = array.length-1;
+showArray(array);
+}
+else alert("You only add element indexes between 0 and " + (size) + ".");
+}
+
+function deleteElement(array) {
+size = array.length;
+delindex = parseInt(prompt("Please enter the element index of the item to remove.",""));
+validNo = (delindex != "NaN");
+inRange = ( (delindex >= 0) && (delindex <= array.length) );
+
+if (validNo && inRange) {
+for (var i=0; i<=size; i++)
+array[i] = ((i == delindex) ? "delete" : array[i]);
+for (var j=delindex; j<size-1; j++)
+if (j != size) array[j] = array[j+1];
+array.length = size-1;
+alert("Element index " + delindex + " has been removed.  The other elements have moved to fill the spot.");
+showArray(array);
+}
+else alert("You only delete from element index 0 to " + (size-1) + ".");
+}
+
+function showArray(array) {
+arraytext = "";
+for (var i=0; i<array.length; i++) {
+arraytext += "Element Index " + i + ":  " + array[i] + "\n";
+}
+document.form.text.value = arraytext;
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR>
+<form name=form>
+
+<input type=button value="Show Array" onClick="javascript:showArray(letterArray)"><br>
+<input type=button value="Add Element" onClick="javascript:addElement(letterArray)">
+<input type=button value="Delete Element" onClick="javascript:deleteElement(letterArray)"><br>
+
+<br>
+<textarea name="text" rows=10 cols=60></textarea>
+</form>
+
+
+</center>
+</BODY>
+</HTML>

@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Carol Gevers -->
+<!-- Modified:  Sandeep V. Tamhankar (stamhankar@hotmail.com) -->
+<!-- Web Site:  http://207.20.242.93 -->
+
+<!-- Begin
+function SSNValidation(ssn) {
+var matchArr = ssn.match(/^(\d{3})-?\d{2}-?\d{4}$/);
+var numDashes = ssn.split('-').length - 1;
+if (matchArr == null || numDashes == 1) {
+alert('Invalid SSN. Must be 9 digits or in the form NNN-NN-NNNN.');
+msg = "does not appear to be valid";
+}
+else
+if (parseInt(matchArr[1],10)==0) {
+alert("Invalid SSN: SSN's can't start with 000.");
+msg = "does not appear to be valid";
+}
+else {
+msg = "appears to be valid";
+alert(ssn + "\r\n\r\n" + msg + " Social Security Number.");
+   }
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<form>
+<tt>
+SS #:  <input type=text name=ssn size=11 maxlength=11> (use dashes!)
+</tt>
+<p>
+<input type=button value="Validate Number" onClick="SSNValidation(this.form.ssn.value);">
+</form>
+
+</center>
+</BODY>
+</HTML>

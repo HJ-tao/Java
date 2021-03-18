@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Motivational Marketing Associates
+<!-- Begin
+function ClearInput(form) {
+form.attendance.value="";
+form.banquet60.value="";
+form.banquet72.value="";
+form.theater.value="";
+form.school18.value="";
+form.school30.value="";
+form.reception.value="";
+form.trade8.value="";
+form.trade10.value="";
+return true;
+}
+function help(helponwhat) {
+if (helponwhat == "attendance")
+alert("Enter the number of people who will be attending your event.")
+}
+ function SizeCalc(form) {
+var banquet60 = 0;
+var banquet72 = 0;
+var theater = 0;
+var school18 = 0;
+var school30 = 0;
+var reception = 0;
+var trade8 = 0;
+var trade10 = 0;
+if (form.attendance.value==null||form.attendance.value.length==0){
+alert("Please enter the number of people attending.");
+return false;
+}
+else
+attendance = form.attendance.value
+form.banquet60.value = attendance * 12;
+form.banquet72.value = attendance * 12.05;
+form.theater.value = attendance * 9;
+form.school18.value = attendance * 14.5;
+form.school30.value = attendance * 17.5;
+form.reception.value = attendance * 9.5;
+form.trade8.value = attendance * 160;
+form.trade10.value = attendance * 200;
+return true;
+}
+// End -->
+</SCRIPT>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<FORM NAME="room" METHOD="post">
+<TABLE BORDER>
+<TR>
+<TD COLSPAN=8 ALIGN=CENTER>
+<B>Number of people or exhibition booths</B> <INPUT TYPE="text" name="attendance" SIZE=8></TD>
+</TR>
+<TR><TD COLSPAN=8 ALIGN=CENTER>
+<INPUT TYPE="button" value="Calculate" onClick="SizeCalc(this.form)">
+<input type="button" value="Reset" onclick="ClearInput(this.form)"></TD>
+</TR>
+<TR ALIGN=CENTER><TD COLSPAN=8><B>Room Size Required</B></TD>
+</TR>
+<TR ALIGN=CENTER><TD COLSPAN=2><FONT SIZE=2>Banquet </TD><TD></TD><TD COLSPAN=2><FONT SIZE=2>School <BR> Room</TD><TD></TD><TD COLSPAN=2><FONT SIZE=2>Trade Show</TD>
+</TR>
+<TR ALIGN=CENTER><TD><FONT SIZE=2>60" <BR> round <BR> tables</TD><TD><FONT SIZE=2>72" <BR> round <BR>tables</TD><TD><FONT SIZE=2>Theater Seating</TD><TD><FONT SIZE=2>18" <BR>desks</TD><TD><FONT SIZE=2>30" <BR>desks</TD><TD><FONT SIZE=2>Reception</TD><TD><FONT SIZE=2>8'x10' <BR> booths</TD><TD><FONT SIZE=2>10'x10' <BR>booths</TD>
+</TR>
+<TR><TD><FONT SIZE=2>
+<INPUT TYPE="text" name="banquet60" SIZE=8> Sq. Ft.</TD><TD><FONT SIZE=2>
+<INPUT TYPE="text" name="banquet72" SIZE=8> Sq. Ft.</TD>
+<TD><FONT SIZE=2><INPUT TYPE="text" NAME="theater" SIZE=8> Sq. Ft.</TD>
+<TD><FONT SIZE=2><INPUT TYPE="text" name="school18" SIZE=8> Sq. Ft.</TD>
+<TD><FONT SIZE=2><INPUT TYPE="text" name="school30" SIZE=8> Sq. Ft.</TD>
+<TD><FONT SIZE=2><INPUT TYPE="text" name="reception" SIZE=8> Sq. Ft.</TD>
+<TD><FONT SIZE=2><INPUT TYPE="text" NAME="trade8" SIZE=8> Sq. Ft.</TD>
+<TD><FONT SIZE=2><INPUT TYPE="text" NAME="trade10" SIZE=8> Sq. Ft.</TD>
+</TR>
+</TABLE>
+</FORM>
+
+</center>
+</BODY>
+</HTML>

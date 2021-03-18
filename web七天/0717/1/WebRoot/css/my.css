@@ -1,0 +1,38 @@
+
+*{
+	font-size:15px;
+	font-family:¡• È;
+}
+tr,td{
+	border:solid 1px green;
+}
+td{
+    text-align:center;
+    color:#ccaa12;   
+    margin:auto;
+    padding:5px;
+}
+table{
+	width:80%;
+    border-color: #999999;  
+    border-collapse: collapse; 
+    color:#333333; 
+	margin:auto;
+}
+.tom{
+	width:50px;
+	height:20px;
+	font-size:14px;
+	background-color:pink;
+}
+#div1{
+	width:400px;
+	height:200px;
+	border:1px dashed red;
+}
+body{
+	margin:auto;
+	width:800px;
+	height:600px;
+	border:1px solid black;
+}

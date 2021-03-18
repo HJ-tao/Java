@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Dion (yobo42@hotmail.com) -->
+<!-- Web Site:  http://www.iinet.net.au/~biab/ -->
+
+<!-- Begin
+
+// change this to where you store the blank.gif image
+var blank = "blank.gif";
+
+topedge = 130;  // location of news box from top of page
+leftedge = 10;  // location of news box from left edge
+boxheight = 150;  // height of news box
+boxwidth = 210;  // width of news box
+scrollheight = 240; // total height of all data to be scrolled
+
+function scrollnews(cliptop) {
+if (document.layers) {
+newsDiv = document.news;
+newsDiv.clip.top = cliptop;
+newsDiv.clip.bottom = cliptop + boxheight;
+newsDiv.clip.left = 0;
+newsDiv.clip.right = boxwidth + leftedge;
+newsDiv.left = leftedge;
+newsDiv.top = topedge - cliptop;
+}
+else {
+newsDiv = news.style;
+newsDiv.clip = "rect(" + cliptop + "px " + (boxwidth + leftedge) + "px " + (cliptop + boxheight) + "px 0px)";
+newsDiv.pixelLeft = leftedge;
+newsDiv.pixelTop = topedge - cliptop;
+}
+cliptop = (cliptop + 1) % (scrollheight + boxheight);
+newsDiv.visibility='visible';
+setTimeout("scrollnews(" + cliptop + ")", 150);
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg OnLoad="scrollnews(0)">
+<center><BR><BR><BR>
+<div ID="news" style="position:absolute; visibility:hidden;
+top:1; left:1; height:600;
+clip:rect(10,100,100,10); border-width:0px;">
+<table border=0 cellpadding=1 cellspacing=0 bgcolor="white">
+<tr>
+<td>
+<script language="javascript">
+document.write('<img src=' + blank + ' width=1 height='+boxheight+'>');
+</script>
+</td>
+</tr>
+<tr>
+<td>
+
+<!-- Your News Items are Here -->
+
+This news scroller begins<br>
+Displaying text and images<br>
+From the bottom of the box<br>
+And restarts when all the<br>
+Information scrolls above<br>
+The top of the box.<br><br>
+Any HTML page content can<br>
+Be used in this Javascript<br>
+Scroller.<br>
+<br>
+<a href="mailto:yobo42@hotmail.com">yobo42@hotmail.com</a>
+
+<!-- End Of Your News Items -->
+
+</td>
+</tr>
+<tr>
+<td>
+<script language="javascript">
+document.write('<img src=' + blank + ' width=1 height='+boxheight+'>');
+</script>
+</td>
+</tr>
+</table>
+</div>
+
+</center>
+</BODY>
+</HTML>

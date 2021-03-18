@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Martin Webb -->
+<!-- Web Site:  http://www.irt.org -->
+<!-- Begin
+function Comma(number) {
+number = '' + number;
+if (number.length > 3) {
+var mod = number.length % 3;
+var output = (mod > 0 ? (number.substring(0,mod)) : '');
+for (i=0 ; i < Math.floor(number.length / 3); i++) {
+if ((mod == 0) && (i == 0))
+output += number.substring(mod+ 3 * i, mod + 3 * i + 3);
+else
+output+= ',' + number.substring(mod + 3 * i, mod + 3 * i + 3);
+}
+return (output);
+}
+else return number;
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg >
+<center><BR><BR><BR>
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Begin
+document.write(Comma(1)+'<BR>');
+document.write(Comma(12)+'<BR>');
+document.write(Comma(123)+'<BR>');
+document.write(Comma(1234)+'<BR>');
+document.write(Comma(12345)+'<BR>');
+document.write(Comma(123456)+'<BR>');
+document.write(Comma(1234567)+'<BR>');
+document.write(Comma(12345678)+'<BR>');
+document.write(Comma(123456789)+'<BR>');
+document.write(Comma(1234567890)+'<BR>');
+//  End -->
+</script>
+
+</center>
+</BODY>
+</HTML>

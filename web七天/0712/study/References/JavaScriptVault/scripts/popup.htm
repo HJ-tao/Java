@@ -1,0 +1,82 @@
+<HTML>
+<HEAD>
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Eddie Traversa (psych3@primus.com.au) -->
+<!-- Web Site:  http://nirvana.media3.net -->
+
+<!-- Begin
+function verScroll(dir, spd, loop) {
+loop = true;
+direction = "up";
+speed = 10;
+scrolltimer = null;
+if (document.layers) {
+var page = eval(document.contentLayer);
+}
+else {
+if (document.getElementById) {
+var page= eval("document.getElementById('contentLayer').style");
+}
+else {
+if (document.all) {
+var page = eval(document.all.contentLayer.style);
+      }
+   }
+}
+direction = dir;
+speed = parseInt(spd);
+var y_pos = parseInt(page.top);
+if (loop == true) {
+if (direction == "dn") {
+page.top = (y_pos - (speed));
+} else {
+if (direction == "up" && y_pos < 10) {
+page.top = (y_pos + (speed));
+} else {
+if (direction == "top") {
+page.top = 10;
+      }
+   }
+}
+scrolltimer = setTimeout("verScroll(direction,speed)", 1);
+   }
+}
+function stopScroll() {
+loop = false;
+clearTimeout(scrolltimer);
+}
+//  End -->
+</script>
+</head>
+<body>
+<div id="contentLayer" style="position:absolute; width:300px; z-index:1; left: 39px; top: 51px"> 
+
+
+insert your text here !!
+
+
+
+</div>
+<div id="scrollmenu" style="position:absolute;width:200px;height:30px;z-index:1; left:400px; top: 40px">
+<table border=1><tr><td>
+<table>
+<tr>
+<td align=left>Up</td>
+<td> </td>
+<td align=right>Down</td>
+</tr>
+<tr>
+<td colspan=3>
+<a href="#" onMouseOver="verScroll('up','25','true')" onMouseOut="stopScroll()"><<<</a> 
+<a href="#" onMouseOver="verScroll('up','5','true')" onMouseOut="stopScroll()"><<</a> 
+<a href="#" onMouseOver="verScroll('up','1','true')" onMouseOut="stopScroll()"><</a> |
+<a href="#" onMouseOver="verScroll('dn','1','true')" onMouseOut="stopScroll()">></a> 
+<a href="#" onMouseOver="verScroll('dn','5','true')" onMouseOut="stopScroll()">>></a> 
+<a href="#" onMouseOver="verScroll('dn','25','true')" onMouseOut="stopScroll()">>>></a>
+</td>
+</tr>
+</table>
+</td></tr></table>
+</div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<LINK href="general.css" rel="stylesheet" type="text/css">
+
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Nicholas Lupien (smylex@aol.com) -->
+<!-- Begin
+var rand1 = 0;
+var useRand = 0;
+
+images = new Array;
+images[1] = new Image();
+images[1].src = "toad.jpg";
+images[2] = new Image();
+images[2].src = "lizard.jpg";
+images[3] = new Image();
+images[3].src = "gecko.jpg";
+images[4] = new Image();
+images[4].src = "chameleon.jpg";
+
+function swapPic() {
+var imgnum = images.length - 1;
+do {
+var randnum = Math.random();
+rand1 = Math.round((imgnum - 1) * randnum) + 1;
+} while (rand1 == useRand);
+useRand = rand1;
+document.randimg.src = images[useRand].src;
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg OnLoad="swapPic()">
+<center><BR><BR><BR>
+<a onClick="swapPic();"><img name="randimg" src="toad.jpg"></a><br>
+<font face="Verdana" size="-2">click image to change</font>
+
+</center>
+</BODY>
+</HTML>

@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Fred Roberts (fred@gloryofgod.com) -->
+
+<!-- Begin
+function filterNum(str) {
+re = /^\$|,/g;
+// remove "$" and ","
+return str.replace(re, "");
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR>Removes the dollar sign ($) and commas (,) from a a text box.  Useful if you require input of only numbers.  You may also modify the script to filter out whatever characters you want.
+<hr><BR>
+<form>
+<form>
+Amount: <input type=text name=amount size=30 value="$1,234,567.99" onBlur="this.form.amount.value=filterNum(this.form.amount.value);"><br>
+<input type=button value="OK">
+</form>
+
+
+
+</center>
+</BODY>
+</HTML>

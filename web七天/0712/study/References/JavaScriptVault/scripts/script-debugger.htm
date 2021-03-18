@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<LINK href="general.css" rel="stylesheet" type="text/css">
+
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Begin
+function reportError(msg,url,line) {
+var str = "Err: " + msg + " on line: "
++ line + "\nURL: " + url  + "\nWeb: "
++ navigator.appName + " " + navigator.appName
++ " " + navigator.appVersion;
+document.errform.error.value = str;
+return true;
+}
+window.onerror = reportError;
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<form name=err>
+<input type=button value="Cause JS Error" onClick="brokenScript()">
+</form><p>
+<form name=errform>
+<textarea name=error rows=5 cols=70></textarea>
+</form>
+
+</center>
+</BODY>
+</HTML>

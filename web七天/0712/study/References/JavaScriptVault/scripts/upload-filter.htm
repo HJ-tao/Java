@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  ArjoGod, Shauna Merritt -->
+
+<!-- Begin
+extArray = new Array(".gif", ".jpg", ".png");
+function LimitAttach(form, file) {
+allowSubmit = false;
+if (!file) return;
+while (file.indexOf("\\") != -1)
+file = file.slice(file.indexOf("\\") + 1);
+ext = file.slice(file.indexOf(".")).toLowerCase();
+for (var i = 0; i < extArray.length; i++) {
+if (extArray[i] == ext) { allowSubmit = true; break; }
+}
+if (allowSubmit) form.submit();
+else
+alert("Please only upload files that end in types:  "
++ (extArray.join("  ")) + "\nPlease select a new "
++ "file to upload and submit again.");
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+Please upload only images that end in:
+<script>
+document.write(extArray.join("  "));
+</script>
+<p>
+
+<form method=post name=upform action="/cgi-bin/some-script.cgi" enctype="multipart/form-data">
+<input type=file name=uploadfile>
+<p>
+<input type=button name="Submit" value="Submit" onclick="LimitAttach(this.form, this.form.uploadfile.value)">
+</form>
+
+</center>
+</BODY>
+</HTML>

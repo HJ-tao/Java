@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Begin
+function linkDisplay(selection) {
+if (selection=="1") {
+document.form.info.value="Answers to the most common questions we receive are posted here for your review!";
+document.form.go.value="http://website.com/faq";
+}
+else if(selection=="2") {
+document.form.info.value="Find out what's new since you last visited!  Stay up to date with us!";
+document.form.go.value="http://website.com/new.html";
+}
+else if(selection=="3") {
+document.form.info.value="Subscribe to our Newsletter to know when we add new scripts!";
+document.form.go.value="http://website.com/javascriptsource.html";
+}
+else if(selection=="4") {
+document.form.info.value="Post your question or problem here so other fellow JavaScripters can help you!";
+document.form.go.value="http://website.com/forum";
+}
+else if(selection=="5") {
+document.form.info.value="Don't have time to cut & paste?\nTry our Email-a-Script feature!";
+document.form.go.value="http://website.com";
+}
+else if(selection=="6") {
+document.form.info.value="Not sure where that particular JavaScript is?  Search our web site!";
+document.form.go.value="http://website.com/search";
+}
+else {
+document.form.info.value = "For more information, please email us.";
+document.form.go.value="http://website.com/feedback.html";
+   }
+}
+function moreInfo() {
+var page=document.form.go.value;
+window.location=page;
+}
+// End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<form name=form>
+<table border=0 width=400>
+<tr>
+<td align=center><a href="javascript:linkDisplay(1);">F.A.Q.'s</a><br></td>
+<td align=center><a href="javascript:linkDisplay(2);">What's New?</a><br></td>
+<td align=center><a href="javascript:linkDisplay(3);">Site Newsletter!</a><br></td>
+</tr>
+<tr>
+<td align=center><a href="javascript:linkDisplay(4);">Forum</a><br></td>
+<td align=center><a href="javascript:linkDisplay(5);">"Email-a-Script"!</a><br></td>
+<td align=center><a href="javascript:linkDisplay(6);">Site Search Engine</a><br></td>
+</tr>
+<tr>
+<td colspan=3 align=center>
+<textarea name=info rows=2 cols=40 wrap=virtual>Click a topic above for more info!</textarea><br>
+<input type=button name=button value="Go There!" onClick="moreInfo()">
+<input type=hidden name=go value="">
+</td></tr>
+</table>
+</form>
+
+</center>
+</BODY>
+</HTML>

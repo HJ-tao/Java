@@ -1,0 +1,45 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+
+<!-- Begin
+function validate(){
+var digits="0123456789"
+var temp
+if (document.testform.Name.value=="") {
+alert("No Name !")
+return false
+}
+if (document.testform.age.value=="") {
+alert("Invalid Age !")
+return false
+}
+for (var i=0;i<document.testform.age.value.length;i++){
+temp=document.testform.age.value.substring(i,i+1)
+if (digits.indexOf(temp)==-1){
+alert("Invalid Age !")
+return false
+      }
+   }
+return true
+}
+// End -->
+</SCRIPT>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<FORM name="testform" onSubmit="return validate()">
+Name:<input type="text" size=30 name="Name">
+Age:<input type="text" size=3 name="age">
+<input type="submit" value="Submit">
+</FORM>
+
+
+</center>
+</BODY>
+</HTML>

@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="Javascript">
+<!-- Begin
+var COLOR = 999999
+var woot = 0
+function stoploop() {
+document.bgColor = '#000000';
+clearTimeout(loopID);
+}
+function loopBackground() {
+if (COLOR > 0) {
+document.bgColor = '#' + COLOR
+COLOR -= 111111
+loopID = setTimeout("loopBackground()",1)
+} else {
+document.bgColor = '#000000'
+woot += 10
+COLOR = 999999
+COLOR -= woot
+loopID = setTimeout("loopBackground()",1)
+   }
+}
+// End -->
+</script>
+
+</HEAD>
+
+<BODY bgcolor=##E0E0E0>
+<center><BR><BR><BR>
+<FORM NAME="background">
+<INPUT TYPE="button" VALUE="Start bgColor WARP"
+onClick="loopBackground()">
+<br>
+<input type="button" value="Stop bgColor WARP" onClick="stoploop()">
+</FORM>
+
+</center>
+</BODY>
+</HTML>

@@ -1,0 +1,31 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+<!--  Begin
+function askData() {
+var inputedData =  prompt ("type something!", "" );
+if (confirm("Are you sure you typed "+inputedData+"?")) {
+alert ("Ok, you did type "+inputedData+"!");
+}
+else {
+alert ("No, you did not type "+inputedData+", did you?  OK.  Guess ya did.");
+   }
+}
+// End -->
+</SCRIPT>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg >
+<center><BR><BR><BR>
+<FORM>
+<input type=button value="Confirm (Alert)" onClick="askData()">
+</FORM>
+<!-- Or another method...  --><BR>Or....<BR>
+<A HREF="" onMouseover="askData()">Confirm & Alert</A>
+
+</center>
+</BODY>
+</HTML>

@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+
+<!--  Begin
+var menu_selection="";
+var radio_selection="";
+function  checkForm() {
+if (dropDownMenu() && radioButtons()) {
+document.forms[0].results1.value=menu_selection;
+document.forms[0].results2.value=radio_selection;
+alert("\nForm has been filled out correctly.");
+   }
+}
+function dropDownMenu(form)  {
+var myindex=document.forms[0].menu.selectedIndex;
+if (myindex==0) {
+alert("\nYou must make a selection from the drop-down menu.");
+document.forms[0].menu.focus();
+}
+else {
+menu_selection=document.forms[0].menu.options[myindex].value;
+return true;
+   }
+}
+function radioButtons() {
+if (radio_selection=="")
+alert("\nYou must check one of the radio buttons.");
+else {
+return true;
+   }
+}
+function resetForm() {
+document.forms[0].menu.options[0].selected = true;
+menu_selection="";
+radio_selection="";
+}
+function about() {
+alert("\nVALIDATOR checks to see that a selection has been made from  the drop-down menu and that a radio button has been checked.\n\nIf filled out properly, the data will be displayed below.");
+}
+// End -->
+</SCRIPT>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<FORM>
+<TABLE BORDER=4  WIDTH=500>
+<TR>
+<TD align="center"><FONT SIZE=+1><B>MENU</B></FONT>
+<TD align="center"><FONT SIZE=+1><B>RADIOS</B></FONT>
+</TR>
+<TR>
+<TD align="center"><SELECT NAME="menu" SIZE=1>
+<OPTION SELECTED VALUE=""> --- How many times have you been here?  ---
+<OPTION VALUE="one">Once
+<OPTION VALUE="two">Twice
+<OPTION VALUE="three">Three times
+<OPTION VALUE="four">Four times
+<OPTION VALUE="five">Five times
+<OPTION VALUE="six">Six times
+<OPTION VALUE="seven">Seven times
+<OPTION VALUE="eight">Eight times
+<OPTION VALUE="nine">Nine times
+<OPTION VALUE="ten">Ten+ times
+</SELECT>
+<TD align="center"><BR>Will you be back here?<br>
+<INPUT TYPE="radio" NAME="radiobutton" onClick="radio_selection='yes'">YES
+<INPUT TYPE="radio" NAME="radiobutton" onClick="radio_selection='no'">NO
+<INPUT TYPE="radio" NAME="radiobutton" onClick="radio_selection='maybe'">MAYBE
+</TR>
+</TABLE>
+<BR>
+<TABLE BORDER=0 WIDTH=400>
+<TD align="center"><INPUT TYPE="reset"   VALUE="Reset" onClick="resetForm()">
+<TD align="center"><INPUT TYPE="button" VALUE="Check Form Fields" onClick="checkForm()">
+<TD align="center"><INPUT TYPE="button" VALUE="About" onClick="about()">
+</TABLE>
+<BR>
+<TABLE BORDER=4 WIDTH=250>
+<TR>
+<TD align="center">MENU:
+<TD align="center">RADIO:
+</TR>
+<TR>
+<TD align="center"><INPUT  TYPE="text"  NAME="results1" SIZE=7>
+<TD align="center"><INPUT  TYPE="text"  NAME="results2" SIZE=7>
+</TR>
+</TABLE>
+<BR>
+</FORM>
+
+</center>
+</BODY>
+</HTML>

@@ -1,0 +1,55 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<LINK href="general.css" rel="stylesheet" type="text/css">
+
+<script language="JavaScript">
+<!-- Begin
+function makeArray(q){
+for(i=1 ; i < q ; i++){this[i]=0}}
+w=1;
+howmanysites=4;
+Sites = new makeArray(howmanysites);
+Sites[1] = "http://myplace.50g.com|My Place!";
+Sites[2] = "http://www.geocities.com~Geocities|Click for totally free webspace!";
+Sites[3] = "http://www.yahoo.com~Yahoo!|Click for the greatest Search Engine!";
+Sites[4] = "http://www.builder.com~Builder.com|Click for awesome webmaster resources!";
+
+function showSites() {
+if (w > howmanysites) { w=1; };
+var string=Sites[w] + "";
+var split1=string.indexOf("~");
+var split2=string.indexOf("|");
+var url=string.substring(0,split1);
+var name=string.substring(split1 + 1,split2);
+var word=string.substring(split2 + 1,string.length);
+document.form.url.value=url;
+document.form.name.value=name;
+document.form.word.value=word;
+w+=1;
+window.setTimeout('showSites()',3000);
+}
+function visitSite() {
+window.location=document.form.url.value;
+}
+// End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<form name=form>
+<table><tr><td align=center>
+<input type=button name=name value="Visit these sites!" onClick="visitSite()" size=25>
+<input type=hidden name=url value="">
+<input type=text name=word value="" size=40>
+</td></tr></table>
+</form>
+<script>
+showSites();
+</script>
+
+</center>
+</BODY>
+</HTML>

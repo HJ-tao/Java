@@ -1,0 +1,35 @@
+
+<html>
+  <head>
+  
+    <title>商品录入界面</title>
+    <script>
+       function checkForm(){
+        var flag = false;
+         var wName = document.forms[0].wName;
+         if(wName.value.length==0 || "" ==wName.value)
+            {
+               alert("商品名称不能为空!");
+               wName.focus();
+            }else{
+               flag = true;
+            }
+            return flag;
+       }
+    
+    </script>
+  </head>
+  
+  <body>
+  <h1>商品录入</h1>
+    <form action="../process" method="post" onsubmit="return checkForm()">
+       商品名称*:<input type="text" name="wName"><br/>
+     商品类型*:<input type="radio" name="wSort" value="1" checked="checked">电器
+     <input type="radio" name="wSort" value="2">食品
+     <input type="radio" name="wSort" value="3">服装<br/>
+     商品数量*:<input type="text" name="wAmount"><br/>
+     <input type="submit" value="加入库存">
+     <input type="reset" value="重置">
+    </form>
+  </body>
+</html>

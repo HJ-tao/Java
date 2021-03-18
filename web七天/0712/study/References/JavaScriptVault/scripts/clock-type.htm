@@ -1,0 +1,59 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Begin
+function showMilitaryTime() {
+if (document.form.showMilitary[0].checked) {
+return true;
+}
+return false;
+}
+function showTheHours(theHour) {
+if (showMilitaryTime() || (theHour > 0 && theHour < 13)) {
+if (theHour == "0") theHour = 12;
+return (theHour);
+}
+if (theHour == 0) {
+return (12);
+}
+return (theHour-12);
+}
+function showZeroFilled(inValue) {
+if (inValue > 9) {
+return "" + inValue;
+}
+return "0" + inValue;
+}
+function showAmPm() {
+if (showMilitaryTime()) {
+return ("");
+}
+if (now.getHours() < 12) {
+return (" am");
+}
+return (" pm");
+}
+function showTheTime() {
+now = new Date
+document.form.showTime.value = showTheHours(now.getHours()) + ":" + showZeroFilled(now.getMinutes()) + ":" + showZeroFilled(now.getSeconds()) + showAmPm()
+setTimeout("showTheTime()",1000)
+}
+// End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg onLoad="showTheTime()">
+<center><BR><BR><BR>
+<form name=form>
+<input type=text name=showTime size=11><p>
+<input type=radio name=showMilitary checked>Military Time<br>
+<input type=radio name=showMilitary>12 Hour Time<br>
+</form>
+</center>
+</BODY>
+</HTML>
+

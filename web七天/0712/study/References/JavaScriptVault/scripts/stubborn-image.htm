@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Kien Caoxuan (kcaoxuan@caoxuan.com) -->
+<!-- Web Site:  http://www.caoxuan.com/ -->
+<!-- Begin
+N = (navigator.appName.indexOf("Netscape") != -1);
+M = (navigator.appName.indexOf("Microsoft") != -1);
+Vis = new Array();
+Vis[0] = (M) ? "hidden":"hide";
+Vis[1] = (M) ? "visible":"show";
+function GetDiv(divId, divY, divX, divW, divH, bCol, visb, zInd) {
+bkCol = (bCol != "")?((N)?" bgColor = "+bCol:";background:"+bCol):"";
+DivTyp = (M) ? "<DIV" : "<LAYER";
+if(M) {
+Styl = " ID="+divId+" style = 'position:absolute; top:"+divY+"; left:"+divX+"; width:"+divW+"; height:"+divH+bkCol+"; visibility:"+Vis[visb]+"; z-index:"+zInd+"'>";
+}
+if(N) {
+Styl = " ID = "+divId+" top = "+divY+" left = "+divX+" width = "+divW+" height = "+divH+bkCol+" visibility = "+Vis[visb]+" z-index = "+zInd+">";
+}
+document.writeln(DivTyp+Styl);
+}
+function EndDiv() {
+(M)? document.writeln("</DIV>"): document.writeln("</LAYER>");
+}
+GetDiv('Obj', 300, 300, 20, 20, '', 1, 0);
+document.write("<img src=ball.gif width=30 height=29>");
+EndDiv();
+if(document.layers) document.captureEvents(Event.MOUSEMOVE);
+document.onmousemove = newPos;
+function newPos(e) {
+X = (navigator.appName.indexOf("Microsoft") != -1)?event.clientX:e.pageX;
+Y = (navigator.appName.indexOf("Microsoft") != -1)?event.clientY:e.pageY;
+Xo = parseInt((M)?document.all.Obj.style.left:document.Obj.left);
+Yo = parseInt((M)?document.all.Obj.style.top:document.Obj.top);
+if(Math.abs(X - Xo) < 50 && Math.abs(Y - Yo) < 50) {
+if(M) {
+document.all.Obj.style.left = Math.floor(Math.random() * 400);
+document.all.Obj.style.top = 100 + Math.floor(Math.random() * 300);
+}
+if(N) {
+document.Obj.left = Math.floor(Math.random() * 700);
+document.Obj.top = Math.floor(Math.random() * 500);
+      }
+   }
+}
+//  End -->
+</script>
+
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+
+</center>
+</BODY>
+</HTML>

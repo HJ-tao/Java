@@ -1,0 +1,39 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Ronnie T. Moore, Editor -->
+
+<!-- Begin
+function findEmailAddresses(StrObj) {
+var separateEmailsBy = ", ";
+var email = "<none>"; // if no match, use this
+var emailsArray = StrObj.match(/([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9._-]+)/gi);
+if (emailsArray) {
+email = "";
+for (var i = 0; i < emailsArray.length; i++) {
+if (i != 0) email += separateEmailsBy;
+email += emailsArray[i];
+      }
+   }
+return email;
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR>
+(For this demo, enter some text in the box and then click out of the field.  If you included<br>
+one or more valid email addresses, they will be displayed in the Email field below the box.)<BR>
+<form><textarea name=comments rows=10 cols=50 onBlur="this.form.email.value=findEmailAddresses(this.value);"></textarea>
+<br>
+Email:  <input type=text name=email>
+</form>
+
+</center>
+</BODY>
+</HTML>

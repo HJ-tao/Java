@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<LINK href="general.css" rel="stylesheet" type="text/css">
+
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Ronnie T. Moore, Editor -->
+<!-- Idea and images by:  Stuart King (stuart@ciceron.com) -->
+<!-- Begin
+function previewPic(sel) {
+document.previewpic.src = "" + sel.options[sel.selectedIndex].value;
+}
+function showPic(sel) {
+images = new Array();
+images[1] = "toad.jpg";
+images[2] = "chameleon.jpg";
+images[3] = "lizard.jpg";
+images[4] = "gecko.jpg";
+window.location.href = images[sel.selectedIndex+1];
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<form name=picform>
+<select name=selbox size=1 onChange="previewPic(this)">
+<option value="toad-small.jpg">Toad
+<option value="chameleon-small.jpg">Chameleon
+<option value="lizard-small.jpg">Lizard
+<option value="gecko-small.jpg">Gecko
+</select>
+<p>
+<img name="previewpic" src="toad-small.jpg" width=106 height=64 border=1>
+<p>
+<input type=button value="Show Image" onclick="showPic(this.form.selbox)">
+</form>
+
+</center>
+</BODY>
+</HTML>

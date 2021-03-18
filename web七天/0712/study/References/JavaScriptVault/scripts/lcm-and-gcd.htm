@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  John T. Caranta III (caranta@netzero.net) -->
+<!-- Begin
+function getGCD() {
+var w, x, y;
+x = document.lcm_gcd.a.value;
+y = document.lcm_gcd.b.value;
+while (y != 0) {
+w = x % y;
+x = y;
+y = w;
+}
+return x;
+}
+function getLCM() {
+var gcd = getGCD();
+var lcm = (document.lcm_gcd.a.value * document.lcm_gcd.b.value) / gcd;
+document.lcm_gcd.lcmA.value = lcm;
+document.lcm_gcd.gcdA.value = gcd;
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<form name=lcm_gcd>
+<table border=0>
+<tr>
+<td width=200>
+First Value
+<br>
+<input type=text name=a>
+</td>
+<td width=200>
+Second Value
+<br>
+<input type=text name=b>
+</td>
+</tr>
+<tr>
+<td colspan=2 align=center>
+<br>
+<input type=button value=Solve onClick="getLCM()">
+<br>
+</td>
+</tr>
+<tr>
+<td>
+Least Common Multiple
+<br>
+<input type=text name=lcmA>
+</td>
+<td>
+Greatest Common Divisor
+<br>
+<input type=text name=gcdA>
+</td>
+</tr>
+</table>
+</form>
+
+</center>
+</BODY>
+</HTML>

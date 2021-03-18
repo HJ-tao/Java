@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<LINK href="general.css" rel="stylesheet" type="text/css">
+
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Begin
+<!-- Begin
+function icqCheck() {
+var number = document.ICQ.number.value;
+
+text = "<html><body><center><br>"
++ number + " is: <img src=http://wwp.icq.com/"
++ "scripts/online.dll?ICQ=" + number + "&img=5> "
++ "</body></html>";
+
+windowprops = "toolbar=no,width=150,height=25,"
++ "directories=no,status=no,scrollbars=no,resize=no,"
++ "menubar=no";
+
+icqWindow=window.open("","displayWindow",windowprops)
+icqWindow.document.write(text);
+icqWindow.document.close();
+icqWindow.focus();
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<form name=ICQ>
+<div center>ICQ #:
+<input type=text name=number size=10 value="141983"><br>
+<input type=button name=check value="Check # on ICQ !" onClick="icqCheck()">
+</div>
+</form>
+
+</center>
+</BODY>
+</HTML>

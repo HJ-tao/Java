@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+
+<!-- Original: Eric Stremming <estremming@hotmail.com>  -->
+<!-- Web Site: http://www.geocities.com/SunsetStrip/Club/5970  -->
+
+<!-- Begin
+var pos = 10;
+function initArray() {
+this.length = initArray.arguments.length;
+for (var i = 0; i < this.length; i++) {
+this[i] = initArray.arguments[i];
+   }
+}
+var col=new initArray("4b","5b","8b","8b");
+function stop() {
+document.bgColor = '#FFFFFF';
+clearTimeout(loopID);
+}
+function start() {
+col[1]="red"
+col[2]="yellowgreen"
+col[3]="yellow"
+col[4]="whitesmoke"
+col[5]="white"
+col[6]="wheat"
+col[7]="violet"
+col[8]="turquoise"
+col[9]="tomato"
+col[10]="thistle"
+pos++;
+if (pos<0||pos>10) {
+pos = 0;
+}
+document.bgColor = col[pos];
+loopID = setTimeout("start()",50);
+}
+// End -->
+</SCRIPT>
+
+</HEAD>
+
+<BODY Bgcolor=#E0E0E0 onLoad="start()">
+<center><BR><BR><BR>
+<FORM>
+<input type="button" value="On" onClick="start()">
+<input type="button" value="Off" onClick="stop()">
+</FORM>
+
+</center>
+</BODY>
+</HTML>

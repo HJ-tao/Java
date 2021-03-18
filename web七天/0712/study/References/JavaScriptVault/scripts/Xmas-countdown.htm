@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<script Language="JavaScript">
+var timerID = null;
+var timerRunning = false;
+function stopclock (){
+        if(timerRunning)
+                clearTimeout(timerID);
+        timerRunning = false;
+}
+
+function startclock () {
+        // Make sure the clock is stopped
+        stopclock();
+        showtime();
+}
+
+function showtime () {
+        var now = new Date();
+        var hours = now.getHours();
+        var minutes = now.getMinutes();
+        var seconds = now.getSeconds();
+
+        var date = now.getDate();
+        var month = now.getMonth() + 1;
+        var year = now.getYear();
+        if (year < 1000)
+         year+=1900
+
+        var timeValue = "" + ((hours < 10 ) ? "0" : "") + hours
+        // var timeValue = "" + ((hours >12) ? hours -12 :hours)
+        timeValue += ((minutes < 10) ? ":0" : ":") + minutes
+        timeValue += ((seconds < 10) ? ":0" : ":") + seconds
+        // timeValue += (hours >= 12) ? " P.M." : " A.M."
+
+
+
+
+         if (seconds == 0) {
+        window.status = "New minute!";
+        document.clock.face.value = "New minute!";
+         }
+        if (minutes == 0 && seconds == 0) {
+        window.status = "New hour!";
+        document.clock.face.value = "New hour!";
+
+         }
+        if (hours == 0 && minutes == 0 && seconds == 0) {
+        window.status = "Midnight!";
+        document.clock.face.value = "Midnight!";
+         }
+
+       else if (seconds > 0) {
+        document.clock.face.value = timeValue + "  " + date + "-" +  month + "-" + year;
+        window.status = timeValue + "  The Xact time according to your computer clock!     "  + date + "/" + month + "-" + year;
+                       }
+
+        nextXmas = new Date("December 25, 2000")
+        nextXmas.setYear(year)
+        msPerDay = 24 * 60 * 60 * 1000 ; // Number of milliseconds per day
+        daysLeft = (nextXmas.getTime() - now.getTime()) / msPerDay;
+        daysLeft = Math.round(daysLeft);
+        document.Frame2.Xmas.value =  daysLeft + " days until Christmas Eve!";
+
+        nextXmas = new Date("December 31, 2000")
+        nextXmas.setYear(year)
+        msPerDay = 24 * 60 * 60 * 1000 ; // Number of milliseconds per day
+        daysLeft = (nextXmas.getTime() - now.getTime()) / msPerDay;
+        daysLeft = Math.round(daysLeft);
+        document.Frame3.NewYear.value = daysLeft + " days until New Years Eve!";
+
+        timerID = setTimeout("showtime()",1000);
+
+        timerRunning = true;
+}
+</script>
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg onLoad="startclock()">
+<center><BR><BR><BR>
+<TABLE BORDER=4 CELLPADDING=0.5 CELLSPACING=0.5>
+<TR><TD>
+<form name="clock" onSubmit="0">
+<input type="textarea" name="face" size=20 value="Java">
+</TD></TR></table>
+</form>
+
+<TABLE BORDER=4 CELLPADDING=0.5 CELLSPACING=0.5>
+<TR><TD>
+<form name="Frame2" onSubmit="0">
+<input type="textarea" name="Xmas" size=50 value="Java">
+</TD></TR></table>
+</form>
+
+<TABLE BORDER=4 CELLPADDING=0.5 CELLSPACING=0.5>
+<TR><TD>
+<form name="Frame3" onSubmit="0">
+<input type="textarea" name="NewYear" size=50 value="Java">
+</TD></TR></table>
+</form>
+
+</center>
+</BODY>
+</HTML>

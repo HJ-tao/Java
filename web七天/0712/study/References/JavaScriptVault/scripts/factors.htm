@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Nicholas John Sullivan (nicholasjohnsullivan@hotmail.com) -->
+<!-- Begin
+function calc() {
+var dnum = ((eval(document.res.inpa.value)) / 2);
+var i;
+var pol;
+var inum = (Math.round(dnum));
+if (inum == dnum) {
+document.res.rses.value="Number: " + (eval(document.res.inpa.value)) + " is Even\n\n";
+}
+else {
+document.res.rses.value="Number: " + (eval(document.res.inpa.value)) + " is Odd\n\n";
+}
+document.res.rses.value += "Factors Are:\n\n";
+var num = Math.round(eval(document.res.inpa.value));
+for (i = 2; i < (num / 2); i++) {
+var chkd = Math.round(num / i);
+var inn = Math.round(num / i);
+var outt = (num / i);
+if (inn == outt && chkd > i) {
+document.res.rses.value = document.res.rses.value + "(" + (num/i) + "," + i + ")";
+      }
+   }
+}
+function numbersonly() {
+if (event.keyCode < 48 || event.keyCode > 57) return false;
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<form name="res">
+<input type=text value="0" name="inpa" onkeypress="return numbersonly()">
+<input type=button name="bt1" value="Calculate" onClick="calc()">
+<br>
+Results
+<br>
+<textarea name="rses" cols="20" rows="10" value="nothing"></textarea>
+</form>
+
+</center>
+</BODY>
+</HTML>

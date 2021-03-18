@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Adam Hinz (ajhinz@zworg.com) -->
+<!-- Web Site:  http://www3.cybercities.com/a/ajhinz -->
+<!-- Modified By:  Ronnie T. Moore -->
+
+<!-- Begin
+function sqRt(form) {
+var number = form.num.value;
+var ans = Math.sqrt(number);
+form.answer.value = ans;
+}
+function sqIt(form) {
+var number = form.num.value;
+var ans = eval(number * number);
+form.answer.value = ans;
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<form>
+<table border=1>
+<tr>
+<td>
+<input type=text name=num size=10>
+</td>
+<td>
+<input type=button value="Sq. Root" onClick="sqRt(this.form)"><br>
+<input type=button value="Square It" onClick="sqIt(this.form)">
+</td>
+<td>
+<input type=text name=answer size=15><br>
+<input type=button value="<-- copy back" onClick="this.form.num.value = this.form.answer.value">
+</td>
+</tr>
+</table>
+</form>
+
+</center>
+</BODY>
+</HTML>

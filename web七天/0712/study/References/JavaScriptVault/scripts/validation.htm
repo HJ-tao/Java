@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+
+<!-- Begin
+function checkFields() {
+missinginfo = "";
+if (document.form.name.value == "") {
+missinginfo += "\n     -  Name";
+}
+if ((document.form.from.value == "") ||
+(document.form.from.value.indexOf('@') == -1) ||
+(document.form.from.value.indexOf('.') == -1)) {
+missinginfo += "\n     -  Email address";
+}
+if ((document.form.website.value == "") ||
+(document.form.website.value.indexOf("http://") == -1) ||
+(document.form.website.value.indexOf(".") == -1)) {
+missinginfo += "\n     -  Web site";
+}
+if(document.form.comments.value == "") {
+missinginfo += "\n     -  Comments";
+}
+
+if (missinginfo != "") {
+missinginfo ="_____________________________\n" +
+"You failed to correctly fill in your:\n" +
+missinginfo + "\n_____________________________" +
+"\nPlease re-enter and submit again!";
+alert(missinginfo);
+return false;
+}
+else return true;
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<form name=form onSubmit="return checkFields();">
+
+<input type=hidden name=to value='you @ your domain . web'>
+<input type=hidden name=subject value="Freedback">
+
+<pre>
+Name:      <input type=text name="name" size=30>
+
+E-mail:    <input type=text name="from" size=30>
+
+Web Site:  <input type=text value="http://" name="website" size=30>
+
+Comments:
+
+<textarea rows=3 cols=40 name="comments"></textarea>
+
+<input type=submit name="submit" value="Submit Form!">
+</pre>
+</form>
+
+</center>
+</BODY>
+</HTML>
