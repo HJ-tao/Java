@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Hanz Broden (webmeister@v-wave.com) -->
+<!-- Web Site:  http://plaza.v-wave.com/dotcom -->
+
+<!-- Begin
+function unObfuscateURL(frm) {
+strURL = unescape(frm.txtURL.value.replace(/\s/g,""));
+strURLInitial = strURL;
+
+numHTTP = strURL.toLowerCase().indexOf("http://");
+numHTTPS = strURL.toLowerCase().indexOf("https://");
+numFTP = strURL.toLowerCase().indexOf("ftp://");
+
+if (numHTTP >= 0) numStart = numHTTP + 7;
+else if (numHTTPS >= 0) numStart = numHTTPS + 8;
+else if (numFTP >= 0) numStart = numFTP + 6;
+else numStart = 0;
+
+// ignore everything after the #
+numPound = strURL.indexOf("#", numStart);
+if (numPound >= 0) strURL = strURL.substring(0, numPound);
+
+// if @ before a /, ignore everything up to the @
+numAt = strURL.indexOf("@", numStart);
+numSlash = strURL.indexOf("/", numStart);
+if (numAt >= 0) {
+if ( (numSlash >=0 && numAt < numSlash) || numSlash < 0 ) {
+strURL = strURL.substring(0, numStart)
++ strURL.substring(numAt+1, strURL.length);
+   }
+}
+
+frm.txtURLInitial.value = strURLInitial;
+frm.txtURLFinal.innerText = strURL;
+}
+
+function clearURL(frm) {
+frm.txtURL.value = "";
+frm.txtURLInitial.value = "";
+frm.txtURLFinal.value = "";
+frm.txtURL.focus();
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<form name=frmURL>
+<table border=0 cellpadding=0 cellspacing=3>
+<tr>
+<td valign=top rowspan=2 bgcolor="#e0e0e0">Obfuscated URL</td>
+<td><textarea name=txtURL cols=50 rows=5>http://www.angelfire.com%40%77w%77%2e%63yb%65%72%67atew%61%79%2e%6e%65%74/s%70%61%6d%6d%65r/%69%6Ed%65%78.%68%74m%6C#3491382728/%32c%72%65%64%69%74c/%69%6Ed%65%78.%68%74m%6C</textarea></td>
+</tr>
+<tr>
+<td>
+<input type=button value="Reveal URL" onClick="unObfuscateURL(this.form)">
+<input type=button value="Clear" onClick="clearURL(this.form)"><br>
+</td>
+</tr>
+<tr>
+<td valign=top bgcolor="#e0e0e0">Intial unobfuscation</td>
+<td><input type=text size=65 name=txtURLInitial></td>
+</tr>
+<tr>
+<td valign=top bgcolor="#e0e0e0">Final unobfuscation</td>
+<td><input type=text size=65 name=txtURLFinal></td>
+</tr>
+</table>
+</form>
+
+</center>
+</BODY>
+</HTML>

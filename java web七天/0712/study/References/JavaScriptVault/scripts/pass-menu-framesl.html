@@ -1,0 +1,32 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR>
+This requires 3 html scripts:<br>
+pass-menu-frames.htm<br>
+pass-menu-framesl.html<br>
+pass-menu-framesr.html<br>
+
+<form name=myform>
+Select an Option:<br>
+<select name="site" size=1>
+<option value="">Go to....
+<option value="http://www.yahoo.com">Yahoo
+<option value="http://www.metacrawler.com">Metacrawler
+<option value="http://www.altavista.digital.com">Altavista
+<option value="http://www.webcrawler.com">Webcrawler
+<option value="http://www.lycos.com">Lycos
+<option value="http://javascript.internet.com">JavaScript Source
+</select>
+<input type=button value="Ok!" onClick="parent.passText(this.form.site.options[this.form.site.selectedIndex].value);">
+</form>
+
+</center>
+</BODY>
+</HTML>

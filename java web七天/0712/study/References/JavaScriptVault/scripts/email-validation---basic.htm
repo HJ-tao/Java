@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+
+<!-- Begin
+function checkEmail(myForm) {
+if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(myForm.emailAddr.value)){
+return (true)
+}
+
+alert("Invalid E-mail Address! Please re-enter.")
+return (false)
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<form onSubmit="return checkEmail(this)">
+
+E-mail Address:<br>
+
+<input type="text" name="emailAddr">
+
+<p>
+
+<input type="submit" value="Submit">
+
+<input type="reset" value="Reset">
+
+</form>
+
+</center>
+</BODY>
+</HTML>

@@ -1,0 +1,76 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+
+<!-- Begin
+function decimal(num) {
+string = "" + num;
+if (string.indexOf('.') == -1)
+return string + '.00';
+seperation = string.length - string.indexOf('.');
+if (seperation > 3)
+return string.substring(0,string.length-seperation+3);
+else if (seperation == 2)
+return string + '0';
+return string;
+}
+i=0;
+x=0;
+countit="yes";
+function count() {
+if (i == 60) { i=0; x=(x + 1)}
+document.money.minutes.value = x;
+i++;
+document.money.seconds.value = i;
+document.money.owed.value = "$" + 
+decimal((x * document.money.permin.value) + 
+eval(document.money.initial.value));
+if (countit != "no") {
+setTimeout('count()',1000);
+   }
+}
+function stop() {
+countit="no";
+}
+// End -->
+</SCRIPT>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<form name=money>
+<table border=1 bgcolor="#f5f5f5">
+<tr>
+<td>Initial amount added to every call:</td>
+<td>
+<input name=initial type=text value="1.25" size=20 onChange="document.money.owed.value = decimal(document.money.initial.value)"></td>
+</tr>
+<tr>
+<td>Amount per minute:</td>
+<td><input name=permin type=text value=".10" size=20></td>
+</tr>
+<tr>
+<td>Number of minutes passed:</td>
+<td><input name=minutes type=text size=20></td>
+</tr>
+<tr>
+<td>Seconds in current minute:</td>
+<td><input name=seconds type=text size=20></td>
+</tr>
+<tr>
+<td>Amount of phone call:</td>
+<td><input name=owed type=text size=20 value="$0.00"></td>
+</tr>
+<tr>
+<td colspan=2 align=center><input type=button value=" Start " onClick="countit='yes'; count()"><input type=button value=" Stop " onClick="stop()"></td>
+</tr>
+</table>
+</form>
+
+</center>
+</BODY>
+</HTML>

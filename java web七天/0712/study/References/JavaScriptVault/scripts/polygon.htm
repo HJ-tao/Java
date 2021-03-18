@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Dan Kirkpatrick (drummaster@thedrumforum.com) -->
+<!-- Web Site:  http://kirkpatricknetworks.myip.org -->
+<!-- Modified:  Benjamin Wright, Editor -->
+
+<!-- Begin
+function side(form) {
+var n = document.form1.n.value;
+document.form1.n.value = n;
+document.form1.intx.value = ((n - 2) * 180) / n;
+document.form1.ext.value = 180 - document.form1.intx.value;
+}
+function extn(form) {
+var e = document.form1.ext.value;
+document.form1.n.value = 360 / e;
+document.form1.intx.value = 180 - e;
+}
+function intn(form) {
+var i = document.form1.intx.value;
+document.form1.ext.value = 180 - i;
+document.form1.n.value = 360 / (180 - i);
+}
+//  End -->
+</script>
+
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+The sum of the measures of the angles of a convex polygon with <i>n</i> sides is <b>(<i>n</i> - 2)180.</b><br>
+<br>
+<form name="form1">
+<table width="500" border="1">
+<tr>
+<td width="45%">
+Sides on the polygon:</td>
+<td><input name="n"></td>
+<td><input type="button" value=" Find " onClick="side(this.form)"></td></tr>
+<tr>
+<td width="35%">
+Measure of each exterior angle:</td>
+<td><input name="ext"></td>
+<td><input type="button" value=" Find " onClick="extn(this.form)"></td></tr>
+<tr>
+<td width="20%">
+Measure of each interior angle:</td>
+<td><input name="intx"></td>
+<td><input type="button" value=" Find " onClick="intn(this.form)"></td></tr>
+</table>
+</form>
+
+</center>
+</BODY>
+</HTML>

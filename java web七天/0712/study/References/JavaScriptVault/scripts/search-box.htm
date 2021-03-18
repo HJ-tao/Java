@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+
+<!-- Begin
+function searchFunc() {
+var newWindow = window.open("about:blank", "searchValue", "width=200, height=200, resizable=no, maximizable=no");
+var searchValue = document.search.queryField.value;
+var yahooSearch = document.search.yahoo.value;
+var altavistaSearch = document.search.altavista.value;
+var webcrawlerSearch = document.search.webcrawler.value;
+var exciteSearch = document.search.excite.value;
+newWindow.document.write("<html>\n<head>\n<title>Select Seach Engine</title>\n</head>");
+newWindow.document.write("<body>\n");
+newWindow.document.write("<a href='" + yahooSearch + searchValue + "' target = 'main'>Yahoo!</a><br><br>\n");
+newWindow.document.write("<a href='" + altavistaSearch + searchValue + "' target = 'main'>Altavista</a><br><br>\n");
+newWindow.document.write("<a href='" + webcrawlerSearch + searchValue + "' target = 'main'>WebCrawler</a><br><br>\n");
+newWindow.document.write("<a href='" + exciteSearch + searchValue + "' target = 'main'>Excite</a><br><br>\n");
+newWindow.document.close();
+self.name = "main";
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<form name="search">
+<input type=hidden name=yahoo value="http://search.yahoo.com/search?p=">
+<input type=hidden name=altavista value="http://www.altavista.com/cgi-bin/query?pg=q&what=web&fmt=.&q=">
+<input type=hidden name=webcrawler value="http://www.webcrawler.com/cgi-bin/WebQuery?searchText=">
+<input type=hidden name=excite value="http://www.excite.com/search.gw?trace=a&search=">
+Search the internet for:
+<input type=text size=25 name=queryField>
+<br>
+<input type=button value="Search" onClick="searchFunc()">
+<input type=reset value="Clear">
+<br>
+(A separate window will open where you can select a search engine.)
+</form>
+
+</center>
+</BODY>
+</HTML>

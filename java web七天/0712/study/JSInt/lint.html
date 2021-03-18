@@ -1,0 +1,484 @@
+<html><head><title>jslint: The JavaScript Verifier</title>
+
+
+<style>
+p {margin: 10px}
+pre {margin-left: 40px}
+table {margin: 10px; float:right; border: 0px; cellpadding: 0px;}
+td {background-color: white; border: black solid 1pt; padding-left: 10px;
+    padding-right: 10px; vertical-align: top;}
+ul {list-style-type: square}
+input[type=button] {border: 2px solid black;}
+a {text-decoration: none;}
+a:link {color: black;}
+a:visited {color: purple;}
+a:hover {color: blue; text-decoration: underline;}
+a:active {color: red;}
+</style></head><body bgcolor="linen">
+<h1 align="center"><code>JSLint</code></h1>
+
+<h2 align="center">The JavaScript Verifier</h2>
+
+<p align="center"><a href="http://www.crockford.com/" target="_top">©2002
+Douglas Crockford</a></p>
+
+<p></p>
+
+<p align="center"><a href="http://www.jslint.com/" target="_blank"><code>JSLint</code></a> is a JavaScript
+program that looks for problems in JavaScript programs. </p>
+
+<h2>What is <code>JSLint</code>?</h2>
+
+<p>When <a href="http://en.wikipedia.org/wiki/C_programming_language">C</a> was
+  a <a href="http://cm.bell-labs.com/cm/cs/who/dmr/chist.html">young</a> programming
+  language, there were several common programming errors that were not caught
+  by the primitive compilers, so an accessory program called <code><a href="http://en.wikipedia.org/wiki/Lint_programming_tool">lint</a></code>
+  was developed which would scan a source file, looking for problems.</p>
+
+<p>As the language matured, the definition of the language was
+strengthened to eliminate some insecurities, and compilers got better
+at issuing warnings. <code>lint</code> is no longer needed.</p>
+
+<p><a href="http://javascript.crockford.com/">JavaScript</a> is a young language.
+  It was originally intended to do small tasks in webpages, tasks for which Java
+  was too heavy and clumsy. But JavaScript is a very capable language, and it
+  is now being used in larger projects. Many of the features that were intended
+  to make the language easy to use are troublesome for larger projects. A <code>lint</code>
+  for JavaScript is needed: <a href="http://www.jslint.com/"><code>JSLint</code></a>, a JavaScript
+  syntax checker and validator.</p>
+
+<p><code>JSLint</code> takes a JavaScript source and scans it. If it finds
+  a problem, it returns a message describing the problem and an approximate
+  location within the source. The problem is not necessarily a syntax error,
+  although it often is. <code>JSLint</code> looks at some style conventions
+  as well as structural problems. It does not prove that your program is
+  correct. It just provides another set of eyes to help spot problems.</p>
+
+<p><code>JSLint</code> defines a professional subset of JavaScript, a stricter
+  language than that defined by <a href="http://www.ecma-international.org/publications/standards/Ecma-262.htm" target="ecma">Edition
+  3 of the <i>ECMAScript Language Specification</i></a>. The subset is related
+  to recommendations found in <a href="http://javascript.crockford.com/code.html" target="sun"><i>Code
+  Conventions for the JavaScript Programming Language</i></a>. </p>
+<p>JavaScript is a sloppy language, but inside it there is an elegant, better
+  language. JSLint helps you to program in that better language and to avoid
+  most of the slop.</p>
+<h2>Semicolon</h2>
+
+<p>JavaScript uses a C-like syntax which requires the use of semicolons to delimit
+  statements. JavaScript attempts to make semicolons optional with a semicolon
+  insertion mechanism. This is dangerous.</p>
+<p>Like C, JavaScript has <code>++</code> and <code>--</code> and <code>(</code> operators
+  which can be prefixes or suffixes. The disambiguation is done by the semicolon.</p>
+<p>In Javascript, a linefeed can be whitespace or it can act as a semicolon.
+  This replaces one ambiguity with another. </p>
+<p><code>JSLint</code> expects that every statement be followed by <code>;</code> except
+  for <code>for</code>, <code>function</code>, <code>if</code>, <code>switch</code>, <code>try</code>, and
+  <code>while</code>. <code>JSLint</code> does not expect to see unnecessary semicolons or the
+  empty statement.</p>
+<h2>Line Breaking</h2>
+<p>As a further defense against the semicolon insertion mechanism, <code>JSLint</code>
+  expects long statements to be broken only after one of these punctuation
+  characters or operators:</p>
+<p align="center"><code>, . ; : { } ( [ = &lt; &gt; ? ! + - * / % ~ ^ | &amp; </code></p>
+<p align="center"><code>== != &lt;= &gt;= += -= *= /= %= ^= |= &amp;= &lt;&lt; &gt;&gt;
+  || &amp;&amp; </code></p>
+<p align="center"><code>=== !== &lt;&lt;= &gt;&gt;= &gt;&gt;&gt; &gt;&gt;&gt;= </code></p>
+<p><code>JSLint</code> does not expect to see a long statement broken after
+  an identifier, a string, a number, closer, or a suffix operator:</p>
+<p align="center"><code>)  ] ++ --</code></p>
+
+<p><code>JSLint</code> allows you to turn on the <code>Tolerate sloppy line breaking</code> option.
+</p>
+<p>Semicolon insertion can mask copy/paste errors. If you always break lines after
+  operators, then JSLint can do better at finding them.</p>
+<h2>Comma</h2>
+<p>The comma operator can lead to excessively tricky expressions. It can also
+  mask some programming errors.</p>
+<p><code>JSLint</code> expects to see the comma used as a separator, but not as an
+  operator (except in the initialization and incrementation parts of the <code>for</code>
+  statement). It does not expect to see elided elements in array literals. Extra
+  commas should not be used. A comma should not appear after the last element
+  of an array literal or object literal because it can be misinterpreted by some
+  browsers. </p>
+<h2>Required Blocks</h2>
+
+<p><code>JSLint</code> expects that <code>if</code> and <code>for</code>
+statements will be made with blocks {that is, with statements
+enclosed in braces}.</p>
+
+<p>JavaScript allows an <code>if</code> to be written like this:</p>
+
+<pre>if (<i>condition</i><code>)
+    </code><i>statement</i>;</pre>
+
+<p>That form is known to contribute to mistakes in projects where many programmers
+  are working on the same code. That is why <code>JSLint</code> expects the use of
+  a block:</p>
+
+<pre>if (<i>condition</i>) {
+    <i>statement</i>;
+}</pre>
+
+<p>Experience shows that this form is more resilient.</p>
+
+<h2>Forbidden Blocks</h2>
+
+<p>In many languages, a block introduces a scope. Variables
+  introduced in a scope are not visible to other parts of the
+  program.</p>
+
+<p>In JavaScript, blocks do not introduce a scope. There is only
+  function-scope. JavaScript's blocks confuse experienced programmers
+  and lead to errors.</p>
+
+<p><code>JSLint</code> expects blocks with <code>function</code>,
+  <code>if</code>, <code>switch</code>, <code>while</code>, <code>for</code>,
+  <code>do</code>, and <code>try</code> statements and nowhere else.</p>
+
+<h2>Expression Statements</h2>
+<p>An expression statement is expected to be an assignment or a function/method
+  call. All other expression statements are considered to be errors.</p>
+
+<h2><code>var</code></h2>
+
+<p>JavaScript allows <code>var</code> definitions to occur anywhere
+  within a function. <code>JSLint</code> is more strict.</p>
+
+<p><code>JSLint</code> expects that a <code>var</code> will be declared only once, and
+  that it will be declared before it is used.</p>
+
+<p><code>JSLint</code> expects that parameters will not also be declared
+  as vars. </p>
+
+<p><code>JSLint</code> does not expect the <code>arguments</code> array to be declared
+  as a <code>var</code>.</p>
+<p><code>JSLint</code> does not expect that a var will be defined in a block.
+  This is because JavaScript blocks do not have block scope. This can have
+  unexpected consequences. Define all variables at the top of the function.</p>
+
+<h2><code>switch</code></h2>
+<p>A common error in <code>switch</code> statements is to forget to place a <code>break</code>
+  statement after each <code>case</code>, resulting in unintended fall-through. <code>JSLint</code>
+  expects that the statement before a <code>case</code> or <code>default</code> is one
+  of these: <code>break</code>, <code>case</code>, <code>continue</code>, <code>return</code>,
+  <code>switch</code>, or <code>throw</code>. </p>
+<h2><code>with</code></h2>
+
+<p>The <code>with</code> statement was intended to provide a shorthand in accessing
+  members in deeply nested objects. Unfortunately, it behaves <a href="http://yuiblog.com/blog/2006/04/11/with-statement-considered-harmful/">very
+  badly</a> when setting new members. Never use the <code>with</code> statement. Use
+  a <code>var</code> instead.</p>
+
+<p><code>JSLint</code> does not expect to see a <code>with</code> statement.</p>
+
+<h2>=</h2>
+<p><code>JSLint</code> does not expect to see an assignment statement in the condition
+  part of an <code>if</code> or <code>while</code> statement. This is because it is more
+  likely that </p>
+<pre>if (a = b) {
+    ...
+}</pre>
+<p>was intended to be </p>
+<pre>if (a == b) {
+    ...
+}</pre>
+<p>If you really intend an assignment, wrap it in another set of parens:</p>
+<pre>if ((a = b)) {
+    ...
+}</pre>
+
+<h2>== and !=</h2>
+<p>The <code>==</code> and <code>!=</code> operators do type coercion before comparing. This is bad because it causes <code>'' == 0</code> to be <code>true</code>. This can mask type errors.</p>
+<p>When comparing to any of the following values, use the <code>===</code> or <code>!==</code>
+  operators, which do not do type coercion.</p>
+<p align="center"><code>0 '' undefined null false true</code></p>
+<p align="left">If you want the type coercion, then use the short form. Instead of </p>
+<pre align="left">(foo != 0)</pre>
+<p align="left">just say </p>
+<pre align="left">(foo)</pre>
+<p align="left">and instead of</p>
+<pre align="left">(foo == 0)</pre>
+<p align="left"> say</p>
+<pre align="left">(!foo)</pre>
+<p>The <code>===</code> and <code>!==</code> operators are preferred. There
+  is a <code>Disallow == and !=</code> option which requires the use of
+  <code>===</code> and <code>!==</code> in all cases.</p>
+<h2>Labels</h2>
+<p>JavaScript allows any statement to have a label, and labels have a
+  separate name space. <code>JSLint</code> is more strict.</p>
+
+<p><code>JSLint</code> expects labels only on statements that interact
+  with <code>break</code>: <code>switch</code>, <code>while</code>,
+  <code>do</code>, and <code>for</code>. <code>JSLint</code> expects that labels
+  will be distinct from vars and parameters.</p>
+
+<h2>Unreachable Code</h2>
+<p><code>JSLint</code> expects that
+  a <code>return</code>, <code>break</code>, <code>continue</code>,
+  or <code>throw</code> statement will be followed by
+  a <code>}</code> or <code>case</code> or <code>default</code>.</p>
+
+<h2>Confusing Pluses and Minuses</h2>
+
+<p><code>JSLint</code> expects that <code>+</code> will not be followed by
+<code>+</code> or <code>++</code>, and that <code>-</code> will not be followed
+by <code>-</code> or <code>--</code>. A misplaced space can turn <code>+ +</code> into <code>++</code>, an error that is difficult to see. Use parens to avoid confusion..</p>
+<h2><code>++</code> and <code>--</code></h2>
+<p>The <code>++</code> <small>(increment)</small> and <code>--</code> <small>(decrement)</small>
+  operators have been known to contribute to bad code by encouraging excessive
+  trickiness. They are second only to faulty architecture in enabling to
+  viruses and other security menaces. There is an option that prohibits
+  the use of these operators.</p>
+<h2>Bitwise Operators</h2>
+<p>JavaScript does not have an integer type, bit it does have bitwise operators.
+  The bitwise operators convert their operands from floating point to integers
+  and back, so they are not near as efficient as in C or other languages.
+  They are rarely useful in browser applications. The similarity to the
+  logical operators can mask some programming errors. There is an option
+  that prohibits the use of these operators.</p>
+<h2><code>eval</code> is evil</h2>
+<p>The <code>eval</code> function (and its relatives, <code>Function</code>, <code>setTimeout</code>,
+  and <code>setInterval</code>) provide access to the JavaScript compiler. This is
+  sometimes useful for parsing <a href="http://www.json.org/">JSON</a> text, but
+  in virtually all other cases it indicates the presences of extremely bad coding.
+  The <code>eval</code> function is the most misused feature of JavaScript.</p>
+
+<h2><code>void</code></h2>
+<p>In most C-like languages, <code>void</code> is a type. In
+  JavaScript, <code>void</code> is a prefix operator that always
+  returns <code>undefined</code>. <code>JSLint</code> does not expect to
+  see <code>void</code> because it is confusing and not very useful.</p>
+
+<h2>Regular Expressions</h2>
+
+<p>JavaScript's syntax for regular expression literals overloads the <code>/</code>
+  character. To avoid ambiguity, <code>JSLint</code> expects that the character preceding
+  a regular expression literal is a <code>(</code> or <code>=</code> or <code>:</code> or
+  <code>,</code> character. </p>
+<p>The ECMAScript specification requires that the <code>/</code> character within
+  a regular expression literal be escaped. </p>
+<h2>Undefined variables</h2>
+<p>In JavaScript, undefined variables are assumed to be implied global variables.
+  JSLint provides an option for detecting these. </p>
+<p>Use the <code>/*extern </code>...<code> */</code> declaration to indicate
+  symbols which are defined in other modules. See <a href="#Global">Extern</a>
+  below. </p>
+<h2>Constructors and <code>new</code></h2>
+<p>Constructors are function which are designed to be used with the <code>new</code>
+  prefix. The <code>new</code> prefix creates a new object based on the function's
+  prototype, and binds that object to the function's implied <code>this</code>
+  parameter. If you neglect to use the <code>new</code> prefix, no new object
+  will be made and <code>this</code> will be bound to the global object. This
+  is a serious mistake.</p>
+<p><code>JSLint</code> enforces the convention that constructor functions be given
+  names with initial uppercase. <code>JSLint</code> does not expect to see a function
+  invocation with an initial uppercase name unless it has the <code>new</code>
+  prefix. <code>JSLint</code> does not expect to see the <code>new</code> prefix used
+  with functions whose names do not start with initial uppercase. </p>
+<p><code>JSLint</code> does not expect to see the wrapper forms <code>new Number</code>,
+  <code>new String</code>, <code>new Boolean</code>. </p>
+<p><code>JSLint</code> does not expect to see <code>new Object</code> (use <code>{}</code>
+  instead). </p>
+<p><code>JSLint</code> does not expect to see <code>new Array</code> (use <code>[]</code>
+  instead).</p>
+<h2>Not Looked For</h2>
+
+<p><code>JSLint</code> does not do flow analysis to determine that variables are assigned
+  values before used. This is because variables are given a value (<code>undefined</code>)
+  which is a reasonable default for many applications.</p>
+
+<p><code>JSLint</code> does not do any kind of global analysis. It does not
+  attempt to determine that functions used with <code>new</code> are really
+  constructors (except by enforcing capitalization conventions), or that
+  method names are spelled correctly.</p>
+<h2>HTML</h2>
+<p><code>JSLint</code> is able to handle HTML text. It can inspect the JavaScript content
+  contained within <code>&lt;script&gt;</code>...<code>&lt;/script&gt;</code> tags. It
+  also inspects the HTML content, looking for problems that are known to interfere
+  with JavaScript:</p>
+<ul>
+  <li>All tag names must be  in lower case.</li>
+  <li>All tags that can take a close tag (such as <code>&lt;/p&gt;</code>) must have
+    a close tag.</li>
+  <li>All tags are correctly nested.</li>
+  <li>Entities must be used for literal <code>'&lt;'</code>.</li>
+</ul>
+<p><code>JSLint</code> is less anal than the sycophantic conformanity demanded by
+  XHTML, but more strict than the popular browsers. </p>
+<p><code>JSLint</code> also checks for the occurence of<code> '&lt;/' </code>in
+  string literals. You should always write<code> '&lt;\/' </code>instead.
+  The extra backslash is ignored by the JavaScript compiler but not by the
+  HTML parser. Tricks like this should not be necessary, and yet they are.</p>
+<p>There is an option that allows use of upper case tagnames.</p>
+
+<h2>Report</h2>
+
+<p>If the source is as <code>JSLint</code> expects, it generates a
+function report. It lists for each function:</p>
+
+<ul>
+
+   <li>The line number on which it starts.</li>
+
+
+  <li>Its name. In the case of anonymous functions, <code>JSLint</code> will "guess"
+    the name.</li>
+
+   <li>The parameters (including <code>arguments</code> if used).</li>
+
+   <li>The vars.</li>
+
+   <li>The global vars. An unexpected item here can be an indication
+   of an error.</li>
+
+   <li>The labels.</li>
+</ul>
+<p>These suffixes may appear in the report:</p>
+<table>
+<tbody><tr><td>(closure)</td><td>The parameter or var is used by an inner function.</td></tr>
+<tr><td>(outer)</td><td>The var is defined by an outer function.</td></tr>
+<tr><td>(unused)</td><td>The var is defined but not used.
+This may be an indication of an error.</td></tr>
+<tr><td>(?)</td>
+    <td>The global var is defined by default within a function. This may be an
+      indication of an error. It can also be a normal occurrence because <code>JSLint</code>
+      does not know about global vars or functions that are defined by the browser
+      or by other files. Select the <code>Detect undefined variables</code> option
+      to flag these as errors. </td>
+  </tr>
+</tbody></table>
+<p>The report will also include a list of all of the member names that were 
+  used. There is a <a href="http://www.jslint.com/msgs.html">list of JSLint messages</a>.</p>
+<h2 id="Global">External</h2>
+<p>You can include in your program a comment that lists the global functions and
+  objects that your program depends on, but that are not defined in your program
+  or script file. Including this information can improve the quality of the report
+  that is generated.</p>
+<p>An external declaration can look like this:</p>
+<pre>/*extern getElementByClass, breakCycles, JSONRequest */
+</pre>
+<p>A global declaration starts with <code>/*extern</code>. Notice that there is no
+  space before the <code>e</code>.</p>
+<p>Select the <code>Assume a browser</code> option to predefine the standard
+  global properties that are supplied by web browsers, such as <code>window</code>
+  and <code>document</code> and <code>alert</code>. Select the <code>Assume
+  Rhino</code> option to predefine the global properties provided by the
+  Rhino environment. Select the <code>Assume a Yahoo Widget</code> option
+  to predefine the global properties provided by the Yahoo! Widgets environment.</p>
+<h2>Options</h2>
+<p>The implementation of <code>JSLint</code> accepts an option object which
+  allows you to determine the subset of JavaScript that is acceptable to
+  you. It is also possible to set those options within the source of a script.</p>
+<p>An option specification can look like this:</p>
+<pre>/*jslint nomen: true, evil: false */</pre>
+<p>An option specification starts with <code>/*jslint</code>. Notice that
+  there is no space before the <code>j</code>. The specification contains
+  a sequence of name value pairs, where the names are <code>JSLint</code>
+  options, and the values are <code>true</code> or <code>false</code>. An
+  option specification takes precedence over the option object.</p>
+<p>These are the current options:
+</p>
+<table>
+  <tbody> 
+  <tr> 
+    <td><code>adsafe</code></td>
+    <td><code>true</code> if ADSAFE rules should be enforced </td>
+  </tr>
+  <tr> 
+    <td><code>bitwise</code></td>
+    <td><code>true</code> if bitwise operators should not be allowed </td>
+  </tr>
+  <tr> 
+    <td><code>browser</code></td>
+    <td><code>true</code> if the standard browser globals should be predefined 
+    </td>
+  </tr>
+  <tr> 
+    <td><code>cap</code></td>
+    <td><code>true</code> if upper case HTML should be allowed </td>
+  </tr>
+  <tr> 
+    <td><code>debug</code></td>
+    <td><code>true</code> if debugger statements should be allowed </td>
+  </tr>
+  <tr> 
+    <td><code>eqeqeq</code></td>
+    <td><code>true</code> if === should be required </td>
+  </tr>
+  <tr> 
+    <td><code>evil</code></td>
+    <td><code>true</code> if eval should be allowed </td>
+  </tr>
+  <tr>
+    <td><code>fragment</code></td>
+    <td><code>true</code> if HTML fragments should be allowed </td>
+  </tr>
+  <tr>
+    <td><code>laxbreak</code></td>
+    <td><code>true</code> if line breaks should not be checked </td>
+  </tr>
+  <tr> 
+    <td><code>nomen</code></td>
+    <td><code>true</code> if names should be checked </td>
+  </tr>
+  <tr> 
+    <td><code>passfail</code></td>
+    <td><code>true</code> if the scan should stop on first error </td>
+  </tr>
+  <tr> 
+    <td><code>plusplus</code></td>
+    <td><code>true</code> if increment/decrement should not be allowed </td>
+  </tr>
+  <tr> 
+    <td><code>rhino</code></td>
+    <td><code>true</code> if the Rhino environment globals should be predefined 
+    </td>
+  </tr>
+  <tr> 
+    <td><code>undef</code></td>
+    <td><code>true</code> if undefined variables are errors </td>
+  </tr>
+  <tr> 
+    <td><code>white</code></td>
+    <td><code>true</code> if strict whitespace rules apply </td>
+  </tr>
+  <tr> 
+    <td><code>widget</code></td>
+    <td><code>true</code> if the Yahoo Widgets globals should be predefined</td>
+  </tr>
+  </tbody> 
+</table>
+<h2>Feedback</h2>
+
+<p>Please let me know if <code>JSLint</code> is useful for you. Is it too
+strict? Is there a check or a report that could speed up your
+debugging? <a href="mailto:douglas@crockford.com">douglas@crockford.com</a></p>
+
+<p>I intend to continue to adapt <code>JSLint</code> based on your comments. Keep
+watching for improvements.</p>
+
+<h2>Try it</h2>
+
+<p><a href="http://www.jslint.com/" target="_blank">Try it.</a> Paste your script
+  into the window and click the <a href="http://www.jslint.com/">
+  <input value="JSLint" onclick="window.open('http://www.JSLint.com');" type="button"></a>
+  button. The analysis is done by a script running on your machine. Your script
+  is not sent over the network. </p>
+<p>It is also available as a <a href="http://www.widgetgallery.com/?search=jslint">Konfabulator
+  widget</a>. You can check a file by dragging it and dropping it on the widget. You can
+  recheck the file by double-clicking the widget.</p>
+<p>It is also available in a <a href="http://www.jslint.com/wsh/index.html">WSH Command Line</a> version.</p>
+<p>It is also available in a <a href="http://www.jslint.com/rhino/index.html">Rhino Command Line</a>
+  version.</p>
+<h2>Implementation</h2>
+<p><code>JSLint</code> uses a <a href="http://javascript.crockford.com/tdop/tdop.html">Pratt 
+  Parser (Top Down Operator Precedence)</a>. It is written in JavaScript. 
+  The full source code is available:</p>
+<ul>
+  <li><a href="http://www.jslint.com/fulljslint.js"><code>fulljslint.js</code></a></li>
+  <li><code><a href="http://www.jslint.com/rhino/rhino.js">rhino.js</a></code></li>
+  <li><code><a href="http://www.jslint.com/web.js">web.js</a></code></li>
+  <li><code><a href="http://www.jslint.com/wsh/wsh.js">wsh.js</a></code></li>
+</ul>
+
+</body></html>

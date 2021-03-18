@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<LINK href="general.css" rel="stylesheet" type="text/css">
+
+
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Begin
+var howMany = 2;  // max number of items listed below
+var page = new Array(howMany+1);
+
+page[0]="first-random-page.html";
+page[1]="second-random-page.html";
+page[2]="third-random-page.html";
+
+function rndnumber(){
+var randscript = -1;
+while (randscript < 0 || randscript > howMany || isNaN(randscript)){
+randscript = parseInt(Math.random()*(howMany+1));
+}
+return randscript;
+}
+quo = rndnumber();
+quox = page[quo];
+document.write("[ You would have been taken to <tt>" + quox + "</tt> ]");
+// End -->
+</SCRIPT>
+
+</center>
+</BODY>
+</HTML>

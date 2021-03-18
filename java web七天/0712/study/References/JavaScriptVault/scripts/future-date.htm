@@ -1,0 +1,35 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT language="JavaScript">
+<!-- Original:  Kevin Myers (kevinmyers@unforgettable.com) -->
+<!-- Web Site:  http://www.geocities.com/SiliconValley/Bay/7554 -->
+
+<!-- Begin
+function AddDays(form) {
+DaysToAdd=document.form.DaysToAdd.value;
+
+var now=new Date();
+var newdate=new Date();
+var newtimems=newdate.getTime()+(DaysToAdd*24*60*60*1000);
+newdate.setTime(newtimems);
+document.form.display.value=newdate.toLocaleString();
+}
+// End -->
+</SCRIPT>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<form name=form>
+<input type=text name=DaysToAdd size=5 value=10>
+<input type=button value="days from today will be..." onclick="AddDays(this.form)">
+<input type=text name="display" size=35 value="">
+</form>
+
+</center>
+</BODY>
+</HTML>

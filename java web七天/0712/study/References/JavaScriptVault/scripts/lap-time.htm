@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Geoff Greer (gig0wiz@hotmail.com) -->
+<!-- Begin
+function calc(form) {
+var laps = (isNaN( parseInt(form.laps.value) )) ? 0 : parseInt(form.laps.value);
+if (laps) {
+var minutes = (form.minutes.value == "") ? 0 : parseInt(form.minutes.value);
+var seconds = (form.seconds.value == "") ? 0 : parseInt(form.seconds.value);
+return( ((minutes * 60 + seconds) / laps) + " seconds");
+   }
+else return ("");
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<form name=raceform>
+<table border=1 width=300>
+<tr>
+<td>Number of laps:</td>
+<td><input type=text name=laps size=2></td>
+</tr>
+<tr>
+<td>Desired time:</td>
+<td><input type=text name=minutes size=2><b>:</b><input type=text name=seconds size=2>  (mm:ss)</td>
+</tr>
+<tr>
+<td colspan=2 align=center><input type=button value="Calculate" onclick="this.form.laptime.value=calc(this.form);"></td>
+</tr>
+<tr>
+<td>Avg. Lap Time:</td>
+<td><input type=text name=laptime></td>
+</tr>
+</table>
+</form>
+
+</center>
+</BODY>
+</HTML>

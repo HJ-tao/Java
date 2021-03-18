@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg onLoad="clock()">
+<center><BR><BR><BR>
+
+
+<!-- Adjust the placement of the clock in the line below -->
+<span id="pendule" style="position:absolute;left:300;top:20;"></span>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Xavier R. (xav@lougaou.com) -->
+<!-- Modified:  Benjamin Wright, Editor -->
+<!-- Web Site:  http://www.lougaou.com/ -->
+
+<!-- Begin
+function clock() {
+if (!document.layers && !document.all) return;
+var digital = new Date();
+var hours = digital.getHours();
+var minutes = digital.getMinutes();
+var seconds = digital.getSeconds();
+var amOrPm = "AM";
+if (hours > 11) amOrPm = "PM";
+if (hours > 12) hours = hours - 12;
+if (hours == 0) hours = 12;
+if (minutes <= 9) minutes = "0" + minutes;
+if (seconds <= 9) seconds = "0" + seconds;
+dispTime = hours + ":" + minutes + ":" + seconds + " " + amOrPm;
+if (document.layers) {
+document.layers.pendule.document.write(dispTime);
+document.layers.pendule.document.close();
+}
+else
+if (document.all)
+pendule.innerHTML = dispTime;
+setTimeout("clock()", 1000);
+}
+//  End -->
+</script>
+
+</center>
+</BODY>
+</HTML>
+

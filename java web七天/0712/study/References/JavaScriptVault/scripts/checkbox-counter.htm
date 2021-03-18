@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Alan Gruskoff (alan@performantsystems.com) -->
+<!-- Web Site:  http://www.performantsystems.com/ -->
+
+<!-- Begin
+function anyCheck(form) {
+var total = 0;
+var max = form.ckbox.length;
+for (var idx = 0; idx < max; idx++) {
+if (eval("document.playlist.ckbox[" + idx + "].checked") == true) {
+    total += 1;
+   }
+}
+alert("You selected " + total + " boxes.");
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<form method="post" name=playlist>
+1<input type=checkbox name=ckbox>
+<br>2<input type=checkbox name=ckbox>
+<br>3<input type=checkbox name=ckbox>
+<br>4<input type=checkbox name=ckbox>
+<br>5<input type=checkbox name=ckbox>
+<br>6<input type=checkbox name=ckbox>
+<br>7<input type=checkbox name=ckbox>
+<br>8<input type=checkbox name=ckbox>
+<br>9<input type=checkbox name=ckbox>
+<p><input type=button value="Count Checkboxes" onClick="anyCheck(this.form)">
+</form>
+
+</center>
+</BODY>
+</HTML>

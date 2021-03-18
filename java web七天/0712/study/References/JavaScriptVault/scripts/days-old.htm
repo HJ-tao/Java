@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+
+<!-- Begin
+var montharray=new Array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec");
+function countup(yr,m,d) {
+var today=new Date();
+var todayy=today.getYear();
+
+// Y2K Fix by Isaac Powell
+// http://onyx.idbsu.edu/~ipowell
+
+if ((navigator.appName == "Microsoft Internet Explorer") && (todayy < 2000))		
+todayy="19" + todayy;
+if (navigator.appName == "Netscape")
+todayy=1900 + todayy;
+
+var todaym=today.getMonth();
+var todayd=today.getDate();
+var todaystring=montharray[todaym]+" "+todayd+", "+todayy;
+var paststring=montharray[m-1]+" "+d+", "+yr;
+var difference=(Math.round((Date.parse(todaystring)-Date.parse(paststring))/(24*60*60*1000))*1);
+
+document.write("JSS was created " + difference + " days ago.");
+
+}
+countup(1997,08,29);  // Date in format:  (year,month,day)
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+
+</center>
+</BODY>
+</HTML>

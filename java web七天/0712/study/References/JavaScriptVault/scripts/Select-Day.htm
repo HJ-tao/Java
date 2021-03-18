@@ -1,0 +1,82 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<TITLE>Clocks</TITLE>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<FORM>
+<SELECT NAME="dates" SIZE=1>
+<SCRIPT LANGUAGE="JavaScript">
+//--------------------------------------------
+// By mattias.sjoberg@swipnet.se 26/7-97
+// The JavaScript Planet
+// http://www.geocities.com/SiliconValley/7116
+// You're welcome to use/edit this script,
+// just keep the comments and drop me a note.
+//--------------------------------------------
+// Some editing was done by the scriptors here
+// at jsworld.com.
+//--------------------------------------------
+
+        today = new Date();
+        thismonth = today.getMonth() + 1;
+        thisyear = today.getYear();
+        thisday = today.getDate();
+
+        maxdays=31;//default
+
+        // months with 30 days
+        if (thismonth==4 || thismonth==6 || thismonth==9 || thismonth==11)
+        {
+                maxdays=30
+        }
+
+        // february, leap year
+        if (thismonth==2)
+        {
+                // feb
+                if ((thisyear/4)!=parseInt(thisyear/4))
+                {
+                        maxdays=28
+                }
+                else
+                {
+                        //leap year
+                        maxdays=29
+                }
+        }
+
+        thismonth = "" + thismonth
+        if (thismonth.length == 1)
+        {
+                thismonth = "0" + thismonth;
+        }
+
+        for (var theday = 0; theday <= maxdays; theday++)
+        {
+                if (theday == 0)
+                {
+                        document.write ("<OPTION SELECTED> "+ thismonth + "-" + thisday + "-" + thisyear )
+                        document.write ("<OPTION> ========")
+                }
+                else
+                {
+                        var thed = "" + theday
+                        if (thed.length == 1)
+                        {
+                                thed = "0" + thed;
+                        }
+                        document.write ("<OPTION> " + thismonth + "-" + thed + "-" + thisyear)
+                }
+        }
+</SCRIPT>
+</SELECT>
+</FORM>
+</center>
+</BODY>
+</HTML>

@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Phil Webb (phil@philwebb.com) -->
+<!-- Web Site:  http://www.philwebb.com -->
+
+<!-- Begin
+function move(fbox, tbox) {
+var arrFbox = new Array();
+var arrTbox = new Array();
+var arrLookup = new Array();
+var i;
+for (i = 0; i < tbox.options.length; i++) {
+arrLookup[tbox.options[i].text] = tbox.options[i].value;
+arrTbox[i] = tbox.options[i].text;
+}
+var fLength = 0;
+var tLength = arrTbox.length;
+for(i = 0; i < fbox.options.length; i++) {
+arrLookup[fbox.options[i].text] = fbox.options[i].value;
+if (fbox.options[i].selected && fbox.options[i].value != "") {
+arrTbox[tLength] = fbox.options[i].text;
+tLength++;
+}
+else {
+arrFbox[fLength] = fbox.options[i].text;
+fLength++;
+   }
+}
+arrFbox.sort();
+arrTbox.sort();
+fbox.length = 0;
+tbox.length = 0;
+var c;
+for(c = 0; c < arrFbox.length; c++) {
+var no = new Option();
+no.value = arrLookup[arrFbox[c]];
+no.text = arrFbox[c];
+fbox[c] = no;
+}
+for(c = 0; c < arrTbox.length; c++) {
+var no = new Option();
+no.value = arrLookup[arrTbox[c]];
+no.text = arrTbox[c];
+tbox[c] = no;
+   }
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<form name="combo_box">
+<table><tr><td>
+<select multiple size="10" name="list1" style="width:150">
+<option value="12">Alabama</option>
+<option value="54">Alaska</option>
+<option value="65">Arizona</option>
+<option value="45">Arkansas</option>
+<option value="2">California</option>
+<option value="6">Colorado</option>
+<option value="81">Connecticut</option>
+<option value="5">Delaware</option>
+<option value="23">District of Columbia</option>
+<option value="58">Florida</option>
+<option value="87">Georgia</option>
+<option value="98">Hawaii</option>
+<option value="53">Idaho</option>
+<option value="22">Illinois</option>
+<option value="28">Indiana</option>
+<option value="89">Iowa</option>
+<option value="71">Kansas</option>
+<option value="35">Kentucky</option>
+<option value="85">Louisiana</option>
+<option value="9">Maine</option>
+<option value="7">Maryland</option>
+<option value="77">Massachusetts</option>
+<option value="36">Michigan</option>
+<option value="87">Minnesota</option>
+<option value="66">Mississippi</option>
+<option value="34">Missouri</option>
+<option value="50">Montana</option>
+<option value="20">Nebraska</option>
+<option value="25">Nevada</option>
+<option value="32">New Hampshire</option>
+<option value="27">New Jersey</option>
+<option value="74">New Mexico</option>
+<option value="17">New York</option>
+<option value="3">North Carolina</option>
+<option value="13">North Dakota</option>
+<option value="4">Ohio</option>
+<option value="21">Oklahoma</option>
+<option value="12">Oregon</option>
+<option value="48">Pennsylvania</option>
+<option value="63">Rhode Island</option>
+<option value="82">South Carolina</option>
+<option value="14">South Dakota</option>
+<option value="72">Tennessee</option>
+<option value="49">Texas</option>
+<option value="47">Utah</option>
+<option value="92">Vermont</option>
+<option value="59">Virginia</option>
+<option value="52">Washington</option>
+<option value="41">West Virginia</option>
+<option value="46">Wisconsin</option>
+<option value="95">Wyoming</option>
+</select>
+</td>
+<td align="center" valign="middle">
+<input type="button" onClick="move(this.form.list2,this.form.list1)" value="<<">
+<input type="button" onClick="move(this.form.list1,this.form.list2)" value=">>">
+</td>
+<td>
+<select multiple size="10" name="list2" style="width:150">
+</select>
+</td></tr></table>
+</form>
+
+</center>
+</BODY>
+</HTML>

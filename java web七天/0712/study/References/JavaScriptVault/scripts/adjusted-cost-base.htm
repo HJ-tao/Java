@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Gordon Coverley (gordonc@mondenet.com) -->
+
+<!-- Begin
+var tot_units = 0;
+var tot_cost = 0;
+function acbCalc(acbForm) {
+with (acbForm) {
+if (!unitsnum.value || isNaN(unitsnum.value) || !unitscost.value || isNaN(unitscost.value) ) {
+alert("Please re-enter the units and cost amounts again.");
+return;
+}
+else {
+if (saletype[0].checked) { // bought
+CapGain.value = "";
+tot_units += unitsnum.value*1;
+total_units.value = tot_units;
+tot_cost += (unitsnum.value*1) * (unitscost.value*1);
+total_cost.value = d_places(tot_cost, 4);
+acb.value = d_places(tot_cost/tot_units, 4);
+CapGain.value = "-- sales only --";
+}
+else { // sold
+if ((unitsnum.value*-1 + tot_units*1) >= 0) {
+tot_units -= unitsnum.value;
+total_units.value = tot_units;
+tot_cost = tot_units * acb.value;
+total_cost.value = d_places(tot_cost, 4);
+CapGain.value = d_places(unitsnum.value*(unitscost.value - acb.value), 2);
+}
+else {
+alert("You don't have that many units to sell."); return;
+         }
+      }
+   }
+}
+// sets the decimal precision
+function d_places(n,p) {
+var factor = 1;
+var ans  = 0;
+var j = 0;
+for (j = 1; j <= p; j++)
+factor =  factor * 10.0;
+ans = (Math.round((n + 0.05 / (factor) ) * factor)) / factor;
+return ans;
+   }
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<form>
+<table border=1 cellpadding=5 cellspacing=0><tr><td>
+<table>
+<th colspan=2>Adjusted Cost Base Calculator<p></th>
+<tr>
+<td># of Units</td>
+<td><input type=text name=unitsnum size=15 maxlength=10></td>
+</tr>
+<tr>
+<td>Cost per Unit</td>
+<td><input type=text name=unitscost size=15 maxlength=10></td>
+</tr>
+<tr>
+<td>Transaction Type</td>
+<td><input type=radio name=saletype value="1" checked>Bought
+<br><input type=radio name=saletype value="-1">Sold
+</td>
+</tr>
+<tr>
+<td colspan=2 align=center><input type=button value="Add This Transaction" onClick="acbCalc(this.form);"></td>
+</tr>
+<tr>
+<td>Total Units</td>
+<td><input type=text name=total_units size=15 readonly></td>
+</tr>
+<td>Total Cost</td>
+<td><input type=text name=total_cost size=15 maxlength=10 readonly></td>
+</tr>
+<tr>
+<td>Adjusted Base Cost</td>
+<td><input type=text name=acb size=15 readonly></td>
+</tr>
+<tr>
+<td>Gain or Loss</td>
+<td><input type=text name=CapGain size=15 maxlength=10 readonly></td>
+</tr>
+</table>
+</td></tr></table>
+</form>
+
+</center>
+</BODY>
+</HTML>

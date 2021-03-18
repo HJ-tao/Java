@@ -1,0 +1,30 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Keith Swerling (keiths@topixonline.com) -->
+<!-- Begin
+ScrollSpeed = 200;
+ScrollChars = 1;
+
+function ScrollMarquee() {
+window.setTimeout('ScrollMarquee()', ScrollSpeed);
+var msg = document.scrollform.box.value;
+document.scrollform.box.value = msg.substring(ScrollChars) + msg.substring(0, ScrollChars);
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg OnLoad="javascript:ScrollMarquee()">
+<center><BR><BR><BR>
+<form method=get name=scrollform>
+<input name=box type="text" size="15" value="                       Click Here To Search                  " onFocus="javascript:this.value='';ScrollSpeed=99999;">
+</form>
+
+</center>
+</BODY>
+</HTML>

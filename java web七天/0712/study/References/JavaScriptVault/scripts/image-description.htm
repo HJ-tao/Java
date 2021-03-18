@@ -1,0 +1,45 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+
+<!-- Begin
+function showMsg(text) {
+document.picform.message.value = text;
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<ul>
+<li>
+<a href="HTTP://WWW.SITE1.COM"
+onmouseover="showMsg('this is information about pic 1....');"
+onmouseout="showMsg('');">
+<img name="button1" src="alien.gif" border=0></a>
+</li>
+<li>
+<a href="HTTP://WWW.SITE2.COM"
+onmouseover="showMsg('this is information about pic 2....');"
+onmouseout="showMsg('');">
+<img name="button2" src="bluedot.gif" border=0></a>
+</li>
+<li>
+<a href="HTTP://WWW.SITE3.COM"
+onmouseover="showMsg('this is information about pic 3....');"
+onmouseout="showMsg('');">
+<img name="button3" src="reddot.gif" border=0></a>
+</li>
+
+<form name="picform">
+<textarea name=message rows=2 cols=40 wrap=virtual>choose an image above for a description!</textarea><br>
+<input type=hidden name=go value="">
+</form>
+
+</center>
+</BODY>
+</HTML>

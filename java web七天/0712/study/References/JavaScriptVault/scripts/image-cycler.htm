@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<LINK href="general.css" rel="stylesheet" type="text/css">
+
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  D. Keith Higgs (dkh2@po.cwru.edu) -->
+<!-- Begin
+var timeDelay = 5; // change delay time in seconds
+var Pix = new Array
+("toad.jpg"
+,"chameleon.jpg"
+,"lizard.jpg"
+,"gecko.jpg"
+);
+var howMany = Pix.length;
+timeDelay *= 1000;
+var PicCurrentNum = 0;
+var PicCurrent = new Image();
+PicCurrent.src = Pix[PicCurrentNum];
+function startPix() {
+setInterval("slideshow()", timeDelay);
+}
+function slideshow() {
+PicCurrentNum++;
+if (PicCurrentNum == howMany) {
+PicCurrentNum = 0;
+}
+PicCurrent.src = Pix[PicCurrentNum];
+document["ChangingPix"].src = PicCurrent.src;
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg OnLoad="startPix()">
+<center><BR><BR>
+<img name="ChangingPix" src="toad.jpg">
+
+
+</center>
+</BODY>
+</HTML>

@@ -1,0 +1,121 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  WarpGear Software (bbcalculator@warpgear.com) -->
+<!-- Web Site:  http://www.warpgear.com/developer -->
+<!-- Begin
+var max_units = 200; // quantities in excess of max_units all have the same unit price
+var currency = "$"; // currency sign used in 'formatMessage()'
+// Edit this function to reflect your discount prices! 
+function getDiscountPrice(units) {
+// Note: It is important to work your way down from max to min amounts!
+if (units >= max_units) return 4; 
+if (units >= 100) return 6;
+if (units >= 50) return 8;
+if (units >= 25) return 10;
+if (units >= 10) return 13;
+if (units >= 5) return 16;
+if (units >= 2) return 17.50;
+if (units == 1) return 19.95;
+if (units <= 0) return 0;
+}
+function getNumberOfUnits() {
+var units = document.calculator.units.value; 
+return (units == "") ? 0 : units;
+}
+function showResult(result) {
+// adjust the following line if result must popup somewhere else
+document.calculator.respons.value = result;	
+}
+function formatMessage(units, unit_price) {
+return units + " * " + currency + formatPrice(unit_price) + " = " + currency + formatPrice(units * unit_price);
+}
+// AltUnits (alternate units): add extra units to reach minimum for next discount price
+function getAltUnits(units) {
+var discount_price = getDiscountPrice(units);
+if (units < max_units) do { units++ } while (discount_price == getDiscountPrice(units));
+return units;
+}
+function findPrice() {
+var units = getNumberOfUnits();
+var unit_price = getDiscountPrice(units);
+var alt_units = getAltUnits(units);
+var alt_unit_price = getDiscountPrice(alt_units);
+var result;
+if ((units * unit_price) < (alt_units * alt_unit_price)) 
+result = formatMessage(units, unit_price); 
+else
+result = formatMessage(alt_units, alt_unit_price);
+showResult(result);
+}
+function formatPrice(value) {
+var result= Math.floor(value) + ".";
+var cents = 100 * (value-Math.floor(value)) + 0.5;
+result += Math.floor(cents / 10);
+result += Math.floor(cents % 10);
+return result;
+}
+function filterNonNumeric(field) {
+var result = new String();
+var numbers = "0123456789";
+var chars = field.value.split(""); // create array 
+for (i = 0; i < chars.length; i++) {
+if (numbers.indexOf(chars[i]) != -1) result += chars[i];
+}
+if (field.value != result) field.value = result;
+}
+//  End -->
+</script>
+
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg onLoad="findPrice()">
+<center><BR><BR><BR>
+<table border="1" cellspacing="0" cellpadding="3" width="300">
+<tr>
+<td>Single unit license</td>
+<td width=50 align=right>$19.95</td>
+</tr>
+<tr>
+<td>License for 2 to 4 units</td>
+<td width=50 align=right> $17.50</td>
+</tr>
+<tr>
+<td>License for 5 to 9 units</td>
+<td width=50 align=right>$16.00</td>
+</tr>
+<tr>
+<td>License for 10 to 24 units</td>
+<td width=50 align=right> $13.00</td>
+</tr>
+<tr>
+<td>License for 25 to 49 units</td>
+<td width=50 align=right>$10.00</td>
+</tr>
+<tr>
+<td>License for 50 to 99 units</td>
+<td width=50 align=right> $8.00</td>
+</tr>
+<tr>
+<td>License for 100 to 199 units</td>
+<td width=50 align=right> $6.00</td>
+</tr>
+<tr>
+<td>License for 200 or more units</td>
+<td width=50 align=right> $4.00</td>
+</tr>
+</table>
+<br>
+<form name=calculator>
+Units:
+<input type=text value="1" name="units" onkeydown="findPrice()" onKeyUp="filterNonNumeric(this); findPrice()" onkeypress="findPrice()" size="4">
+<input type=text onfocus="this.blur()" name="respons" size="24" style="border:0; font-weight:bold;">
+</form>
+
+</center>
+</BODY>
+</HTML>

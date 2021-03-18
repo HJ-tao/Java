@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Cyanide_7 (leo7278@hotmail.com) -->
+<!-- Web Site:  http://www7.ewebcity.com/cyanide7 -->
+<!-- Begin
+var o = null;
+var isNN = (navigator.appName.indexOf("Netscape")!=-1);
+function beginEditing(menu) {
+finish();
+if(menu[menu.selectedIndex].value != "read-only") {
+o = new Object();
+o.editOption = menu[menu.selectedIndex];
+o.editOption.old = o.editOption.text;
+o.editOption.text = "_";
+menu.blur();
+window.focus();
+document.onkeypress = keyPressHandler;
+}
+function keyPressHandler(e){
+var option = o.editOption;
+var keyCode = (isNN) ? e.which : event.keyCode;
+if(keyCode == 8 || keyCode == 37)
+option.text = option.text.substring(0,option.text.length-2) + "_";
+else if (keyCode == 13) {
+finish();
+} else
+option.text = option.text.substring(0,option.text.length-1) + String.fromCharCode(keyCode) + "_";
+status = keyCode;
+}
+function finish() {
+if(o != null) {
+option = o.editOption;
+if(option.text.length > 1)
+option.text = option.text.substring(0,option.text.length-1);
+else
+option.text = option.old;
+document.onkeypress = null;
+o = null;
+      }
+   }
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR>
+<form>
+<select onChange="beginEditing(this);" size=7>
+<option value="read-only">Select an option to edit it.</option>
+<option value="read-only">   ----------------------------              </option>
+<option value="last">SurName</option>
+<option value="first">FirstName</option>
+<option value="email">Email</option>
+<option value="add1">Address 1</option>
+<option value="add2">Address 2</option>
+</select>
+</form>
+<table border=1 width=500>
+<tr><td>
+<b>Known bugs:</b><br>
+
+Netscape
+<ul>
+<li>Typing does nothing if mouse is over the menu.</li>
+<li>Shift, delete, and the directionals do not work properly.</li>
+<li>Spacebar creates a space, but also scrolls the page if possible.</li>
+</ul>
+Internet Explorer 5.0
+<ul>
+<li>The backspace button works like a BACK button.</li>
+<li>Spacebar creates a space, but also scrolls the page if possible.</li>
+<ul>
+</td></tr>
+</table>
+
+</center>
+</BODY>
+</HTML>

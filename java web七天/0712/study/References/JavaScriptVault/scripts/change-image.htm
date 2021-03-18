@@ -1,0 +1,39 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<LINK href="general.css" rel="stylesheet" type="text/css">
+
+<SCRIPT language="JavaScript">
+
+<!-- Begin
+// Preload Images
+image1 = new Image();
+image1.src = "toad.jpg";
+
+image2 = new Image();
+image2.src = "lizard.jpg";
+//  End -->
+
+
+<!-- Begin
+function movepic(img_name,img_src) {
+document[img_name].src=img_src;
+}
+// End -->
+</SCRIPT>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<!-- Be sure to give each image a name! (<img name="button">)
+     Include that name in the onmouseover/onmouseout tags! -->
+
+<A HREF="http://myplace.50g.com"
+onmouseover="movepic('button','toad.jpg')"
+onmouseout="movepic('button','lizard.jpg')">
+<IMG NAME="button" SRC="toad.jpg" ALT="Image"></A>
+
+</center>
+</BODY>
+</HTML>

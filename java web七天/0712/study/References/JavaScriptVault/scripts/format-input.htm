@@ -1,0 +1,78 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Phillip Bryant (toxic1@fcmail.com) -->
+<!-- Web Site:  http://fly.to/toxic -->
+
+<!-- Begin
+function reverse() {
+text = "";
+str = document.forms[0].elements[0].value=document.forms[0].elements[0].value;
+for (i = 0; i <= str.length; i++)
+text = str.substring(i, i+1) + text;
+document.forms[0].elements[0].value = document.forms[0].elements[0].value = text;
+}
+function lower() {
+document.forms[0].elements[0].value = document.forms[0].elements[0].value.toLowerCase()
+}
+function caps() {
+document.forms[0].elements[0].value = document.forms[0].elements[0].value.toUpperCase()
+}
+function whatIsThis() {
+document.forms[0].elements[0].value = escape(document.forms[0].elements[0].value)
+}
+function dontLikeThis() {
+document.forms[0].elements[0].value = unescape(document.forms[0].elements[0].value)
+}
+var t = new Array();
+t[0] = "Here is some text to use as an example. Click on reverse, uppercase, or lowercase.";
+function example() {
+for(var i = 0; i < 2; i++) {
+if(document.forms[0].elements[i].value) {
+document.forms[0].elements[0].value = document.forms[0].elements[0].value+unescape(t[0]);
+      }
+   }
+}
+var f = new Array();
+f[0] = "%3Ca%20href%3D%27http%3A//www.javascriptsource.com%27%3E%3Cimg%20src%3D%22http%3A//www.javascriptsource.com/img/logo.gif%22%20alt%3D%27The%20JavaScript%20Source%21%27%20border%3D0%3E%3C/a%3E";
+function exAscii() {
+for(var i = 0; i < 2; i++) {
+if(document.forms[0].elements[i].value) {
+document.forms[0].elements[0].value = document.forms[0].elements[0].value+unescape(f[0]);
+      }
+   }
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<form action="" method="post">
+<textarea rows=10 cols=40 wrap=soft></textarea>
+<table border=0><center>
+<tr><td>
+<input type=button value="Example" onClick="example(this.form)">
+<input type=button value="Reverse" onClick="reverse()">
+<input type=button value="All Upper" onClick="caps()">
+<input type=button value="All Lower" onClick="lower()">
+</td>
+</tr>
+<tr>
+<td>
+<input type=button value="Ascii Example" onClick="exAscii()">
+<input type=button value="UnAscii" onClick="dontLikeThis()">
+<input type=button value="Ascii" onClick="whatIsThis()">
+<input type=button value="Clear It" onClick="reset()">
+</td>
+</tr>
+</table>
+</form>
+
+</center>
+</BODY>
+</HTML>

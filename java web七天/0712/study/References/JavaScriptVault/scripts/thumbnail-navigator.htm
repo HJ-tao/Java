@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<LINK href="general.css" rel="stylesheet" type="text/css">
+
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Daniel Smith (xalres@earthlink.net) -->
+<!-- Web Site:  http://home.earthlink.net/~xalres -->
+<!-- Begin
+prev1 = new Image (32,18);
+prev1.src = "prev1.jpg";
+prev2 = new Image (32,18);
+prev2.src = "prev2.jpg";
+
+next1 = new Image (32,18);
+next1.src = "next1.jpg";
+next2 = new Image (32,18);
+next2.src = "next2.jpg";
+
+go1 = new Image (48,24);
+go1.src = "go1.jpg";
+go2 = new Image (48,24);
+go2.src = "go2.jpg";
+
+maxPic = 4;
+
+p1 = new Image (144,96);
+p1.src = "chameleon-small.jpg";
+link1 = "chameleon.jpg";
+
+p2 = new Image (144,96);
+p2.src = "gecko-small.jpg";
+link2 = "gecko.jpg";
+
+p3 = new Image (144,96);
+p3.src = "lizard-small.jpg";
+link3 = "lizard.jpg";
+
+p4 = new Image (144,96);
+p4.src = "toad-small.jpg";
+link4 = "toad.jpg";
+
+count = 1;
+function next() {
+count++;
+if (count > maxPic) {
+count = 1;
+}
+eval("document.p.src=p" + count + ".src");
+}
+function back() {
+count--;
+if (count == 0) {
+count = maxPic;
+}
+eval("document.p.src=p" + count + ".src");
+}
+function link() {
+location.href=eval("link" + count);
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<table bgcolor="#003366" border=0>
+<tr>
+<td align=center width=300>
+<font color=white face="Arial, Helvetica" size="+1">Thumbnail Navigator</font>
+<br><br>
+<img name=p src="chameleon-small.jpg" border=0 width=144 height=96>
+<br>
+<table border=0>
+<tr>
+<td><a href="javascript:back()" onmouseover="prev.src=prev2.src" onmouseout="prev.src=prev1.src"><img src="prev1.jpg"  width="32" height="18" border="0" name="prev"></td>
+<td><a href="javascript:link()" onmouseover="go.src=go2.src" onmouseout="go.src=go1.src"><img src="go1.jpg" width="48" height="24" border="0" name="go"></td>
+<td><a href="javascript:next()" onmouseover="next.src=next2.src" onmouseout="next.src=next1.src"><img src="next1.jpg" width="32" height="18" border="0" name="next"></td>
+</tr>
+</table>
+<br>
+<font color="#A3ACC9" size="2" face="Arial">
+Browse to a picture you like and click "GO".</font>
+</td>
+</tr>
+</table>
+
+</center>
+</BODY>
+</HTML>

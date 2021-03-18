@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Reaz Hoque
+
+<!-- Begin
+function customize(form) {
+var address = document.form1.url.value;
+var op_tool  = (document.form1.tool.checked== true)  ? 1 : 0;
+var op_loc_box  = (document.form1.loc_box.checked == true)  ? 1 : 0;
+var op_dir  = (document.form1.dir.checked == true)  ? 1 : 0;
+var op_stat  = (document.form1.stat.checked == true)  ? 1 : 0;
+var op_menu  = (document.form1.menu.checked == true)  ? 1 : 0;
+var op_scroll  = (document.form1.scroll.checked == true)  ? 1 : 0;
+var op_resize  = (document.form1.resize.checked == true)  ? 1 : 0;
+var op_wid  = document.form1.wid.value;
+var op_heigh = document.form1.heigh.value;
+var option = "toolbar="+ op_tool +",location="+ op_loc_box +",directories="
++ op_dir +",status="+ op_stat +",menubar="+ op_menu +",scrollbars="
++ op_scroll +",resizable="  + op_resize +",width=" + op_wid +",height="+ op_heigh;
+var win3 = window.open("", "what_I_want", option);
+var win4 = window.open(address, "what_I_want");
+}
+function clear(form) {
+document.form1.wid.value="";
+document.form1.heigh.value="";
+}
+// End -->
+</SCRIPT>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<h4>Please choose from the following selections to customize your window</h4>
+<br>
+<TABLE cellpadding=5 border><TR><TD><PRE>
+<FORM name=form1  ACTION="javascript:" METHOD="POST">
+<INPUT TYPE="text" NAME="url" value="http://www.geocities.com" >: URL
+<INPUT TYPE="checkbox" NAME="tool">: Toolbar
+<INPUT TYPE="checkbox" NAME="loc_box">: Location
+<INPUT TYPE="checkbox" NAME="dir">: Directories
+<INPUT TYPE="checkbox" NAME="stat">: Status
+<INPUT TYPE="checkbox" NAME="menu">: Menubar
+<INPUT TYPE="checkbox" NAME="scroll">: Scrollbars
+<INPUT TYPE="checkbox" NAME="resize">: Resizable
+<INPUT TYPE="text"   NAME="wid" value= >: Width
+<INPUT TYPE="text"  NAME="heigh" value=>: Height
+<BR><CENTER>
+<INPUT TYPE="button" VALUE="=ENTER=" OnClick="customize(this.form)">
+<INPUT TYPE="reset" VALUE="=RESET=" onClick="clear(this.form)">
+</PRE></TD></TR></TABLE>
+</FORM>
+
+</center>
+</BODY>
+</HTML>

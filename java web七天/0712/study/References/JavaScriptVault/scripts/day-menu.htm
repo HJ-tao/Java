@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<SCRIPT LANGUAGE="JavaScript">
+
+<!-- Begin
+today = new Date();
+thismonth = today.getMonth()+1;
+thisyear = today.getYear();
+thisday = today.getDate();
+montharray=new Array(31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
+maxdays=montharray[thismonth-1];
+if (thismonth==2) {
+if ((thisyear/4)!=parseInt(thisyear/4)) maxdays=28;
+else maxdays=29;
+}
+thismonth = "" + thismonth
+if (thismonth.length == 1) {
+thismonth = "0" + thismonth;
+}
+document.write("<form>");
+document.write("<select name=dates size=1>");
+for (var theday = 1; theday <= maxdays; theday++) {
+var theday = "" + theday;
+if (theday.length == 1) {
+theday = "0" + theday;
+}
+document.write("<option");
+if (theday == thisday) document.write(" selected");
+document.write(">");
+document.write(thismonth + "-" + theday + "-" + thisyear);
+}
+document.write("</select></form>");
+// End -->
+</SCRIPT>
+</center>
+</BODY>
+</HTML>

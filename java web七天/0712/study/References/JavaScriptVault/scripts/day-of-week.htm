@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+
+<!-- Original:  Abraham I. (abraham_824@hotmai.com) -->
+<!-- Idea:  Peter Bonnett (PeterBonnett@hotmail.com) -->
+<!-- Begin
+var months = new Array("January","February","March","April","May","June","July","August","September","October","November","December");
+var days = new Array("Sunday","Monday","Tuesday","Wednsday","Thursday","Friday","Saturday");
+var mtend = new Array(31,28,31,30,31,30,31,31,30,31,30,31);
+var opt = new Array("Past","Future");
+function getDateInfo() {
+var y = document.form.year.value;
+var m = document.form.month.options[document.form.month.options.selectedIndex].value;
+var d = document.form.day.options[document.form.day.options.selectedIndex].value;
+var hlpr = mtend[m];
+if (d < mtend[m] + 1) {
+if (m == 1 && y % 4 == 0) { hlpr++; }
+var c = new Date(y,m,d);
+var dayOfWeek = c.getDay();
+document.form.dw.value = days[dayOfWeek];
+if(c.getTime() > new Date().getTime()) {
+document.form.time.value = opt[1];
+}
+else {
+document.form.time.value = opt[0];
+   }
+}
+else {
+alert("The date "+months[m]+" "+d+", "+y+" is invalid.\nCheck it again.");
+   }
+}
+function setY() {
+var y = new Date().getYear();
+if (y < 2000) y += 1900;
+document.form.year.value = y;
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg onLoad="setY()">
+<center><BR><BR><BR>
+<form name="form">
+<p>Day <select name="day" size="1">
+<option selected value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option>
+<option value="16">16</option>
+<option value="17">17</option>
+<option value="18">18</option>
+<option value="19">19</option>
+<option value="20">20</option>
+<option value="21">21</option>
+<option value="22">22</option>
+<option value="23">23</option>
+<option value="24">24</option>
+<option value="25">25</option>
+<option value="26">26</option>
+<option value="27">27</option>
+<option value="28">28</option>
+<option value="29">29</option>
+<option value="30">30</option>
+<option value="31">31</option>
+</select> Month <select name="month" size="1">
+<option selected value="0">January</option>
+<option value="1">February </option>
+<option value="2">March </option>
+<option value="3">April </option>
+<option value="4">May </option>
+<option value="5">June </option>
+<option value="6">July </option>
+<option value="7">August </option>
+<option value="8">September </option>
+<option value="9">October </option>
+<option value="10">November </option>
+<option value="11">December </option>
+</select> Year <input type="text" name="year" size="4"> <input type="button"
+value="Get Date Info" name="gdi" onClick="getDateInfo()"></p>
+<p>Day of the week <input type="text" name="dw" size="12">  Time <input type="text"
+name="time" size="10"></p>
+</form>
+
+</center>
+</BODY>
+</HTML>

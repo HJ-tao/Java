@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Wayne Nolting (w.nolting@home.com) -->
+
+<!-- Begin
+function verify() {
+var themessage = "You are required to complete the following fields: ";
+if (document.form.first.value=="") {
+themessage = themessage + " - First Name";
+}
+if (document.form.last.value=="") {
+themessage = themessage + " -  Last Name";
+}
+if (document.form.email.value=="") {
+themessage = themessage + " -  E-mail";
+}
+//alert if fields are empty and cancel form submit
+if (themessage == "You are required to complete the following fields: ") {
+document.form.submit();
+}
+else {
+alert(themessage);
+return false;
+   }
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<form  name=form method="post" action="">
+<input type=text name="first" size="20"> First Name<BR>
+<input type=text name="last" size="20"> Last Name<BR>
+<input type=text name="email" size="20"> E-Mail<BR><BR>
+<input type=button value="Submit Request" onclick="verify();">
+
+<input type=reset value="Clear Form"><br>
+</form>
+
+</center>
+</BODY>
+</HTML>

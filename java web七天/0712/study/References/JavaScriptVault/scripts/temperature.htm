@@ -1,0 +1,23 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+Enter a number in either field, then click outside the text box.
+<form>
+F: 
+<input type="text" name="F" value="32" 
+onChange="C.value = 100/(212-32) * (this.value - 32 )"><br>
+C: 
+<input type="text" name="C" value="0" 
+onChange="F.value = (212-32)/100 * this.value + 32 "><br>
+</form>
+
+</center>
+</BODY>
+</HTML>

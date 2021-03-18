@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<table border="0">
+<tr>
+<td align="center"><font face="Arial"><strong>You have
+visited my page for:</strong></font></td>
+<td align="center"><form name="d">
+<p><input type="text" size="8" name="d2"></p>
+</form>
+</td>
+<td align="center"><font face="Arial"><strong>seconds!</strong></font></td>
+</tr>
+</table>
+<script>
+<!--
+/*By George Chiang. (WA's ultimate JavaScript tutorial and free JavaScripts site!)
+http://www.wsabstract.com
+Credit MUST stay intact for use*/
+var milisec=0
+var seconds=0
+document.d.d2.value='0'
+function display(){
+if (milisec>=9){
+milisec=0
+seconds+=1
+}
+else
+milisec+=1
+document.d.d2.value=seconds+"."+milisec
+setTimeout("display()",100)
+}
+display()
+//-->
+</script>
+
+</center>
+</BODY>
+</HTML>

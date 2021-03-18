@@ -1,0 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Robert Khatchadourian (sonic890@hotmail.com) -->
+
+<!-- Begin
+function call_me(max_length) {
+if((document.form1.mybox.value == null ) || (document.form1.mybox.value == "" )) document.form1.mybox.size = size;
+if((document.form1.mybox.value.length >= size)&&(document.form1.mybox.value.length <= max_length)) document.form1.mybox.size = document.form1.mybox.value.length + 1;
+else document.form1.mybox.size = size;
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<form name="form1">
+LastName: <input type="text" style="font-family: Terminal" name="mybox" maxlength="30" size="10" onFocus="setInterval('call_me(document.form1.mybox.maxLength)', 1)">
+<!--/style needs to be a font that has a fixed size attribute like TERMINAL/-->
+</form>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Robert Khatchadourian (sonic890@hotmail.com) -->
+
+<!-- Begin
+var size = document.form1.mybox.size; //Global Variable keeps original size
+//  End -->
+</script>
+
+</center>
+</BODY>
+</HTML>
