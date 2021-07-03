@@ -1,0 +1,6 @@
+edu\whut\cs\jee\mooc\mclass\service\ExerciseServiceTest.class
+edu\whut\cs\jee\mooc\mclass\service\MoocClassServiceTest.class
+edu\whut\cs\jee\mooc\mclass\service\CheckInServiceTest.class
+edu\whut\cs\jee\mooc\mclass\service\SubjectServiceTest.class
+edu\whut\cs\jee\mooc\upms\service\UserServiceTest.class
+edu\whut\cs\jee\mooc\mclass\service\ExaminationServiceTest.class
