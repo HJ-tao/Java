@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<LINK href="general.css" rel="stylesheet" type="text/css">
+
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Ronnie T. Moore, Editor -->
+<!-- Idea by:  Selvi Narayanan -->
+<!-- Begin
+site = "http://www.yoursite.com"; // Do not include the final "/"
+function combineMenus(frm, menu1, menu2) {
+with (frm) {
+str = menu1.options[menu1.selectedIndex].value;
+str += menu2.options[menu2.selectedIndex].value;
+url = site + "/" + str + ".html";
+window.location.href = url;
+   }
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR>
+<form name=menufrm>
+<select name=menu1>
+<option value="">Make</option>
+<option value="Ford">Ford</option>
+<option value="Chevy">Chevy</option>
+<option value="Toyota">Toyota</option>
+</select>
+
+<select name=menu2>
+<option value="">Year</option>
+<option value="1998">1998</option>
+<option value="1999">1999</option>
+<option value="2000">2000</option>
+</select>
+
+<input type=button value="Select" onClick="combineMenus(this.form, this.form.menu1, this.form.menu2)">
+</form>
+
+
+</center>
+</BODY>
+</HTML>

@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<LINK href="general.css" rel="stylesheet" type="text/css">
+
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Begin
+function stClock() {
+window.setTimeout( "stClock()", 1000 );
+today = new Date();
+self.status = today.toString();
+}
+function getMessage() {
+var ar = new Array(20)
+ar[0] = "Buy a Pentium 586/90 so you can reboot faster."
+ar[1] = "2 + 2 = 5 for extremely large values of 2."
+ar[2] = "Anything that can go wrong will go wrong."
+ar[3] = "Computers make very fast, very accurate mistakes."
+ar[4] = "My software never has bugs. It just develops random features."
+ar[5] = "If anything simply cannot go wrong, it will anyway."
+ar[6] = "Best file compression around: \"DEL *.*\" = 100% compression"
+ar[7] = "The Definition of an Upgrade: Take old bugs out, put new ones in."
+ar[8] = "If everything seems to be going well, you have obviously overlooked something."
+ar[9] = "BREAKFAST.COM Halted...Cereal Port Not Responding"
+ar[10] = "BUFFERS=20 FILES=15 2nd down, 4th quarter, 5 yards to go!"
+ar[11] = "It is impossible to make anything foolproof because fools are so ingenious."
+ar[12] = "Bad command. Bad, bad command! Sit! Stay! Staaay..."
+ar[13] = "Every solution breeds new problems."
+ar[14] = "As a computer, I find your faith in technology amusing."
+ar[15] = "Two wrongs are only the beginning."
+ar[16] = "Shell to DOS... Come in DOS, do you copy? Shell to DOS..."
+ar[17] = "All computers wait at the same speed."
+ar[18] = "DEFINITION: Computer - A device designed to speed and automate errors."
+ar[19] = "Success always occurs in private, and failure in full view."
+var now = new Date()
+var sec = now.getSeconds()
+alert("Quote:\r" + ar[sec % 20])
+}
+// End -->
+</SCRIPT>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg onLoad="stClock()">
+<center><BR><BR><BR>
+<FORM>
+<INPUT TYPE="button" VALUE="Random Computer Quote" onClick="getMessage()">
+</FORM>
+
+</center>
+</BODY>
+</HTML>

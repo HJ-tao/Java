@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript1.2">
+<!-- Begin
+function initArray() {
+this.length = initArray.arguments.length;
+for (var i = 0; i < this.length; i++) {
+this[i] = initArray.arguments[i];
+   }
+}
+
+var ctext = "Wow! Look at all the pretty colors!  ;-)";
+var speed = 1000;
+var x = 0;
+var color = new initArray(
+"red", 
+"blue", 
+"green",
+"black"
+);
+if(navigator.appName == "Netscape") {
+document.write('<layer id="c"><center>'+ctext+'</center></layer><br>');
+}
+if (navigator.appVersion.indexOf("MSIE") != -1){
+document.write('<div id="c"><center>'+ctext+'</center></div>');
+}
+function chcolor(){ 
+if(navigator.appName == "Netscape") {
+document.c.document.write('<center><font color="'+color[x]);
+document.c.document.write('">'+ctext+'</font></center>');
+document.c.document.close();
+}
+else if (navigator.appVersion.indexOf("MSIE") != -1){
+document.all.c.style.color = color[x];
+}
+(x < color.length-1) ? x++ : x = 0;
+}
+setInterval("chcolor()",1000);
+// End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+
+</center>
+</BODY>
+</HTML>

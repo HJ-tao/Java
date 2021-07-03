@@ -1,0 +1,66 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Darko Egersdorfer (darkoe@za.bynx.com) -->
+
+<!-- Begin
+function promptSearch (thisform, thisfield) {
+var elnum = parseInt(-1);
+var k = parseInt(-1);
+for (var j = 0; j < document.forms[thisform].elements.length; j++) {
+if (document.forms[thisform].elements[j].name == thisfield) {
+elnum = j;
+break;
+   }
+}
+var myvar = "";
+var srch = "";
+var menuLength = "";
+menuLength = eval("document." + thisform + "." + thisfield + ".length");
+srch = prompt("Search this menu for...", "");
+if (srch ) {
+srch = srch.toUpperCase();
+for (var i = 0; i < menuLength; i++) {
+myvar = eval("document." + thisform + "." + thisfield + ".options[" + i + "].text.toUpperCase()");
+if (myvar.indexOf(srch) >= 0) {
+document.forms[thisform].elements[elnum].options[i].selected = true;
+break;
+      }
+   }
+}
+return false;
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR>
+Allows you to jump to any value in a drop down list. In our example, search for a value between 'a1' and 'a15'. Saves time when it comes to navigating within long pull down menus. <hr>
+<BR>
+<form name=myform action="">
+<select name=menu1 size=1 onFocus="promptSearch(this.form.name, this.name)">
+<option>a1
+<option>a2
+<option>a3
+<option>a4
+<option>a5
+<option>a6
+<option>a7
+<option>a8
+<option>a9
+<option>a10
+<option>a11
+<option>a12
+<option>a13
+<option>a14
+<option>a15
+</select>
+</form>
+</center>
+</BODY>
+</HTML>

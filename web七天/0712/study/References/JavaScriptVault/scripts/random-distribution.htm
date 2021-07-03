@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Phil Pavlik (ppavlik@nmu.edu) -->
+<!-- Contributor URL:  http://chemistry.nmu.edu/ppavlik  -->
+
+<!-- Begin
+function calculate() {
+var mean, sdev, N, sign, sum, str;
+var y = Array(), x = Array(), freq = Array();
+mean = document.statForm.m.value * 1;
+sdev = document.statForm.s.value * 1;
+N = document.statForm.n.value * 1;
+sdevsq = sdev * sdev;
+for(var i = 0; i <= N; i++) {
+yr = 1;
+yxr = 0;
+while(yr > yxr) {
+xr = 500 * sdev * Math.random();
+yr = 100 * Math.random();
+yxr = 100 * Math.exp(-(xr) * (xr) / (2 * sdevsq));
+}
+s = 1;
+if(Math.random() < .5)
+s = -1;
+x[i] = mean + s * xr;
+}
+str = "";
+for(var i = 1; i <= N; i++) {
+str = str + x[i] + "\n";
+}
+sum = 0;
+for(var i = 1; i <= N; i++) {
+sum = sum + x[i];
+}
+mean = sum / N;
+sum = 0;
+for(var i = 1; i <= N; i++) {
+sum = sum + (x[i] - mean) * (x[i] - mean)
+}
+sdev = Math.sqrt((sum) / (N - 1));
+document.statForm.vals.value = str;	
+document.statForm.mm.value = mean;
+document.statForm.ss.value = sdev;
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<form name=statForm>
+<table cellpadding=0 bgcolor=black>
+<tr>
+<td>
+<table border=0 cellpadding=5 bgcolor=ffffcc>
+<tr>
+<td colspan=2>
+<center>
+<font face=arial size=2>
+<b>GENERATION OF A RANDOM SET OF NORMALLY DISTRIBUTED VALUES</b>
+</font>
+</center>
+</td>
+</tr>
+<tr>
+<td colspan=2>
+<center>
+<b>Normal Law Universe Parameters
+</center>
+</td>
+</tr>
+<tr>
+<td>
+<b>Mean value = <input type=text  name="m" size=15></b>
+</td>
+<td>
+<b>Std. Deviation = <input type=text name="s" size=15></b>
+</td>
+</tr>
+<tr>
+<td colspan=2>
+<center>
+<b>Number of points to generate = <input type=text name="n" size=10></b>
+<input type=button value="Generate Sample" onClick="calculate()">
+</center>
+</td>
+</tr>
+<tr>
+<td>
+<center>
+<b>Calculated Random Sample values</b>
+<br>
+<textarea name=vals rows=5 cols=20></textarea> 
+</center>
+</td>
+<td valign=top>
+<center>
+<b>Calculated Sample Properties</b>
+<br>
+<br>
+<b>Mean value   = <input type=text name="mm" size=20>
+<br>
+Std. Deviation = <input type=text name="ss" size=20>
+</b>
+</center>
+<br>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</form>
+
+</center>
+</BODY>
+</HTML>

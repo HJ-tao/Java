@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Ronnie T. Moore, Editor -->
+
+<!-- Begin
+function checkDecimals(fieldName, fieldValue) {
+
+decallowed = 2;  // how many decimals are allowed?
+
+if (isNaN(fieldValue) || fieldValue == "") {
+alert("Oops!  That does not appear to be a valid number.  Please try again.");
+fieldName.select();
+fieldName.focus();
+}
+else {
+if (fieldValue.indexOf('.') == -1) fieldValue += ".";
+dectext = fieldValue.substring(fieldValue.indexOf('.')+1, fieldValue.length);
+
+if (dectext.length > decallowed)
+{
+alert ("Oops!  Please enter a number with up to " + decallowed + " decimal places.  Please try again.");
+fieldName.select();
+fieldName.focus();
+      }
+else {
+alert ("That number validated successfully.");
+      }
+   }
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<form>
+Please enter a number with up to 2 decimal places:  <br>
+<input type=text name=numbox>
+<input type=button name=ok value="Ok" onClick="checkDecimals(this.form.numbox, this.form.numbox.value)">
+</form>
+
+</center>
+</BODY>
+</HTML>

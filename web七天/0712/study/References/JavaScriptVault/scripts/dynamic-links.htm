@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<LINK href="general.css" rel="stylesheet" type="text/css">
+
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR>
+<form name="addresses">
+do you want to ... <select name="list" onChange="update()">
+<option value="mailto:admin@some-site.com">email admin@some-site.com
+<option value="mailto:support@some-site.com">email support@some-site.com
+<option value="http://www.netscape.com">go to www.netscape.com
+</select>
+<a href="updatelink">do it!</a>
+</form>
+
+<script language="javascript">
+<!--  begin
+pos = 9999;
+for(num=0;num<document.links.length;num++) {
+if (document.links[num].href.indexOf("updatelink") != -1) {
+pos = num;
+num = 5000;
+   }
+}
+function update() {
+if (pos!=9999) {
+sel = document.addresses.list.selectedIndex;
+document.links[pos].href = document.addresses.list[sel].value;
+   }
+}
+update();
+// end -->
+</script>
+
+
+</center>
+</BODY>
+</HTML>

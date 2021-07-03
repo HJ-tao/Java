@@ -1,0 +1,73 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<SCRIPT LANGUAGE="JavaScript">
+<!-- This script and many more are available free online at -->
+
+
+<!-- Begin
+var day="";
+var month="";
+var myweekday="";
+var year="";
+newdate = new Date();
+mydate = new Date();
+dston =  new Date('April 4, 1999 2:59:59');
+dstoff = new Date('october 31, 1999 2:59:59');
+var myzone = newdate.getTimezoneOffset();
+newtime=newdate.getTime();
+
+var zone = 6;  // references your time zone
+
+if (newdate > dston && newdate < dstoff ) {
+zonea = zone - 1 ;
+dst = "  Pacific Daylight Savings Time";
+}
+else {
+zonea = zone ; dst = "  Pacific Standard Time";
+}
+var newzone = (zonea*60*60*1000);
+newtimea = newtime+(myzone*60*1000)-newzone;
+mydate.setTime(newtimea);
+myday = mydate.getDay();
+mymonth = mydate.getMonth();
+myweekday= mydate.getDate();
+myyear= mydate.getYear();
+year = myyear;
+
+if (year < 2000)    // Y2K Fix, Isaac Powell
+year = year + 1900; // http://onyx.idbsu.edu/~ipowell
+myhours = mydate.getHours();
+if (myhours >= 12) {
+myhours = (myhours == 12) ? 12 : myhours - 12; mm = " PM";
+}
+else {
+myhours = (myhours == 0) ? 12 : myhours; mm = " AM";
+}
+myminutes = mydate.getMinutes();
+if (myminutes < 10){
+mytime = ":0" + myminutes;
+}
+else {
+mytime = ":" + myminutes;
+};
+arday = new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday")
+armonth = new Array("January ","February ","March ","April ","May ","June ","July ","August ","September ", "October ","November ","December ")
+ardate = new Array("0th","1st","2nd","3rd","4th","5th","6th","7th","8th","9th","10th","11th","12th","13th","14th","15th","16th","17th","18th","19th","20th","21st","22nd","23rd","24th","25th","26th","27th","28th","29th","30th","31st");
+// rename locale as needed.
+
+var time = ("In Dallas, Texas, it is: " + myhours + mytime+ mm + ", " + arday[myday] +", " + armonth[mymonth] +" "+ardate[myweekday] + ", " + year+", " + dst +".");
+document.write(time);
+//-->
+</SCRIPT>
+
+</center>
+</BODY>
+</HTML>

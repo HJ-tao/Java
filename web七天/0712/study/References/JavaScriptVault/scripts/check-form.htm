@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Chris van Marle (C.A.vanMarle@inter.NL.net) -->
+<!-- Web Site:  http://www.chrisworld.org -->
+
+<!-- Begin
+FormName  = "form"  //Name of the form
+CheckName = "check" //Name of the checkboxes (without 1,2,3...10,11,12...)
+TextName  = "text"  //Name of the textfields (without 1,2,3...10,11,12...)
+
+var Condition=new Array(
+'a!=""', //Must be filled
+'a!=""', //Must be filled
+'a!=""&&a.length>5&&a.indexOf("@")!=-1&&a.indexOf(".")!=-1', //Must be longer than 5 characters, have @, and atleast one '.'
+'a.length>7&&!(a.split("/")[0]*1>12)&&!(a.split("/")[1]*1>31)&&!(a.split("/")[2]*1<1900)' //Must be longer than 7 characters, first (two) digit(s) NOT greater than 12, second (two) digit(s) NOT greater than 31 and last 4 greater than 1900
+);
+function docheck(w) {
+eval("a=document." + FormName + "." + TextName + w + ".value");
+if (eval(Condition[w])) eval("document." + FormName + "." + CheckName + w + ".checked=true");
+else eval("document." + FormName + "." + CheckName + w + ".checked=false");
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<form name=form>
+<input type=checkbox name=check0 onClick="return false"> First: <input type=text name=text0 onBlur='docheck("0")'><BR>
+<input type=checkbox name=check1 onClick="return false"> Last: <input type=text name=text1 onBlur='docheck("1")'><BR>
+<input type=checkbox name=check2 onClick="return false"> E-Mail: <input type=text name=text2 onBlur='docheck("2")'><BR>
+<input type=checkbox name=check3 onClick="return false"> Birthday (mm/dd/yyyy): <input type=text name=text3 onBlur='docheck("3")'><BR>
+</form>
+
+
+</center>
+</BODY>
+</HTML>

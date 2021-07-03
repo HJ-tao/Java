@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+
+<!-- Begin
+var id,pause=0,position=0;
+function banner() {
+var i,k,msg=document.form1.message.value;
+k=(66/msg.length)+1;
+for(i=0;i<=k;i++) msg+=" "+msg;	document.form2.banner.value=msg.substring(position,position+50);
+if(position++==document.form1.message.value.length)
+position=0;
+id=setTimeout("banner()",1000/document.form1.speed.value);
+}
+function action() {
+if(!pause) {
+clearTimeout(id);
+pause=1;
+}
+else {
+banner();
+pause=0;
+   }
+}
+// End -->
+</SCRIPT>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg BODY onLoad="banner()">
+<center><BR><BR><BR>
+<FORM name="form1">
+<TABLE border="3">
+<caption>Edit box</caption>
+<tr><td align="right">Message:</td>
+<td><input type="text" name="message" value="This is a scroll - a text box scroll.                                              " size="50"></td></tr>
+<tr><td align="right">Speed:</td>
+<td><input type="text" name="speed" value="10" size="5"></td></tr>
+<tr><td align="right">Change:</td>
+<td><center><input type="button" value=" Click here to make changes take effect" onclick="clearTimeout(id);position=0;banner()"></center></td></tr>
+</TABLE>
+</FORM>
+<p>
+<hr size="4" width="40%">
+<p>
+<FORM name="form2">
+<input type="text" name="banner" size="50"><br>
+<input type="hidden" value=" Start Banner " onclick="action()">
+</FORM>
+
+</center>
+</BODY>
+</HTML>

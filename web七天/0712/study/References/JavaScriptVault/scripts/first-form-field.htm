@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Wayne Nolting (wayne@dtg.net) -->
+
+<!-- Begin
+function toForm() {
+document.form.field1.focus();
+// Replace field1 in the script with the field name of which you want to place the focus.
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg onLoad="toForm()">
+<center><BR><BR><BR>
+<FORM  NAME="form" METHOD="POST" ACTION="#">
+<SELECT NAME="field1" SIZE="1">
+<OPTION VALUE="one">Field 1
+<OPTION VALUE="two">also field1
+</SELECT>
+<BR>
+<INPUT TYPE="TEXT" NAME="field2" SIZE="10"> Field 2<BR>
+<INPUT TYPE="TEXT" NAME="field3" SIZE="10"> Field 3<BR>
+<BR>
+<INPUT TYPE="SUBMIT" NAME="submit" VALUE="Submit">
+<INPUT TYPE="RESET" onclick="toForm();">
+</FORM>
+
+</center>
+</BODY>
+</HTML>

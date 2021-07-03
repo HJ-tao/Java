@@ -1,0 +1,96 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+
+</HEAD>
+
+<BODY bgcolor="black" onLoad="space()">>
+<center><BR><BR><BR>
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Viswanathan Manohar (manohar_v@yahoo.com) -->
+<!-- Web Site:  http://www.geocities.com/manohar_v -->
+<!-- Begin
+astropic = "astronaut.jpg"; // location of YOUR astronaut image
+var xval = new Array(); // holds star coordinates
+var yval = new Array();
+no = 100;  // number of stars in the background
+speed = 200; // speed
+xp = 20 + 100 * Math.random();
+yp = 20 + 100 * Math.random();
+angle = 3.14 * Math.random(); // astronaut angle
+xinc = 3 * Math.sin(angle);
+yinc = 3;
+ie = (document.all)? 1 : 0;
+ns = (document.layers)? 1: 0;
+if (ie) {
+width = document.body.clientWidth;
+height = document.body.clientHeight;
+for (var i = 0; i <= no; i++) {
+document.write("<div id=\"div" + i+ "\" style=\"color:white;");
+document.write("position:absolute;left:100;\">.</div>");
+}
+document.write("<div id=\"diva\" style=\"position:absolute;\">");
+document.write("<img src=" + astropic + " border=\"0\" width=\"65\" height=\"95\"></div>");
+for (i = 0; i <= no; i++) {
+xval[i] = width * Math.random();
+yval[i] = height * Math.random();
+document.all["div" + i].style.left = xval[i];
+document.all["div" + i].style.top = yval[i];
+   }
+}
+if (ns) {
+width = self.innerWidth;
+height = self.innerHeight;
+for (var i = 0; i <= no; i++) {
+document.write("<layer id=\"div" + i+ "\" style=\"color:white;");
+document.write("position:absolute;left:100;\">.</layer>");
+}
+document.write("<layer id=\"diva\" style=\"position:absolute;\">");
+document.write("<img src=" + astropic + " border=\"0\" width=\"65\" height=\"95\"></layer>");
+for (i = 0; i <= no; i++) {
+xval[i] = width * Math.random();
+yval[i] = height * Math.random();
+document.layers["div" + i].left = xval[i];
+document.layers["div" + i].top = yval[i];
+   }
+}
+function star() {
+for (i = 0; i <= no; i = i+4) {
+xval[i] +=5;
+if ((i%20) == 0) xval[i] += 10;
+if(xval[i] >= width)  xval[i] = width * Math.random();
+if (ie) document.all["div" + i].style.left = xval[i];
+if (ns) document.layers["div" + i].left = xval[i];
+}
+return true;
+}
+function goangle() {
+angle = 3.14 * Math.random();
+xinc = 3 * Math.sin(angle);
+return true;
+}
+function space() {
+if (ie) {
+document.all["diva"].style.left = xp;
+document.all["diva"].style.top = yp;
+}
+if (ns) {
+document.layers["diva"].left = xp;
+document.layers["diva"].top = yp;
+}
+xp += xinc;
+yp +=yinc;
+star();
+if ((xp >= (width - 50)) || (xp <= 10))  { goangle();  xinc = (-1) * xinc; }
+if ((yp >= (height - 50)) || (yp <= 10)) {  goangle(); yinc = (-1) * yinc; }
+setTimeout('space()', speed);
+}
+//  End -->
+</script>
+
+</center>
+</BODY>
+</HTML>

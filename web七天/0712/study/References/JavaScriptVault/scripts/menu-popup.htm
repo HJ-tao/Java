@@ -1,0 +1,35 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<LINK href="general.css" rel="stylesheet" type="text/css">
+
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Begin
+function formHandler(form) {
+var windowprops = "height=500,width=500,location=no,"
++ "scrollbars=no,menubars=no,toolbars=no,resizable=yes";
+
+var URL = form.site.options[form.site.selectedIndex].value;
+popup = window.open(URL,"MenuPopup",windowprops);
+}
+// End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<form name=form>
+<select name=site SIZE=1 onChange="formHandler(this.form)">
+<option value="http://www.yoursite.com">Go to....
+<option value="http://www.yahoo.com">Yahoo
+<option value="http://www.metacrawler.com">Metacrawler
+<option value="http://www.altavista.digital.com">Altavista
+<option value="http://www.webcrawler.com">Webcrawler
+<option value="http://www.lycos.com">Lycos
+</select>
+</form>
+
+</center>
+</BODY>
+</HTML>

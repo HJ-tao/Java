@@ -1,0 +1,96 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+
+<!--  Begin
+var onHours = " ";
+var onMinutes = " ";
+var onSeconds = " ";
+var offHours = 0;
+var offMinutes = 0;
+var offSeconds = 0;
+var logSeconds = 0;
+var logMinutes = 0;
+var logHours = 0;
+var OnTimeValue = " ";
+var OffTimeValue = " ";
+var PageTimeValue = " ";
+
+function getLogonTime() {
+var now = new Date();
+var ampm = (now.getHours() >= 12) ? " P.M." : " A.M."
+var Hours = now.getHours();
+Hours = ((Hours > 12) ? Hours - 12 : Hours);
+var Minutes = ((now.getMinutes() < 10) ? ":0" : ":") + now.getMinutes();
+var Seconds = ((now.getSeconds() < 10) ? ":0" : ":") + now.getSeconds();
+OnTimeValue =(" "
++ Hours
++ Minutes
++ Seconds
++ " "
++ ampm);
+onHours = now.getHours();
+onMinutes = now.getMinutes();
+onSeconds = now.getSeconds();
+}
+function getLogoffTime() {
+var now = new Date();
+var ampm = (now.getHours() >= 12) ? " P.M." : " A.M."
+var Hours = now.getHours();
+Hours = ((Hours > 12) ? Hours - 12 : Hours);
+var Minutes = ((now.getMinutes() < 10) ? ":0" : ":") + now.getMinutes();
+var Seconds = ((now.getSeconds() < 10) ? ":0" : ":") + now.getSeconds();
+OffTimeValue =(" "
++ Hours
++ Minutes
++ Seconds
++ " "
++ ampm);
+offHours = now.getHours();
+offMinutes = now.getMinutes();
+offSeconds = now.getSeconds();
+timer();
+}
+function timer() {
+if (offSeconds >= onSeconds) {
+logSeconds = offSeconds - onSeconds; }
+else {
+offMinutes -= 1;
+logSeconds = (offSeconds + 60) - onSeconds;
+}
+if (offMinutes >= onMinutes) {
+logMinutes = offMinutes - onMinutes; }
+else {
+offHours -= 1;
+logMinutes = (offMinutes + 60) - onMinutes;
+}
+logHours = offHours - onHours;
+logHours =  ((logHours < 10) ? "0" : ":") + logHours;
+logMinutes = ((logMinutes < 10) ? ":0" : ":") + logMinutes;
+logSeconds = ((logSeconds < 10) ? ":0" : ":") +logSeconds;
+PageTimeValue =(" "
++ logHours
++ logMinutes
++ logSeconds);
+displayTimes();
+}
+function displayTimes() {
+alert("\nLOG ON TIME    : " +OnTimeValue+"\n\nLOG OFF TIME  : "+OffTimeValue+"\n\nTIME ON PAGE : " + PageTimeValue);
+}
+// End -->
+</SCRIPT>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg onLoad="getLogonTime()">
+<center><BR><BR><BR>
+<FORM>
+<INPUT TYPE="button" value="Time on Page" onClick="getLogoffTime()">
+</FORM>
+
+</center>
+</BODY>
+</HTML>

@@ -1,0 +1,59 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<LINK href="general.css" rel="stylesheet" type="text/css">
+
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Michiel Van Velthoven  -->
+<!--  Begin
+function MakeIt(form){
+var txt='<META NAME="DESCRIPTION" CONTENT="'+form.description.value+'">\r\n';
+txt+='<META NAME="KEYWORDS" CONTENT="';
+if (form.keywords.value)
+txt+=form.keywords.value+'">\r\n';
+form.source.value=txt;
+}
+function AddText(form, Action){
+var AddTxt="";
+var txt="";
+form.keywords.value+=AddTxt;
+}
+function ResetPage(form){
+if(confirm("Do you want to clear all and start a new META-tag Creation?")){
+form.description.value="";
+form.source.value="";
+form.keywords.value="";
+   }
+}
+// End -->
+</SCRIPT>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR>
+<FORM ACTION="">
+<TABLE BGCOLOR="dedfdf" border="2" cellpadding="4">
+<TR>
+<TD align="center"><FONT SIZE="3" FACE="arial"><B>Site Description<BR><font size="-2">(more descriptive the better)</font></TD>
+<TD align="center"><INPUT TYPE="text" NAME="description" size=32></TD>
+</TR>
+
+<TR>
+<TD align="center"><FONT SIZE="3" FACE="arial"><B><CENTER>Up to 10 Keywords<BR><font size="-2">(separated with spaces)</font></TD>
+<TD align="center"><input type="text" name="keywords" size=32></TD>
+</TR>
+
+<TR>
+<TD><FONT SIZE="3" FACE="arial"><B><CENTER><input type="button" value="Create Tags" onClick="MakeIt(this.form);"></B></TD>
+<TD align="center"><FONT SIZE="2"><B>Here is your META - tag coding.
+<BR>Put it in the HEAD of your HTML document.<BR><P><textarea name="source" rows=5 Cols=45></textarea></TD>
+</TR>
+
+</TABLE>
+</FORM>
+
+
+</center>
+</BODY>
+</HTML>

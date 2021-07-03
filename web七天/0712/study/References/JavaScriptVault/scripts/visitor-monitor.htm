@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<LINK href="general.css" rel="stylesheet" type="text/css">
+
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Begin
+var startTime = new Date();
+startTime = startTime.getTime();
+var submissions = 0;
+
+function checkForDuplicate() {
+if (document.form1) {
+document.form1.REFERRER.value = document.referrer;
+document.form1.PLATFORM.value = navigator.appName
++ " " + navigator.appVersion;
+submissions++;
+if (submissions > 1)
+return false;
+else
+return true;
+}
+else {
+return false;
+   }
+}
+function doneLoading() {
+var stopTime = new Date();
+stopTime = stopTime.getTime();
+document.form1.LOADING_TIME.value = ((stopTime - startTime) / 1000)
++ " seconds";
+document.form1.PAGE.value = document.title;
+document.form1.SUBMITTER.click();
+}
+// End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg onLoad="doneLoading()">
+<center><BR>
+<FORM name="form1" METHOD=post action="mailto:antispammer@earthling.net?SUBJECT=Devious Visitor Monitor" enctype="text/plain" onSubmit="return checkForDuplicate()">
+<input type="hidden" name="PAGE" value="none">
+<input type="hidden" name="REFERRER" value="none">
+<input type="hidden" name="PLATFORM" value="none">
+<input type="hidden" name="LOADING_TIME" value="none">
+<input type="submit" name="SUBMITTER" value="Click me to let me know you were here">
+</form>
+
+Change the 'dummy' e-mail address to yours.<br>
+As a security precaution, newer browsers pop up a security alert box for this script - you can't prevent it from showing)
+
+
+
+</center>
+</BODY>
+</HTML>

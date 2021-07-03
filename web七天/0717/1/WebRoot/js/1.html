@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>1.html</title>
+	<script>
+	    //js中的基本数据类型 有5种——————
+	    /* 1number(数字类型,包含整数和小数)、
+	       2.string、
+	       3.boolean、
+	       4.undefined(未定义的)
+	       5.null
+	      
+	      js中对应变量的数据类型是根据对应的值类型来确定的
+	      所以在声明变量的时候是不知道该变量到底是哪种类型的，声明变量时只需用
+	      var关键字即可(表示一个变量或者对象,可以认为var即为variable)
+	      var num; //先声明
+	      num = 5;  //后赋值
+	      然后根据值的类型来确定变量num的类型
+	    */
+	    var num  ; //声明即初始化
+	    //如何判断对应变量的类型————可以使用typeof函数来获取对应变量的类型
+	    //alert(num+"\n"+typeof(num))
+	    document.write("<h1 style='color:red;background-color:gray;width:220px;'>Hello World!</h1>");
+	    
+	   /* function sayHello(name){
+				document.write("Hello "+name+"!");
+        }*/
+        
+        /*
+          请用javascript编程实现4位或者6位的随机验证码，源字符串为
+         var src = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789长江大学计科专业的宝宝们辛苦了";
+         Math.random()生成[0,1)的随机数
+         用到string字符串中对应的length属性以及对应的charAt()和indexOf()等,同java一样
+        要求将生成的随机验证码显示在一个文本框中,并且可以一个超级链接实现刷新的效果
+        */
+	</script>
+   
+  </head>
+  
+  <body>
+  <!-- 从外部导入对应的js脚本 -->
+  
+ <script src="my.js"></script>
+    <input type="button" value="点击我看看:)" onclick="sayHello('tom')">
+  </body>
+</html>

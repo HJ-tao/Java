@@ -1,0 +1,55 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<LINK href="general.css" rel="stylesheet" type="text/css">
+
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Reinout Verkerk -->
+<!-- Begin
+function Login(form) {
+var username = form.username.value;
+var password = form.password.value;
+var server = form.server.value;
+if (username && password && server) {
+var ftpsite = "ftp://" + username + ":" + password + "@" + server;
+window.location = ftpsite;
+}
+else {
+alert("Please enter your username, password, and FTP server's address.");
+   }
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR>
+<form name=login>
+<table width=250 border=1 cellpadding=3>
+<tr>
+<td colspan=2 align=center><b><h2>Logon to FTP Server!</h2></b></td>
+</tr>
+<tr>
+<td>Username:</td>
+<td><input type=text name=username size=20></td>
+</tr>
+<tr>
+<td>Password:</td>
+<td><input type=password name=password size=20></td>
+</tr>
+<tr>
+<td>Server:</td>
+<td><tt>ftp://</tt><input type=text name=server size=14></td>
+</tr>
+<tr>
+<td colspan=2 align=center>
+<input type=button value="Login!" onClick="Login(this.form)"></td>
+</tr>
+</table>
+</form>
+
+
+</center>
+</BODY>
+</HTML>

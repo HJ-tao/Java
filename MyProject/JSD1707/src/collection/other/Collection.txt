@@ -1,0 +1,92 @@
+集合:
+   Collection:
+	   Collection是所有集合的顶级父接口,含有两个子接口：
+		   java.util.List:可重复集且有序
+		   java.util.Set:不可重复集(元素是否重复是依靠equals比较的结果)
+	   Collection c = new ArrayList()
+	   Collection c = new HashSet()     创建一个集合
+	   方法:
+		   int size()   返回当前集合的元素个数
+	 	   boolean isEmpty()    判断当前集合是否没有元素
+	 	   void clear()    清空集合
+	 	   boolean add()   给集合添加元素,添加成功返回true
+		   boolean contains(E e)   判断集合是否包含给定元素(用于判断给定元素与集合现有元素是否有equals比较
+		   						   为true)
+		   boolean remove(E e)    将给定元素从集合中删除，成功返回true.(将给定元素与集合中现有元素顺序进行
+		   						  equals比较,然后删除与给定元素equals比较为true的.若有多个仅删除一个)
+	   	   boolean addAll(Collection c)    将给定集合中的所有元素添加到当前集合中,添加后当前集合发生变化则
+	   	   								   返回true
+	       boolean containsAll(Collection c)     判断当前集合是否包含给定集合中的所有元素
+	       boolean removeAll(Collection c)     删除当前集合与给定集合中的共有元素
+	       Object []toArray()    将集合转为数组,之后修改集合元素就是修改数组元素
+   List:
+   	   java.util.List是Collection的一个子接口
+   	   可重复集且有序，提供了一系列基于下标操作的方法
+   	   方法:
+   	       static List asList(Object[] obj)    将数组转换为List集.通过数组的工具类,Arrays的静态方法asList	
+                                               数组转换的集合是不能添加新元素的，因为这会导致数组扩容，那么
+                                               就不能表示原数组，所以不支持这样的操作.
+   	       E get(int index)    获取指定下标处对应的元素 
+	       E set(int index,E e)    替换指定下标处的元素，返回原下标处元素
+		   List提供了add和remove的重载方法,可以基于下标进行增加和删除操作.
+		   void add(int index,E e)    在指定位置增加元素
+		   E remove(int index)     删除并返回指定位置对应的元素
+		   List subList(int start,int end)    截取子集
+   Iterator:
+       Iterator it = c.iterator();
+   	   Iterator迭代器用来遍历集合元素的
+       Collection提供了用于遍历集合元素的迭代器方法Iterator iterator()
+       Iterator是一个接口，规定了遍历集合的相关方法.不同的集合实现类都提供了一个可以遍历自身的迭代器实现类
+       使用迭代器遍历集合遵循步骤： 问，取，删(不是必要操作) 
+       方法:
+           boolean hasNext()   判断集合是否还有元素可以取出
+		   E next()   通过迭代器获取集合下一个元素
+   泛型:
+       泛型又称为为参数化类型，是将一个类中属性的类型，方法参数的类型，方法返回值的类型的定义权交给了使用者.
+       使用者在实例化当前类实例时传入实际类型.泛型的原型就是Object.
+       泛型是编译器认可,它会检查泛型实参的类型是否符合泛型指定的类型.
+       当获取一个泛型数据时,编译器也会自动添加类型转换.
+       迭代器也支持泛型，泛型的类型应当与其遍历的集合指定的泛型一致   
+   Collections:
+       集合的工具类,提供了很多便于操作集合的方法
+       方法:
+       	   static void sort(List list) 对给定的List集合进行自然排序(从小到大).该方法要求集合中的元素必须
+       	   可以比较大小.即:元素必须实现Comparable接口上述方法实际上排序自定义元素的集合时对我们的代码是有
+       	   "侵入性"的    
+   Queue:
+   	   java.util.Queue队列也可以存储一组元素,但是对于存取元素要求必须从两端进行.队列存取元素要求:先进先出
+       java.util.LinkedList也是队列的实现类.因为LinkedList可以存一组元素,并且由于链表的特性,首尾增删元素
+       效果好,所以也满足队列的特点.于是java就让LinkedList也实现了队列接口.
+       方法:
+       		boolean offer(E e)         入队操作,向队列末尾追加给定元素.元素入队成功则返回true
+       		E poll()      出队操作
+       		E peek()      引用队首元素,获取队首元素,但该元素不做出队操作
+   Deque:
+   	   Deque<String> deque = new LinkedList<String>();  创建Deque对象
+   	   双端队列java.util.Deque两端都可以进出队的队列,Deque继承自Queue
+   	   方法:
+   	   		boolean offerFirst(E e)   与offer方向相同
+   	   		E pollLast()        与poll方向相同
+   	   		boolean offerLast(E e)    与offer方向相反
+   	   		E pollFirst()       与poll方向相反
+       栈:
+       		通常使用栈来完成"后退"效果
+       		void push(E e)   进栈,方向与offer方向相反
+       		E pop()     出栈,方向与poll方向相同
+   Map:
+       java.util.Map查找表,Map体现的样子是一个多行两列的表格.以key-value对的形式存储元素.
+       Map要求key不允许重复(equals判断)常用实现类:java.util.HashMap  即:散列表(散列算法实现)
+       方法:
+       		V put(Key k,Value v)   将给定的key-value对存入Map,由于Map不允许有重复的key,所以若给定的key在
+       							   Map中已经存在,则是替换value操作,那么返回值就是被替换的value值.若给定的
+       							   key在Map中不存在,则返回值为null.
+       		V get(Key k)     根据给定的key获取对应的Value.若给定的Key不存在则返回值为null
+       		V remove(Key k)      将给定的key所对应的key-value对从Map中删除,返回值为该key所对应的value
+       		boolean containsKey(Object key) 	  若Map中包含给定的key则返回true,否则返回false
+	 		Set<K> keySet()	      遍历所有的Key.将当前Map中所有的key存入一个Set集合后将其返回,那么遍历该集
+	 							  合就等同与遍历了所有的key
+		    Set<Entry> entrySet()	   遍历每一组键值对.将当前Map中每一组键值对(Entry实例)存入一个Set集合
+		       						   后返回.java.util.Map.Entry该类的每一个实例用于表示Map中的一组键值对
+		    Collection values()	    遍历所有的value.将当前Map中所有的value存入到一个集合后放回
+		    
+		    

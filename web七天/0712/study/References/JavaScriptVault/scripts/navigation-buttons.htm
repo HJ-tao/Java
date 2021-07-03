@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<LINK href="general.css" rel="stylesheet" type="text/css">
+
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  John Soul (john@cjsi.com) -->
+<!-- Web Site:  http://www.cjsi.com/ -->
+<!-- Begin
+// Initiate a new array containing all the navigation hyperlinks that loads on startup
+// The 'htm' extension for the link is added by the script
+
+//initialize the variables for indexing data
+x=1; //initialize the first variable
+y=5; //initialize the variable used to reset the buttons on mouse out
+linx = new Array()
+linx[1] = new Array(); //First set of links for the top level category
+linx[1][1] = "link1";
+linx[1][2] = "link2";
+linx[1][3] = "link3";
+linx[1][4] = "link4";
+linx[1][5] = "link5";
+
+linx[2] = new Array(); //Second set of Links for next top level cateogry
+linx[2][1] = "linkA";
+linx[2][2] = "linkB";
+linx[2][3] = "linkC";
+linx[2][4] = "linkD";
+linx[2][5] = "linkE";
+
+linx[3] = new Array(); //Third set of Links for the last top level cateogry
+linx[3][1] = "linkZ";
+linx[3][2] = "linkY";
+linx[3][3] = "linkX";
+linx[3][4] = "linkW";
+linx[3][5] = "linkV";
+
+//This is the function populates the first set of buttons ...
+function rollover1() {
+document.menu.nav1.value = "Link 1";
+document.menu.nav2.value = "Link 2";
+document.menu.nav3.value = "Link 3";
+document.menu.nav4.value = "Link 4";
+document.menu.nav5.value = "Link 5";
+document.menu.dummy.value = 1;
+x = document.menu.dummy.value;
+return(x);
+}
+//Function populates the second set of buttons ...
+function rollover2() {
+document.menu.nav1.value = "Link A";
+document.menu.nav2.value = "Link B";
+document.menu.nav3.value = "Link C";
+document.menu.nav4.value = "Link D";
+document.menu.nav5.value = "Link E";
+document.menu.dummy.value = 2;
+x = document.menu.dummy.value;
+return(x);
+}
+//Function populates the third set of buttons ...
+function rollover3() {
+document.menu.nav1.value = "Link Z";
+document.menu.nav2.value = "Link Y";
+document.menu.nav3.value = "Link X";
+document.menu.nav4.value = "Link W";
+document.menu.nav5.value = "Link V";
+document.menu.dummy.value = 3;
+x = document.menu.dummy.value;
+return(x);
+}
+
+//This sends
+function go2url(hlink) {
+// set temporary variable temp1 to the value of the dummy hidden field
+var temp1 = document.menu.dummy.value;
+// set the temporary variable temp2 to link array
+var temp2 = (linx[temp1][hlink]);
+// Construct the url for the link to point to
+window.location = "http://www.yourdomain.com/"+temp2+".htm";
+}
+
+//If there are no lower tier navigation buttons, this function closes the buttons as the mouse moves off the prevoius link to this.
+function rollout() {
+//
+for (var j=0; j<y; j++) {
+document.menu.elements[j].value = "            ";
+   }
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<!-- The following may be added to the body tag -->
+<!--- onLoad="init()"> --->
+
+<div align=center>
+<center>
+<!--- Note first 2 links do not have dynamic buttons --->
+<A HREF="test1.htm" onMouseOver="rollover1()">Category 1</A> |
+<A HREF="test2.htm" onMouseOver="rollover2()">Category 2</A> |
+<A HREF="test3.htm" onMouseOver="rollover3()">Category 3</A> |
+<A HREF="test4.htm" onMouseOver="rollout()">Category 4</A>
+<FORM NAME="menu">
+<!--- the blanks used in the value cater for Netscape that otherwise truncates the labels --->
+<INPUT TYPE="button" name="nav1" value="            " onClick="go2url(1)">
+<INPUT TYPE="button" name="nav2" value="            " onClick="go2url(2)">
+<INPUT TYPE="button" name="nav3" value="            " onClick="go2url(3)">
+<INPUT TYPE="button" name="nav4" value="            " onClick="go2url(4)">
+<INPUT TYPE="button" name="nav5" value="            " onClick="go2url(5)">
+<!--- this dummy element stores the link structure --->
+<INPUT TYPE="hidden" name="dummy" value=""size="3" >
+</FORM>
+
+<P>
+<SCRIPT>
+//document.write(linx[1][2])
+document.write("<P><SCRI"+"PT LANGUAGE='JavaScript1.2' SRC='../footer.js'></SCR"+"IPT>");
+</SCRIPT>
+</center>
+</div>
+
+</center>
+</BODY>
+</HTML>

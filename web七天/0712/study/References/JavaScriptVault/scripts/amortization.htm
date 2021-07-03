@@ -1,0 +1,319 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Brian Cordeau (stdbsc13@shsu.edu) -->
+<!-- Web Site:  http://www.shsu.edu/~stdbsc13 -->
+<!-- Begin
+function Loan() {
+var housePrice;
+var IR;
+var dpayment;
+var years;
+var monthPay;
+var month;
+switch(document.calcform.startm.value) {
+case "january":
+document.calcform.startm.value="0";
+parseInt(document.calcform.startm.value)
+break;
+case "february":
+document.calcform.startm.value="1";
+parseInt(document.calcform.startm.value)
+break;
+case "march":
+document.calcform.startm.value="2";
+parseInt(document.calcform.startm.value);
+break;
+case "april":
+document.calcform.startm.value="3";
+parseInt(document.calcform.startm.value);
+break;
+case "may":
+document.calcform.startm.value="4";
+parseInt(document.calcform.startm.value);
+break;
+case "june":
+document.calcform.startm.value="5";
+parseInt(document.calcform.startm.value);
+break;
+case "july":
+document.calcform.startm.value="6";
+parseInt(document.calcform.startm.value);
+break;
+case "august":
+document.calcform.startm.value="7";
+parseInt(document.calcform.startm.value);
+break;
+case "september":
+document.calcform.startm.value="8";
+parseInt(document.calcform.startm.value);
+break;
+case "october":
+document.calcform.startm.value="9";
+parseInt(document.calcform.startm.value);
+break;
+case "november":
+document.calcform.startm.value="10";
+parseInt(document.calcform.startm.value);
+break;
+case "december":
+document.calcform.startm.value="11";
+parseInt(document.calcform.startm.value);
+break;
+default:
+document.calcform.startm.value="0";
+parseInt(document.calcform.startm.value);
+break;
+}
+housePrice = parseFloat(document.calcform.price.value);
+dpayment = parseFloat(document.calcform.dpayment.value);
+IR = parseFloat(document.calcform.interest.value);
+years = parseFloat(document.calcform.time.value);
+housePrice = housePrice - dpayment;
+month = years * 12;
+interestRate = IR / 12;
+negmonth =- 1 * month;
+var bottom = 1 - (Math.pow(interestRate+1,negmonth));
+var top = interestRate;
+var mid = top / bottom;
+var dec;
+document.calcform.monthPay.value = (housePrice * mid);
+monthPay = document.calcform.monthPay.value;
+document.calcform.monthPay.value = eval(monthPay);
+housePrice = housePrice - document.calcform.monthPay.value;
+document.calcform.month.value = month;
+}
+function convert() {
+var startmonth = new String();
+startmonth = document.calcform.startm.value;
+document.calcform.startm.value = startmonth.toLowerCase();
+}
+function changenum() {
+document.calcform.startyear.value=parseInt(document.calcform.startyear.value);
+}
+var d = new Date;
+function getFieldValue (strFieldName) {
+var strFieldValue;
+var objRegExp = new RegExp(strFieldName + "=([^&]+)","gi");
+if (objRegExp.test(location.search))
+strFieldValue = unescape(RegExp.$1);
+else strFieldValue="";
+return strFieldValue;
+}
+function Currency(money1) {
+var money = new String(money1);
+var decimal = money.indexOf(".",[0]);
+var money = money.substring(0,decimal+3);
+var money1 = parseFloat(money);
+return money;
+}
+var startmonth;
+startmonth = getFieldValue("startm");
+var monthofpayment = new String;
+month = getFieldValue("month");
+monthPay = getFieldValue("monthPay");
+Houseprice = getFieldValue("price");
+Ir = getFieldValue("interest");
+Ir = Ir/12;
+year = getFieldValue("startyear")
+function check() {
+var dPayment = document.calcform.dpayment.value;
+var price = document.calcform.price.value;
+if(price.indexOf(",") >= 0) {
+alert("Please do not put commas in the Price number")
+   }
+}
+function check1() {
+var dPayment = document.calcform.dpayment.value;
+if(dPayment.indexOf(",") >= 0) {
+alert("Please do not put commas in the Down Payment number");
+   }
+}
+//  End -->
+</script>
+
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<form method="get" name=calcform action="amortization.htm">
+<table border=0>
+<tr>
+<td valign="top">
+Anticipated Amount of House
+<br>
+</td>
+<td valign="top">
+$
+<input name=price onblur="check()" size=10>
+</td>
+</tr>
+<tr>
+<td>
+Amount of Down Payment
+</td>
+<td>
+$
+<input name=dpayment onblur="check1()" size=10>
+<br>
+</td>
+</tr>
+<tr>
+<td>
+Anticipated Interest Rate(.00 format)
+<br>
+</td>
+<td>
+<input name=interest size=10>
+<br>
+</td>
+<tr>
+<td>
+Anticipated length of loan, in years.
+<br>
+</td>
+<td>
+<input name="time" size=10>
+<br>
+</tr>
+<tr>
+<td>
+Start Date of Loan (month and year)
+</td>
+<td>
+<input name=startm onblur="convert()" size=10>
+<input name=startyear onblur="changenum()" size=10>
+</td>
+</td>
+</tr>
+<input name=month type=hidden>
+<input name=monthPay type=hidden>
+<tr>
+<td>
+<input type=submit value="Calculate Mortgage" onmouseover="check()" onclick="Loan()">
+</td>
+</tr>
+</table>
+</form>
+<table border=0>
+<tr>
+<td>
+House Price
+</td>
+<td>
+$
+<script language="javascript">
+<!--
+document.write(getFieldValue("price"));
+//-->
+</script>
+</td>
+</tr>
+<tr>
+<td>
+Down Payment
+</td>
+<td>
+$
+<script language="javascript">
+<!--
+document.write((getFieldValue("dpayment")));
+//-->
+</script>
+</td>
+</tr>
+<tr>
+<td>
+Monthly Payment
+</td>
+<td>
+$
+<script language="javascript">
+<!--
+var payment = getFieldValue("monthPay");
+payment=Currency(payment);
+document.write(payment);
+//-->
+</script>
+</td>
+</tr>
+<tr>
+<td>
+# of years
+</td>
+<td>
+<script language="javascript">
+<!--
+document.write(month/12);
+-->
+</script>
+</td>
+</tr>
+</table>
+<table border="1" >
+<tr>
+<th width="125">
+Month/Year
+</th>
+<th width="125">
+Interest
+</th>
+<th width="125">
+Principal
+</th>
+</tr>
+<script language="JavaScript">
+<!--
+var halfmonth;
+halfmonth = month / 2;
+for(y = 0; y <= month; y++) {
+var interest = Houseprice * Ir;
+var principal = monthPay - interest;
+Houseprice = Houseprice - principal;
+interest = Currency(interest);
+principal = Currency(principal);
+if(startmonth > 11) {
+startmonth = 0;
+year++;
+}
+switch(startmonth.toString()) {
+case "0":monthofpayment="January";
+break;
+case "1":monthofpayment="February";
+break;
+case "2":monthofpayment="March";
+break;
+case "3":monthofpayment="April";
+break;
+case "4":monthofpayment="May";
+break;
+case "5":monthofpayment="June";
+break;
+case "6":monthofpayment="July";
+break;
+case "7":monthofpayment="August";
+break;
+case "8":monthofpayment="September";
+break;
+case "9":monthofpayment="October";
+break;
+case "10":monthofpayment="November";
+break;
+case "11":monthofpayment="December";
+}
+document.write("<tr><td width='125'>")
+document.write(monthofpayment+" "+year+"</td>"+"<td width='125'>"+"$"+interest+"</td><td width='125'>"+"$"+principal);
+document.write("</td></tr>");
+startmonth++;
+}
+//-->
+</script>
+</table>
+
+</center>
+</BODY>
+</HTML>

@@ -1,0 +1,149 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Paul DeBrino (irandd@aol.com) -->
+<!-- Web Site:  http://members.aol.com/irandd/ -->
+
+<!-- Begin
+//Define function to manipulate the form total per item selected/deselected:
+function CheckChoice(whichbox) {
+with (whichbox.form) {
+//Handle differently, depending on type of input box.
+if (whichbox.type == "radio") {
+//First, back out the prior radio selection's price from the total:
+hiddentotal.value = eval(hiddentotal.value) - eval(hiddenpriorradio.value);
+//Then, save the current radio selection's price:
+hiddenpriorradio.value = eval(whichbox.price);
+//Now, apply the current radio selection's price to the total:
+hiddentotal.value = eval(hiddentotal.value) + eval(whichbox.price);
+}
+else {
+//If box was checked, accumulate the checkbox value as the form total,
+//Otherwise, reduce the form total by the checkbox value:
+if (whichbox.checked == false) {
+hiddentotal.value = eval(hiddentotal.value) - eval(whichbox.value);
+}
+else {
+hiddentotal.value = eval(hiddentotal.value) + eval(whichbox.value);
+   }
+}
+//Ensure the total never goes negative (some browsers allow radiobutton to be deselected):
+if (hiddentotal.value < 0) {
+InitForm();
+}
+//Now, return with formatted total:
+return(formatCurrency(hiddentotal.value));
+   }
+}
+//Define function to format a value as currency:
+function formatCurrency(num) {
+<!-- Function courtesy of:  Cyanide_7 (leo7278@hotmail.com) -->
+<!-- Web Site:  http://www7.ewebcity.com/cyanide7 -->
+num = num.toString().replace(/\$|\,/g,'');
+if(isNaN(num)) num = "0";
+cents = Math.floor((num*100+0.5)%100);
+num = Math.floor((num*100+0.5)/100).toString();
+if(cents < 10) cents = "0" + cents;
+for (var i = 0; i < Math.floor((num.length-(1+i))/3); i++)
+num = num.substring(0,num.length-(4*i+3))+','+num.substring(num.length-(4*i+3));
+return ("$" + num + "." + cents);
+}
+//Define function to init the form on reload:
+function InitForm() {
+//Reset the displayed total on form:
+document.myform.total.value='$0';
+document.myform.hiddentotal.value=0;
+document.myform.hiddenpriorradio.value=0;
+document.myform2.total.value='$0';
+document.myform2.hiddentotal.value=0;
+document.myform2.hiddenpriorradio.value=0;
+document.myform2.hiddenpriorradio.value=0;
+//Set all checkboxes and radio buttons on form-1 to unchecked:
+for (xx=0; xx < document.myform.elements.length; xx++) {
+if (document.myform.elements[xx].type == 'checkbox' | document.myform.elements[xx].type == 'radio') {
+document.myform.elements[xx].checked = false;
+   }
+}
+//Set all checkboxes and radio buttons on form-2 to unchecked:
+for (xx=0; xx < document.myform2.elements.length; xx++) {
+if (document.myform2.elements[xx].type == 'checkbox' | document.myform2.elements[xx].type == 'radio') {
+document.myform2.elements[xx].checked = false;
+      }
+   }
+}
+//  End -->
+</script>
+
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg onLoad="InitForm();" onreset="InitForm();">
+<center><BR><BR><BR>
+<form method=POST name=myform>
+Steak $15.25
+<input type=checkbox name=Steak value=15.25 onClick="this.form.total.value=CheckChoice(this);">
+Chicken $12.39
+<input type=checkbox name=Chicken value=12.39 onClick="this.form.total.value=CheckChoice(this);">
+Sushi $18.75
+<input type=checkbox name=Sushi value=18.75 onClick="this.form.total.value=CheckChoice(this);">
+<br>
+<br>
+<b>Prepare with this special sauce (extra charge -- only one selection allowed):</b>
+<br>
+None, thanks
+<input type=radio name=Sauce value=none price=0.00 onClick="this.form.total.value=CheckChoice(this);">
+Duck Sauce $10.99
+<input type=radio name=Sauce value=duck price=10.99 onClick="this.form.total.value=CheckChoice(this);">
+Ginger Sauce $5.00
+<input type=radio name=Sauce value=ginger price=5.00 onClick="this.form.total.value=CheckChoice(this);">
+Hot Sauce $1.50
+<input type=radio name=Sauce value=hot price=1.50 onClick="this.form.total.value=CheckChoice(this);">
+<br>
+<br>
+<br>
+<input type=hidden name=hiddentotal value=0>
+<input type=hidden name=hiddenpriorradio value=0>
+Your total is: <input type=text name=total readonly>
+<br>
+<br>
+(Note: Total can not be changed by the visitor.)
+</font>
+</form>
+<hr width=100% noshade>
+<form method=POST name=myform2>
+Roasted Pig $10.00
+<input type=checkbox name=Pig value=10.00 onClick="this.form.total.value=CheckChoice(this);">
+Roasted Rat $17.49
+<input type=checkbox name=Rat value=17.49 onClick="this.form.total.value=CheckChoice(this);">
+Roasted Cat $3.50
+<input type=checkbox name=Cat value=3.50  onClick="this.form.total.value=CheckChoice(this);">
+<br>
+<br>
+<b>Prepare with this special seasoning (extra charge -- only one selection allowed):</b>
+<br>
+None, thanks
+<input type=radio name=Season value=none price=0.00 onClick="this.form.total.value=CheckChoice(this);">
+Liquid Nitrogen $17.50
+<input type=radio name=Season value=nitrogen price=17.50 onClick="this.form.total.value=CheckChoice(this);">
+Gun Powder $8.50
+<input type=radio name=Season value=gunpowder price=8.50 onClick="this.form.total.value=CheckChoice(this);">
+Vodka $4.00
+<input type=radio name=Season value=vodka price=4.00 onClick="this.form.total.value=CheckChoice(this);">
+<br>
+<br>
+<br>
+<input type=hidden name=hiddentotal value=0>
+<input type=hidden name=hiddenpriorradio value=0>
+Your total is: <input type=text name=total readonly>
+<br>
+<br>
+(Note: Total can not be changed by the visitor.)
+</font>
+</form>
+
+</center>
+</BODY>
+</HTML>

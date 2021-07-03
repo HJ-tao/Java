@@ -1,0 +1,27 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<LINK href="general.css" rel="stylesheet" type="text/css">
+
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR>
+The substring() function allows you to pull out any combination of characters from a string.  In this example, an unformated date string such as 19990422 (which represents April 22, 1999) can be split up into 1999, 04, and 22.  Each of these are separate variables that you can deal with independently in your scripts!  Neat!
+<br><br>
+<b>
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Begin
+var date = "19990422"; // yyyymmdd variable
+year = date.substring(0,4);
+month = date.substring(4,6);
+day = date.substring(6,8);
+datestring = month + "/" + day + "/" + year;
+document.writeln(date + " converts to " + datestring);
+//  End -->
+</script>
+</b>
+</center>
+</BODY>
+</HTML>

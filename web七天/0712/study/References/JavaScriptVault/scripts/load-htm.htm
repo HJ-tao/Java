@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Eddie Traversa (psych3@primus.com.au) -->
+<!-- Web Site:  http://dhtmlnirvana.com/ -->
+
+<!-- Begin
+var nn4 = (document.layers);
+var nn6 = (document.getElementById && !document.all);
+var ie4 = (document.all && !document.getElementById);
+var ie5 = (document.all && document.getElementById);
+function loadPage(id,nestref,url) {
+if (nn4) {
+var lyr = (nestref)? eval('document.'+nestref+'.document.'+id) : document.layers[id]
+lyr.load(url,lyr.clip.width)
+}
+else if(ie4) parent.contentFRM.location = url;
+else if(ie5 || nn6) document.getElementById('contentFRM').src = url;
+}
+function showPage(id) {
+if (ie4) {
+document.all[id].innerHTML = parent.contentFRM.document.body.innerHTML;
+}
+else if(nn6 || ie5) {
+document.getElementById(id).innerHTML = window.frames['contentFRM'].document.getElementById('theBody').innerHTML;
+   }
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg onload="parent.showPage('contentLayer')">
+<center><BR><BR><BR>
+<a href="load-html-demo.html">Click Here for the Demo</a>
+
+</center>
+</BODY>
+</HTML>

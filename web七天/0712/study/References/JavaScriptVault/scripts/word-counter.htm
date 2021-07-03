@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+
+
+<!-- Begin
+   var submitcount=0;
+   function checkSubmit() {
+
+      if (submitcount == 0)
+      {
+      submitcount++;
+      document.Surv.submit();
+      }
+   }
+
+
+function wordCounter(field, countfield, maxlimit) {
+wordcounter=0;
+for (x=0;x<field.value.length;x++) {
+      if (field.value.charAt(x) == " " && field.value.charAt(x-1) != " ")  {wordcounter++}  // Counts the spaces while ignoring double spaces, usually one in between each word.
+      if (wordcounter > 250) {field.value = field.value.substring(0, x);}
+      else {countfield.value = maxlimit - wordcounter;}
+      }
+   }
+
+function textCounter(field, countfield, maxlimit) {
+  if (field.value.length > maxlimit)
+      {field.value = field.value.substring(0, maxlimit);}
+      else
+      {countfield.value = maxlimit - field.value.length;}
+  }
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center>
+<FORM NAME=Surv>
+<TABLE BORDER="0" CELLSPACING="0" CELLPADDING="3" width=550>
+<tr><td valign="top">
+<font color="000000" size="2" face="verdana, helvetica, arial">In 100 <b>words</b> or less, why do you (or would you) like living on the coast?</font><font color="ff0000" size="2" face="verdana, helvetica, arial">*</font>
+<td valign="top"><textarea name="Q3367" cols="40" rows="5" wrap="hard" onKeyDown="wordCounter(this.form.Q3367,this.form.remLen,100);" onKeyUp="wordCounter(this.form.Q3367,this.form.remLen,100);"></textarea>
+<br>Words remaining: <input type=box readonly name=remLen size=3 value=100></td></tr>
+
+<tr><td colspan=2><hr width=80%></td></tr>
+
+<tr><td valign="top">
+<font color="000000" size="2" face="verdana, helvetica, arial">In 100 <b>characters</b> or less, why do you (or would you) like living on the coast?</font><font color="ff0000" size="2" face="verdana, helvetica, arial">*</font>
+<td valign="top">
+<textarea name="Q336" cols="40" rows="5" wrap="hard" onKeyDown="textCounter(this.form.Q336,this.form.remLentext,100);" onKeyUp="textCounter(this.form.Q336,this.form.remLentext,100);"></textarea>
+<br>Characters remaining: <input type=box readonly name=remLentext size=3 value=100>
+</td></tr>
+</TABLE>
+
+<INPUT TYPE="button" VALUE="Submit" onclick='' name=submit1>
+<INPUT TYPE="reset" VALUE="Reset" id=reset1 name=reset1>
+</FORM>
+<P>
+<FONT SIZE="-2" COLOR="ff0000" FACE="verdana, helvetica, arial">*</FONT><FONT SIZE="-2" COLOR="4169e1" FACE="verdana, helvetica, arial"> Indicates a required question.</FONT>
+
+
+
+</center>
+</BODY>
+</HTML>

@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Christopher Nielsen (chris@bluegalaxy.net) -->
+<!-- Web Site:  http://www.bluegalaxy.net -->
+
+<!-- Begin
+binary_numbers = new Array("0000", "0001", "0010", "0011", "0100", "0101", 
+"0110", "0111", "1000", "1001", "1010", "1011", "1100", "1101", "1110", "1111");
+
+function toBinary(High, Low) {
+var hiHex = "ABCDEF";
+if (Low < 10 ) {
+LowNib = Low;
+}
+else {
+LowNib = 10 + hiHex.indexOf(Low); 
+}
+if (High  < 10 ) {
+HighNib = High;
+}
+else {
+HighNib = 10 + hiHex.indexOf(High);
+}
+eight_bits = binary_numbers[HighNib] + " " + binary_numbers[LowNib];
+return eight_bits;
+}
+function Dec2Hex(Decimal) {
+var hexChars = "0123456789ABCDEF";
+var a = Decimal % 16;
+var b = (Decimal - a)/16;
+hex = "" + hexChars.charAt(b) + hexChars.charAt(a);
+L = hexChars.charAt(a);
+H = hexChars.charAt(b);
+return hex;
+}
+var symbols = " !\"#$%&'()*+'-./0123456789:;<=>?@";
+function toAscii ()  {
+var loAZ = "abcdefghijklmnopqrstuvwxyz";
+symbols+= loAZ.toUpperCase();
+symbols+= "[\\]^_`";
+symbols+= loAZ;
+symbols+= "{|}~";
+var loc;
+loc = symbols.indexOf(document.asciiform.Input.value);
+if (loc >-1) { 
+Ascii_Decimal = 32 + loc;
+return (32 + loc);
+   }
+return(0);  // If not in range 32-126 return ZERO
+}
+function getAscii(some_value) {
+document.asciiform.toDec.value = toAscii();
+document.asciiform.toHex.value = Dec2Hex(toAscii()); 
+document.asciiform.binary.value = toBinary(H, L); 
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<form name="asciiform" onsubmit="return false;">
+<table border=1><tr><td>
+<center>
+Input one character:  <input size=1 name=Input maxlength=1 onChange="getAscii(this.value)">
+<p>
+<input type=button  value="display" onClick="document.asciiform.toDec.value=toAscii()">
+</center>
+<p>
+<input size=10 name=toDec onFocus="this.blur()"> ASCII Decimal Output<br>
+<input size=10 name=toHex onFocus="this.blur()"> ASCII Hex Output<br>
+<input size=10 name=binary onFocus="this.blur()"> ASCII Binary Output
+</td>
+</tr>
+</table>
+</form>
+
+</center>
+</BODY>
+</HTML>

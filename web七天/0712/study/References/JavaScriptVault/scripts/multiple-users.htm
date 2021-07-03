@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+
+
+
+
+<!-- Begin
+function Login(){
+var done=0;
+var username=document.login.username.value;
+username=username.toLowerCase();
+var password=document.login.password.value;
+password=password.toLowerCase();
+if (username=="member1" && password=="password1") { window.location="page1.html"; done=1; }
+if (username=="member2" && password=="password2") { window.location="page2.html"; done=1; }
+if (username=="member3" && password=="password3") { window.location="page3.html"; done=1; }
+if (done==0) { alert("Invalid login!"); }
+}
+// End -->
+</SCRIPT>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<form name=login>
+<table width=225 border=1 cellpadding=3>
+<tr><td colspan=2><center><font size="+2"><b>Members-Only Area!</b></font></center></td></tr>
+<tr><td>Username:</td><td><input type=text name=username></td></tr>
+<tr><td>Password:</td><td><input type=text name=password></td></tr>
+<tr><td colspan=2 align=center><input type=button value="Login!" onClick="Login()"></td></tr>
+</table>
+</form>
+
+</center>
+</BODY>
+</HTML>

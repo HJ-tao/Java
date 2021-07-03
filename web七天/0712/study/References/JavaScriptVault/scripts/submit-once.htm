@@ -1,0 +1,68 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+
+<!-- Begin
+var submitcount=0;
+
+function reset() {
+document.emailform.name.value="";
+document.emailform.email.value="";
+document.emailform.comments.value="";
+}
+
+function checkFields() {                       // field validation -
+if ( (document.emailform.name.value=="")  ||   // checks if fields are blank.
+     (document.emailform.email.value=="") ||   // More validation scripts at
+     (document.emailform.comments.value=="") ) // forms.javascriptsource.com
+   {
+   alert("Please enter your name, email, and comments then re-submit this form.");
+   return false;
+   }
+
+else
+   {
+   if (submitcount == 0)
+      {
+      submitcount++;
+      return true;
+      }
+   else
+      {
+      alert("This form has already been submitted.  Thanks!");
+      return false;
+      }
+   }
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg OnLoad="reset()">
+<center><BR><BR><BR>
+<form method=post action="http://cgi.freedback.com/mail.pl" name="emailform" onSubmit="return checkFields()">
+
+<input type=hidden name=to value="you@your-website-address-here.com">
+<input type=hidden name=subject value="Feedback Form">
+
+<pre>
+Your Name:   <input type=text name="name">
+Your Email:  <input type=text name="email">
+
+Comments?
+
+<textarea name="comments" wrap="virtual" rows="7" cols="45"></Textarea>
+
+<input type=submit value="Submit Form!">
+
+[ Click the submit button twice to see the script in action ]
+</pre>
+</form>
+
+</center>
+</BODY>
+</HTML>

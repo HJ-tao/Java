@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Begin
+function initArray() {
+for (var i = 0; i < initArray.arguments.length; i++) {
+this[i] = initArray.arguments[i];
+}
+this.length = initArray.arguments.length;
+}
+var colors = new initArray(
+"red",
+"blue",
+"green",
+"purple",
+"black",
+"tan",
+"red");
+delay = .5; // seconds
+link = 0;
+vlink = 2;
+function linkDance() {
+link = (link+1)%colors.length;
+vlink = (vlink+1)%colors.length;
+document.linkColor = colors[link];
+document.vlinkColor = colors[vlink];
+setTimeout("linkDance()",delay*1000);
+}
+linkDance();
+// End -->
+</script>
+
+<!-- Be sure to include some links in your HTML page!  -->
+
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg >
+<center><BR><BR><BR>
+<a href="/">Example link - notice the link color?</a>
+
+</center>
+</BODY>
+</HTML>

@@ -1,0 +1,38 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+
+
+
+
+<!-- Begin
+
+agree = 0;  // 0 means 'no', 1 means 'yes'
+
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<form name=enableform>
+You can only enter your name if you agree to the terms. (just a demo)<br>
+<br>
+<input type=radio name='enable' value='agree' onClick="agree=1; document.enableform.box.focus();">I agree<br>
+<input type=radio name='enable' value='disagree' onClick="agree=0; document.enableform.box.value='';">I disagree<br>
+
+Please enter your name:
+
+<input type=text name=box onFocus="if (!agree)this.blur();" onChange="if (!agree)this.value='';" size=12>
+<br>
+<br>
+<input type=submit value="Done!">
+</form>
+
+</center>
+</BODY>
+</HTML>

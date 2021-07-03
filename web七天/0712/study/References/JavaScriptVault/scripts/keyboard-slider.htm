@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Massimo Giari (motore@iol.it) -->
+
+<!-- Begin
+n = (document.layers) ? 1 : 0;
+ie = (document.all) ? 1 : 0;
+function moveImage() {
+if (n) {
+block = document.blockDiv;
+}
+if (ie) {
+block = blockDiv.style;
+}
+block.xpos = parseInt(block.left);
+block.active = 0;
+document.onkeydown = keyDown;
+document.onkeyup = keyUp;
+if (n) {
+document.captureEvents(Event.keydown | Event.keyup);
+   }
+}
+function keyDown(e) {
+if (n) {
+var nKey = e.which;
+var ieKey = 0;
+}
+if (ie) {
+var ieKey = event.keyCode;
+var nKey = 0;
+}
+if ((nKey == 97 || ieKey == 65) && !block.active) {
+block.active = 1;
+slideLeft();
+}
+if ((nKey == 100 || ieKey == 68) && !block.active) {
+block.active = 1;
+slideRight();
+   }
+}
+function keyUp(e) {
+if (n) {
+var nKey = e.which;
+var ieKey = 0;
+}
+if (ie) {
+var ieKey = event.keyCode;
+var nKey = 0;
+}
+if ((nKey == 97 || ieKey == 65 || nKey == 100 || ieKey == 68))
+block.active = 0;
+}
+function slideRight() {
+if (block.active) {
+block.xpos += 5;
+block.left = block.xpos;
+status = block.xpos;
+setTimeout("slideRight()", 25);
+   }
+}
+function slideLeft() {
+if (block.active) {
+block.xpos -= 5;
+block.left = block.xpos;
+status = block.xpos;
+setTimeout("slideLeft()", 25);
+   }
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg BODY OnLoad="moveImage()">
+<center><BR><BR><BR>
+<div id="blockDiv" STYLE="position:absolute; left:317px; top:130px; width:137px; height: 121px">
+<img src="alien.gif" width="115" height="63"></div>
+
+Use <b>A</b> to move the image toward left, <b>D</b> to move the image right.
+
+
+</center>
+</BODY>
+</HTML>

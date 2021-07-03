@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<LINK href="general.css" rel="stylesheet" type="text/css">
+
+<SCRIPT LANGUAGE="JavaScript">
+
+<!-- Original:  The Radiance Group, Inc.  (info@radiancegroup.com) -->
+<!-- Web Site:  http://www.radiancegroup.com -->
+<!--  Begin
+function makeArray(q){
+for(i=1 ; i <= q ; i++){this[i]=0}}
+Colors = new makeArray(7);
+Colors[1] = "00";
+Colors[2] = "33";
+Colors[3] = "66";
+Colors[4] = "99";
+Colors[5] = "CC";
+Colors[6] = "FF";
+// End -->
+</SCRIPT>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center>
+<table cellspacing = 0 cellpadding = 0>
+<script language="JavaScript">
+for(i=1 ; i <= 6 ; i++){
+for(j=1 ; j <= 6 ; j++){
+for(k=1 ; k <= 6 ; k++){
+var thiscolor = Colors[i] + Colors[j] + Colors[k];
+document.writeln("<tr><td height = 20 bgcolor = \"#" + thiscolor + "\" align = right><a href = ");
+document.writeln("\'\' onMouseOver = \"document.bgColor = \'" + thiscolor + "\'\">" + thiscolor + "</a></td></tr>");
+      }
+   }
+}
+</script>
+</table>
+
+
+</center>
+</BODY>
+</HTML>

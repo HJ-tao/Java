@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<LINK href="general.css" rel="stylesheet" type="text/css">
+
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Begin
+netscapeTest = parseInt(navigator.appVersion)
+explorerTest = navigator.appName.indexOf("Microsoft") + 1
+function netscapeThree() {
+if (navigator.javaEnabled()) {
+userDomain = java.net.InetAddress.getLocalHostName()
+txt = "I bet your hostname is " + (userDomain.toString()) + " !";
+} else {
+txt = "You are browsing without Java enabled and therefore I can\'t find out what your hostname is.";
+   }
+}
+function netscapeFour() {
+if (navigator.javaEnabled()) {
+baseAddress = java.net.InetAddress.getLocalHost()
+userDomain = baseAddress.getHostName()
+txt = "I bet your hostname is " + (userDomain.toString()) + " !";
+} else {
+txt = "You are browsing without Java enabled and therefore I can\'t find out what your hostname is."; }
+}
+if ((explorerTest == "0") && (netscapeTest == "3")) { netscapeThree() }
+else if ((explorerTest == "0") && (netscapeTest == "4")) { netscapeFour() }
+else {
+txt = "It appears you are using Internet Explorer - and we can not find your hostname in that browser."
+}
+alert(txt)
+// End -->
+</SCRIPT>
+
+</center>
+</BODY>
+</HTML>

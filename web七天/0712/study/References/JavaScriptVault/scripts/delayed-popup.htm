@@ -1,0 +1,38 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<LINK href="general.css" rel="stylesheet" type="text/css">
+
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Ronnie T. Moore, Editor -->
+<!-- Web Site:  The JavaScript Source -->
+<!-- Begin
+closetime = 0; // Close window after __ number of seconds?
+// 0 = do not close, anything else = number of seconds
+
+function Start(URL, WIDTH, HEIGHT) {
+windowprops = "left=50,top=50,width=" + WIDTH + ",height=" + HEIGHT;
+preview = window.open(URL, "preview", windowprops);
+if (closetime) setTimeout("preview.close();", closetime*1000);
+}
+
+function doPopup() {
+url = "delayed-popup-window.htm";
+width = 267;  // width of window in pixels
+height = 103; // height of window in pixels
+delay = 2;    // time in seconds before popup opens
+timer = setTimeout("Start(url, width, height)", delay*1000);
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg OnLoad="doPopup();">
+<center><BR><BR><BR>
+Note:  We configured our demo to open the popup window 2 seconds<br>
+after this page finishes loading and to not close the window automatically.
+
+</center>
+</BODY>
+</HTML>

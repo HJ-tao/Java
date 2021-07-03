@@ -1,0 +1,87 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript1.2">
+<!-- Original:  Ernst Straka (ernst.straka@central-europe.basf.org) -->
+<!-- Web Site:  http://www.rs-systems.at/straka -->
+
+<!-- Begin
+var l1 =   0; // left of ticker in pixel, or 0 to position relative
+var t1 =   0; // top of ticker in pixel, or 0 to position relative
+var w1 = 400; // width of ticker in pixel
+var ie = document.all ? true : false;
+var first = true;
+var l2 = l1 + w1;
+var l3 = l1 - l2;
+var l = l2;
+function tickinit() {
+if (ie) {
+if (l1 == 0 && t1 == 0) {
+pos = document.all['tickpos'];
+l1 = getLeft(pos);
+t1 = getTop(pos);
+}
+ticktext.style.posTop = t1;
+}
+else {
+if (l1 == 0 && t1 == 0) {
+pos = document.anchors['tickpos'];
+l1 = pos.x;
+t1 = pos.y;
+}
+document.ticktext.pageY = t1;
+}
+l2 = l1 + w1;
+l3 = l1 - l2;
+l = l2;
+setInterval('tick()', 10);
+}
+function getLeft(ll) {
+if (ll.offsetParent)
+return (ll.offsetLeft + getLeft(ll.offsetParent));
+else
+return (ll.offsetLeft);
+}
+function getTop(ll) {
+if (ll.offsetParent)
+return (ll.offsetTop + getTop(ll.offsetParent));
+else
+return (ll.offsetTop);
+}
+function tick() {
+l = l - 0.5;
+if (l < l3) l = l2;
+cl = l1 - l;
+cr = l2 - l;
+if (ie) {
+ticktext.style.posLeft = l;
+ticktext.style.posTop = t1;
+ticktext.style.clip = "rect(auto "+cr+"px auto "+cl+"px)";
+if (first) ticktext.style.visibility = "visible";
+}
+else {
+document.ticktext.pageX = l;
+document.ticktext.clip.left = cl;
+document.ticktext.clip.right = cr;
+if (first) document.ticktext.visibility = "show";
+}
+first = false;
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg OnLoad="tickinit()">
+<center><BR><BR><BR>
+<a name="tickpos"> </a>
+
+<div id="ticktext" style="position:absolute;font-family:arial;font-size:14pt;visibility:hidden;">
+<nobr>Doesn't this message scroller look great?  You can even insert links like this: <a href="http://www.yahoo.com" target="_blank">yahoo.com</a>  Now it repeats.</nobr>
+</div>
+
+</center>
+</BODY>
+</HTML>

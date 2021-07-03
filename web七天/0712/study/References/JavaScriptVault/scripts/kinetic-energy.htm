@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  David K (davidwkjr@hotmail.com) -->
+<!-- Begin
+function a_times_b(form) {
+a = eval(form.a.value);
+b = eval(form.b.value);
+c = 1 / 2 * a * b * b;
+form.c.value = c;
+}
+function c_div_b(form) {
+c = eval(form.c.value);
+b = eval(form.b.value);
+a = c / (b * b);
+form.a.value = a * 2;
+}
+function c_div_a(form) {
+c = eval(form.c.value);
+a = eval(form.a.value);
+b = c / (1 / 2 * a);
+form.b.value = Math.sqrt(c / (1 / 2 * a));
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<table width=300 border=0>
+<form name="fromcal">
+<tr>
+<td><center>MASS (kg)</td>
+<td><center>VELOCITY (m/s)</td>
+<td><center>KINETIC ENERGY (joules)</td>
+</tr>
+<tr>
+<td><input type=number name="a" value=" " size=10></td>
+<td><input type=number name=b value=" " size=10></td>
+<td><input type=number name="c" value=" " size=10></td>
+</tr>
+<tr>
+<td><input type=button value="Find Mass" onClick="c_div_b(this.form)"></td>
+<td><input type=button value="Find Velocity" onClick="c_div_a(this.form)"></td>
+<td><input type=button value="Find KE" onClick="a_times_b(this.form)"></td>
+</tr>
+</form>
+</table>
+
+</center>
+</BODY>
+</HTML>
