@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<LINK href="general.css" rel="stylesheet" type="text/css">
+
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Ronnie T. Moore, Editor -->
+<!-- Web Site:  JavaScript Source -->
+<!-- Begin
+netscape = "netscape.html"; // set your browser pages
+explorer = "explorer.html";
+unknown  = "unknown.html";
+
+// Determine the popup window properties
+// options include:  top, left, toolbars, scrollbars,
+// menubar, location, statusbar, and resizable
+
+windowprops = "top=0,left=0,resizable=yes"
++ ",width=" + screen.width + ",height=" + screen.height;
+
+ns = (navigator.appName == 'Netscape');
+ie = (navigator.appName == 'Microsoft Internet Explorer');
+url = (!ns & !ie) ? unknown : ( ns ? netscape : explorer);
+window.open(url, "popupPage", windowprops);
+//  End -->
+</script>
+
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+Done!
+</center>
+</BODY>
+</HTML>

@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<script language="JavaScript">
+<!-- Begin
+function decodeString()
+{
+valNum = new Array();
+valData = new Array();
+var string, length, dataCount, orderData, grandTotal;
+string = "" + unescape(location.search);
+string = string.substring(1,string.length);
+length = location.search.length;
+orderData = "";
+dataCount = 1;
+for (var c = 0; c < string.length; c++)
+if (string.charAt(c).indexOf("&") != -1) dataCount++;
+
+orderData = "<table border=1 width=400>";
+orderData += "<tr><td>Item</td><td>Description</td><td>Cost</td></tr>";
+grandTotal = 0;
+for (var i = 0; i < dataCount; i++)
+{
+valNum[i] = string.substring(0,string.indexOf("="));
+string = string.substring(string.indexOf("=")+1,string.length);
+if (i == dataCount-1) valData[i] = string;
+else valData[i] = string.substring(0,string.indexOf("&"));
+ampd = valData[i].indexOf("&");
+pipe = valData[i].indexOf("-");
+star = valData[i].indexOf("*");
+line = valData[i].indexOf("$");
+itemnum = string.substring(0,pipe);
+itemdsc = string.substring(pipe+1,star);
+itemcst = string.substring(star+1,line);
+string = string.substring(ampd+1,string.length);
+
+orderData += "<tr>";
+orderData += "<input type=hidden name=item" + (i+1) + "num value='" + itemnum + "'>";
+orderData += "<input type=hidden name=item" + (i+1) + "dsc value='" + itemdsc + "'>";
+orderData += "<input type=hidden name=item" + (i+1) + "cst value='$" + itemcst + "'>";
+orderData += "<td>" + itemnum + "</td>";
+orderData += "<td>" + itemdsc + "</td>";
+orderData += "<td>" + itemcst + "</td>";
+orderData += "</tr>";
+grandTotal += parseInt(itemcst);
+}
+orderData += "<tr>";
+orderData += "<td colspan=2 align=center>Total</td><td>" + grandTotal + ".00</td>";
+orderData += "</tr>";
+orderData += "<tr>";
+orderData += "<td colspan=3 align=center><input type=submit value='Confirm Order!'> or <a href='javascript:history.go(-1)'>Go Back</a></td>";
+orderData += "</tr>";
+orderData += "<input type=hidden name=grandtotal value='$" + grandTotal + ".00'>";
+orderData += "</table>";
+document.write(orderData);
+}
+
+function openThanks() {
+window.open("confirm-order-thanks.htm");
+}
+// End -->
+</script>
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg onUnload="openThanks()">
+<center><BR>
+Here is where you confirm your order. The order is then emailed to the webmaster using freedback.com's free form processing cgi-script. This demo will mail the form to you if you enter your email address in the hidden field of this script.
+
+
+<BR><BR>
+<form method=post action="http://cgi.freedback.com/mail.pl" name="emailform">
+
+
+<input type=hidden name=to value="you@your-web-site-address-here.com">
+<input type=hidden name=subject value="** Order Form **">
+
+
+<script language="JavaScript">
+<!-- Begin
+decodeString();
+// End -->
+</script>
+
+
+</form>
+
+</center>
+</BODY>
+</HTML>

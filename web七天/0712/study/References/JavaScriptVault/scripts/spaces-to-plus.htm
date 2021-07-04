@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Mike McGrath (mike_mcgrath@lineone.net) -->
+<!-- Web Site:  http://website.lineone.net/~mike_mcgrath -->
+
+<!-- Begin
+function convertSpaces(str) {
+var out = "", flag = 0;
+for (i = 0; i < str.length; i++) {
+if (str.charAt(i) != " ") {
+out += str.charAt(i);
+flag = 0;
+}
+else {
+if(flag == 0) {
+out += "+";
+flag = 1;
+      }
+   }
+}
+return out;
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<form>
+Your Full Name:  <input name=input type=text size=15 onBlur="this.value = convertSpaces(this.value);">
+<input type=button value="Ok!">
+</form>
+
+</center>
+</BODY>
+</HTML>

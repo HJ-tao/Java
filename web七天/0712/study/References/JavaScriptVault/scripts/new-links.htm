@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Nicolas -->
+<!-- Web Site:  http://www.javascript-page.com -->
+
+<!-- Begin
+function checknew(date) {
+var pic = "c0.gif";
+expdate = new Date(date);
+curdate = new Date();
+if (expdate.getTime() > curdate.getTime())
+document.write("<img src=" + pic + ">");
+}
+// End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<script> checknew("6/01/2000") </script>Shown as "New" until 6/01/2000<br>
+<script> checknew("12/01/2000") </script>Shown as "New" until 12/01/2000<br>
+<script> checknew("6/01/2001") </script>Shown as "New" until 6/01/2001<br>
+<script> checknew("12/01/2001") </script>Shown as "New" until 12/01/2001<br>
+
+<!-- Each news item should have an expiration check
+      with this: <script> checknew("6/01/2000") </script> -->
+
+<!-- Also remember to save the new.gif image to your server.
+     Right click the link below and select "Save Image As..."
+
+     c0.gif  -->
+
+
+</center>
+</BODY>
+</HTML>

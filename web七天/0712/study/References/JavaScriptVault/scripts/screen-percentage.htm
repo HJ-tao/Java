@@ -1,0 +1,38 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<LINK href="general.css" rel="stylesheet" type="text/css">
+
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Idea by:  Giulio Gravinese -->
+<!-- Web Site:  http://www.universeg.com -->
+<!-- Begin
+// IE Compatability by Errol Burrow (errol@thru.net)
+
+function getwindowsize() {
+if (navigator.userAgent.indexOf("MSIE") > 0) {
+var sSize = (document.body.clientWidth * document.body.clientHeight);
+return sSize;
+} else {
+var sSize = (window.outerWidth * window.outerHeight);
+return sSize;
+}
+return;
+}
+// End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Begin
+var percent = Math.round((getwindowsize()/(screen.width * screen.height)*100) * Math.pow(10, 0));
+document.write("This window is using about " + percent + "% of your available screen.");
+// End -->
+</script>
+
+</center>
+</BODY>
+</HTML>

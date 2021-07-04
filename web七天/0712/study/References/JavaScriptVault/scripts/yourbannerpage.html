@@ -1,0 +1,90 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+
+
+
+
+<!-- Begin
+// ====================================
+// Copyright 2001 by www.CodeLifter.com
+// Do *not* remove this notice.
+// ====================================
+
+// Place this script in the head of the page you launch.
+// Call the closeMe function to reliably close the window.
+// In IE (only), this can be attached to an image (see
+// below) or to a table, etc. For a regular link, use:
+// <a href="javascript:closeMe()">Close Window</a>
+
+var Message = "Click the banner, Bozo!";
+
+// Do not edit below this line.
+// ============================
+
+self.blur();
+bV  = parseInt(navigator.appVersion);
+bNS = navigator.appName=="Netscape";
+bIE = navigator.appName=="Microsoft Internet Explorer";
+function closeMe() {
+if (bIE) {
+if(top.opener.closed) {
+top.window.close();
+}
+else {
+if(top.opener.done=="okay") {
+top.window.close();
+         }
+      }
+   }
+}
+function nrc(e) {
+if (bNS && e.which > 1) {
+alert(Message);
+return false;
+}
+else if (bIE && (event.button >1)) {
+alert(Message);
+return false;
+   }
+}
+document.onmousedown = nrc;
+if (document.layers) window.captureEvents(Event.MOUSEDOWN);
+if (bNS && bV<5) window.onmousedown = nrc;
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg bgcolor="#000000" scroll="no">
+<div align="center">
+<center>
+<table border="0" cellpadding="0" cellspacing="0" width="100%" height="100%">
+<tr>
+<!-- Preparing the banner code...
+
+CAUTION: Remove our banner code and replace it with your own!
+Please DO NOT contact us concerning how to modify your banner code.
+We *cannot* advise you on this, as sources differ.
+
+Place your banner code in the following <td>...</td> table cell.
+
+Some minor special preparation and changes to the ad code are mandatory.
+Note how the onClick="closeMe()" is attached to the banner image (for IE).
+Note you *must* use target="_blank" in the banner link code, so the link
+will open in a new window.
+
+//-->
+<td valign="middle" align="center" width="100%" height="100%">
+<a href="../javapage-details.htm" target="_blank"><img onClick="closeMe()" src="faces.gif" alt="A dummy page" border="0"></a>
+</td>
+</tr>
+</table>
+</center>
+</div>
+
+</BODY>
+</HTML>

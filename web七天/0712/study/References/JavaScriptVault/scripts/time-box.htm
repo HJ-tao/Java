@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Chris Englmeier <machin@mindspring.com>
+<!-- Begin
+var Temp;
+setClock();
+function setClock() {
+Temp = "";
+now = new Date();
+var CurHour = now.getHours();
+var CurMinute = now.getMinutes();
+now = null;
+if( CurHour >= 12) {
+ampm = 1;
+}
+else
+ampm = 0;
+if( CurHour > 12 ) {
+CurHour = CurHour - 12;
+}
+if( CurHour == 0 )
+CurHour = 12;
+if( CurMinute < 10 )
+CurMinute = "0" + CurMinute;
+CurHour = "<FONT SIZE=2><B>" + CurHour + ":" + CurMinute + "</B>";
+if( ampm == 1 )
+CurHour = CurHour + " P.M.";
+else
+CurHour = CurHour + " A.M.";
+Temp = CurHour;
+}
+function pathOnly (InString)  {
+LastSlash=InString.lastIndexOf ('/', InString.length-1)
+OutString=InString.substring  (0, LastSlash+1)
+return (OutString);
+}
+// End -->
+</SCRIPT>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<TABLE BGCOLOR="#ffe9bf" cellpadding=3 border=1>
+<TR><TD align=center>
+<SCRIPT>
+document.write( Temp );
+</SCRIPT>
+</TD></TR>
+</TABLE>
+
+</center>
+</BODY>
+</HTML>

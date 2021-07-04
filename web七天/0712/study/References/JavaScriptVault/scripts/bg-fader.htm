@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Hide from old browsers
+var Color= new Array(9);
+Color[1] = "ff";
+Color[2] = "ee";
+Color[3] = "dd";
+Color[4] = "cc";
+Color[5] = "bb";
+Color[6] = "aa";
+Color[7] = "99";
+Color[8] = "88";
+Color[9] = "77";
+Color[10] = "66";
+Color[11] = "55";
+Color[12] = "44";
+Color[13] = "33";
+Color[14] = "22";
+Color[15] = "11";
+Color[16] = "00";
+/* Do not display text on a fading background. Instead, let it
+fade in and out once or twice, then load a new page.        */
+function fadeIn(where) {
+if (where >= 1) {
+document.bgColor="#" + Color[where] +"0000";
+where -= 1;
+setTimeout("fadeIn("+where+")", 15);
+} else {
+setTimeout('fadeOut(1)', 15);
+   }
+}
+function fadeOut(where) {
+if (where <=16) {
+document.bgColor="#" + Color[where] +"0000";
+where += 1;
+setTimeout("fadeOut("+where+")", 15)
+} else {
+setTimeout("fadeIn(16)", 15);
+// window.location.href="http://www.netscape.com/";
+   }
+}
+// Unhide -->
+</SCRIPT>
+
+</HEAD>
+
+<BODY onLoad="fadeIn(16)">
+<center><BR><BR><BR>
+<SCRIPT LANGUAGE="Javascript">
+<FORM>
+<INPUT TYPE="button" VALUE="  BACK  " onClick="history.go(-1)">
+<INPUT TYPE="button" VALUE="FORWARD" onCLick="history.go(1)">
+</FORM>
+</SCRIPT>
+
+</center>
+</BODY>
+</HTML>

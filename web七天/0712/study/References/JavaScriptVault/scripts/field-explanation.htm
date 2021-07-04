@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+
+<!-- Begin
+function explain(name, output, msg) {
+newwin = window.open('','','top=150,left=150,width=325,height=300');
+if (!newwin.opener) newwin.opener = self;
+with (newwin.document)
+{
+open();
+write('<html>');
+write('<body onLoad="document.form.box.focus()"><form name=form>' + msg + '<br>');
+write('<p>You may enter your ' + name + ' here and it will be copied into the form for you.');
+write('<p><center>' + name + ':  <input type=text name=box size=10 onKeyUp=' + output + '=this.value>');
+write('<p><input type=button value="Click to close when finished" onClick=window.close()>');
+write('</center></form></body></html>');
+close();
+   }
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<form name=form method=post action="/cgi-bin/your-script.cgi">
+
+User Name:  <input type=text name="username" size=10>  <a href="javascript:explain('User Name', 'opener.document.form.username.value', 'The user name field is where you select a user name that you will use every time you access this site.  Pick something you can easily remember and that will easily identify you.');" onMouseOver="window.status='Click for explanation...';return true;" onMouseOut="window.status='';return true;">Help?</a>
+
+<br>
+Password:  <input type=text name="password" size=10>  <a href="javascript:explain('Password', 'opener.document.form.password.value', 'The password field is where you select a unique password for your account.  This password will be required each time you login to the site.  For security purposes, be sure to pick a password that you can easily remember that contains letters and numbers or symbols but would be hard for others to guess.');" onMouseOver="window.status='Click for explanation...';return true;" onMouseOut="window.status='';return true;">Help?</a>
+
+</form>
+
+</center>
+</BODY>
+</HTML>

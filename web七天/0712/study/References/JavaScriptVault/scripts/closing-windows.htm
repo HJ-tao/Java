@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<!-- Original:  David Sosnowski (support@codebelly.com) -->
+<!-- Web Site:  http://www.codebelly.com -->
+
+<!--
+
+There are six slightly different scripts below. In cases
+where images are used, replace the image name with the
+name of your own image.
+
+Other than that, just insert the code as shown into your
+page <body> wherever you wish the closing link, image,
+or button to appear.
+
+Special Note on Frameset Pages:
+
+Closing windows that are comprised of a frameset requires
+that you ask to close the "topmost" window, *not* the
+page that contains the JavaScript closing code. Thus,
+where window.close() will work fine with a regular page,
+it will often fail (depending on the browser) when
+attempting to close a window comprised of frameset pages.
+In this case, the JavaScript closer must ask for
+top.window.close() instead.
+
+Other Background:
+
+Before you ask... if a window is *not* a popup to begin
+with, window.close() JavaScript calls will normally
+result in a browser message requesting confirmation
+that you wish to close the window.  There is no means
+in most browsers to avoid or circumvent this.
+
+-->
+
+<!--
+1. Closing a Regular Window from a Link Click
+---------------------------------------------
+-->
+
+<a href="javascript:window.close()">Close</a>
+
+<!--
+2. Closing a Regular Window from an Image Click
+-----------------------------------------------
+-->
+
+<a href="javascript:window.close()">
+<img border="0" src="c0.gif">
+</a>
+
+<!--
+3. Closing a Regular Window from a Button Click
+-----------------------------------------------
+-->
+
+<form>
+<input type="button" value="Close" onClick="window.close()">
+</form>
+
+<!--
+4. Closing a Frameset Window from a Link Click
+----------------------------------------------
+-->
+
+<a href="javascript:top.window.close()">Close</a>
+
+
+<!--
+5. Closing a Frameset Window from an Image Click
+------------------------------------------------
+-->
+
+<a href="javascript:top.window.close()">
+<img border="0" src="c0.gif">
+</a>
+
+<!--
+6. Closing a Frameset Window from a Button Click
+------------------------------------------------
+-->
+
+<form>
+<input type="button" value="Close" onClick="top.window.close()">
+</form>
+
+
+</center>
+</BODY>
+</HTML>

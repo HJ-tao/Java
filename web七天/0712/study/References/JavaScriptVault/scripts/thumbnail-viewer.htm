@@ -1,0 +1,51 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Anders Jennerberg (anders@katedral.se)  -->
+
+<!-- Begin
+function ViewImage(ifile,ix,iy,ititle) {
+var win;
+var sWidth;
+var sHeight;
+var NS = (document.layers) ? 1 : 0;
+win = window.open("","imageviewer","width="+ix+",height="+iy+",menubar=no,toolbar=no");
+if (NS) {
+sWidth = win.innerWidth;
+sHeight = win.innerHeight;
+} else {
+sWidth = win.document.body.clientWidth;
+sHeight = win.document.body.clientHeight;
+}
+if(sWidth!=ix || sHeight!=iy) {
+win.close();
+setTimeout("ViewImage('"+ifile+"',"+ix+","+iy+",'"+ititle+"')", 250);
+return;
+}
+win.document.open();
+win.document.write("<html><head><title>"+ititle+"</title>");
+win.document.write("</head><body>");
+win.document.write('<div style="position:absolute;width:'+ix+'px;height:'+iy+'px;left:0px;top:0px">');
+win.document.write("<img src="+ifile+"></div></body></html>");
+win.document.close();
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<a href="javascript:ViewImage('faces.gif',576,303,'An Apartment')"><img src="faces.gif" width=80 height=80 border=1></a>
+<br>
+or
+<br>
+<a href="javascript:ViewImage('faces.gif',576,303,'An Apartment')">View the apartment</a>
+
+
+</center>
+</BODY>
+</HTML>

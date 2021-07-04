@@ -1,0 +1,73 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Tim Wallace -->
+today=new Date();
+jran=today.getTime();
+var number = 7;
+var random_number="";
+var image="";
+var text_color="";
+ia=9301;
+ic=49297;
+im=233280;
+jran = (jran*ia+ic) % im;
+random_number = Math.ceil( (jran/(im*1.0)) *number);
+// Loads the appropriate image and text color based on random number.
+if (random_number==1) {
+text_color="000000";
+image="paper.gif";
+}
+if (random_number==2) {
+text_color="000000";
+image="wood.gif";
+}
+if (random_number==3) {
+text_color="000000";
+image="clouds.gif";
+}
+if (random_number==4) {
+text_color="000000";
+image="faces.gif";
+}
+if (random_number==5) {
+text_color="000000";
+image="marble.gif";
+}
+if (random_number==6) {
+text_color="000000";
+image="question.gif";
+}
+if (random_number==7) {
+text_color="000000";
+image="plain.gif";
+}
+// End -->
+</SCRIPT>
+
+</HEAD>
+
+<BODY >
+<center><BR><BR><BR>
+<SCRIPT LANGUAGE="JavaScript">
+
+<!-- Begin
+document.open();
+document.write("<BODY BACKGROUND='"+image+"' TEXT='"+text_color+"'>");
+document.write("<CENTER>Reload page for another background.</CENTER>");
+// End -->
+</SCRIPT>
+<BODY>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Begin
+document.write("<CENTER>Background Image: <FONT SIZE=-1>("+image+")</FONT></CENTER>");
+// End -->
+</SCRIPT>
+
+</center>
+</BODY>
+</HTML>

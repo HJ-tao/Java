@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="100%"><form name="slideshow"><div align="center"><center><p><b>What's On Update</b><br><textarea rows="5" name="S1"
+      cols="30" wrap="virtual"></textarea><br>
+      <input type="button" value="Take me there!" name="B1" onClick="window.location=messagelinks[curmsg]"></p>
+      </center></div>
+    </form>
+    </td>
+  </tr>
+</table>
+<script>
+
+
+var curmsg=-1
+var messages=new Array()
+messages[0]="Check out CNN, one of the premier news site on the net, covering national international, sports, and wheather news!"
+messages[1]="Visit Wired.com for the latest happenings in the technology sector."
+messages[2]="Go to download.com to download the latest shareware and demo programs!"
+//add more messages as desired
+
+var messagelinks=new Array()
+messagelinks[0]="http://www.cnn.com"
+messagelinks[1]="http://www.wired.com"
+messagelinks[2]="http://www.download.com"
+//add more links as indicated by the number of messages
+
+function slidemessage(){
+if (curmsg<messages.length-1)
+curmsg++
+else
+curmsg=0
+document.slideshow[0].value=messages[curmsg]
+setTimeout("slidemessage()",4500)
+}
+slidemessage()
+</script>
+
+</center>
+</BODY>
+</HTML>

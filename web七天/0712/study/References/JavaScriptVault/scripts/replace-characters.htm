@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+
+<!-- Begin
+function replaceChars(entry) {
+out = "a"; // replace this
+add = "z"; // with this
+temp = "" + entry; // temporary holder
+
+while (temp.indexOf(out)>-1) {
+pos= temp.indexOf(out);
+temp = "" + (temp.substring(0, pos) + add +
+temp.substring((pos + out.length), temp.length));
+}
+document.subform.text.value = temp;
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR>
+In this example, all "a" characters are changed to "z" <BR>
+<form name="subform">
+
+<input type=text name=text size=40 value="abcdabcd"><br>
+<input type=button name=action value="Done!" onClick="replaceChars(document.subform.text.value);">
+
+<!-- Or to make it change when the user clicks the next -->
+<!-- field, use this instead of the previous two lines: -->
+
+<!--  <input type=text name=text size=40 value="abcdabcd" onBlur="replaceChars(this.value);">  -->
+
+</form>
+
+</center>
+</BODY>
+</HTML>

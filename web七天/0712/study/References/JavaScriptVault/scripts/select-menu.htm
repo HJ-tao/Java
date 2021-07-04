@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Dion (dion42@hotmail.com) -->
+<!-- Web Site:  http://www.iinet.net.au/~biab/ -->
+
+<!-- Begin
+function selectScroller(n) {
+optlist = document.scrollform.scroller;
+optlist[optlist.length] = new Option(optlist[0].text, "", false, false);
+optlist[0] = null;
+optlist.selectedIndex = -1;
+n = (n + 1) % optlist.length;
+// change the speed below: 1000 = 1 second.
+setTimeout("selectScroller("+n+")",2000);
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg OnLoad="selectScroller(0);">
+<center><BR><BR><BR>
+<form name="scrollform">
+<select name="scroller" size=8>
+<option>
+<option>
+<option>
+<option>
+<option>
+<option>
+<option>
+<option>
+<option>This select option list will
+<option>scroll text by copying
+<option>the top line to the bottom
+<option>line before deleting the
+<option>top line. This moves the
+<option>options up one line and
+<option>gives the impression of
+<option>scrolling.
+<option>
+<option>You can leave as many
+<option>blank lines as you feel
+<option>necessary to give the
+<option>look of begining and
+<option>ending.
+<option>
+<option>This script was written
+<option>in response to those
+<option>who wanted a news
+<option>scroller to work within
+<option>a table's cell and for
+<option>those who want old
+<option>browsers to also see
+<option>a scoller on the page.
+<option>
+<option>yobo42@hotmail.com
+</select>
+</form>
+
+</center>
+</BODY>
+</HTML>

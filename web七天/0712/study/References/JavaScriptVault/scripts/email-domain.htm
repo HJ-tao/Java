@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+
+<!-- Begin
+function stripEmail(Email){
+var atsign = Email.substring(0,Email.lastIndexOf('@')+1);
+
+var domain = Email.substring(atsign.length,Email.length+1);
+var page = "http://www.networksolutions.com/cgi-bin/whois/whois?STRING=" + domain;
+
+window.location=page;
+}
+// End -->
+</SCRIPT>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<form>
+<table border="0" cellpadding="2" cellspacing="0">
+<tr>
+<td><strong>Email: </strong></td>
+<td><input type=text name=email value="spam@geocities.com"></td>
+</tr>
+<tr>
+<td colspan=2 align=center>
+<input type=button value="WHOIS Query" onClick="stripEmail(email.value)"></td>
+</tr>
+</table>
+
+</form>
+
+
+</center>
+</BODY>
+</HTML>

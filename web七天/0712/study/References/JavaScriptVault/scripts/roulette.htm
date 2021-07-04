@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+
+<!-- Original:  Michael Tartaglia (stonedstan@hotmail.com) -->
+<!-- Web Site:  http://www.geocities.com/SiliconValley/Horizon/5235 -->
+<!-- Begin
+color=new Array("0","8","F");
+speed=250;
+document.bgColor="#E0E0E0";
+bg=new Array("FFFFFF","FFFFFF","FFFFFF");
+function begin() {
+document.form.col1.value=" X "; document.form.col2.value=" X ";
+document.form.col3.value=" X "; i=0; roll(speed);
+}
+function roll(speedB) {
+if (document.form.col1.value==" X ") {
+document.form.c1.value=document.form.b1.value;
+document.form.b1.value=document.form.a1.value;
+document.form.a1.value=
+color[Math.round(Math.random()*10)%3]+
+color[Math.round(Math.random()*10)%3];
+}
+if (document.form.col2.value==" X ") {
+document.form.c2.value=document.form.b2.value;
+document.form.b2.value=document.form.a2.value;
+document.form.a2.value=
+color[Math.round(Math.random()*10)%3]+
+color[Math.round(Math.random()*10)%3];
+}
+if (document.form.col3.value==" X ") {
+document.form.c3.value=document.form.b3.value;
+document.form.b3.value=document.form.a3.value;
+document.form.a3.value=
+color[Math.round(Math.random()*10)%3]+
+color[Math.round(Math.random()*10)%3];
+}
+setTimeout("roll("+speedB+")",speedB);
+}
+function stop(col) {
+if (col==1) {document.form.col1.value="   ";i++;}
+if (col==2) {document.form.col2.value="   ";i++;}
+if (col==3) {document.form.col3.value="   ";i++;}
+if (i==3) {
+bg[0]=document.form.a1.value+
+document.form.a2.value+
+document.form.a3.value;
+bg[1]=document.form.b1.value+
+document.form.b2.value+
+document.form.b3.value;
+bg[2]=document.form.c1.value+
+document.form.c2.value+
+document.form.c3.value;
+speedB=500000;roll(speedB);
+   }
+}
+function view(letter) {
+document.bgColor=bg[letter];
+document.form.color.value="#"+bg[letter];
+}
+// End -->
+</script>
+
+</HEAD>
+
+<BODY bgcolor=#E0E0E0>
+<center><BR><BR><BR>
+<form name="form">
+<table cellpadding=2>
+<tr><td align=center>
+<input type=text name="a1" size=2 onFocus="this.blur()" value=" ">
+<input type=text name="a2" size=2 onFocus="this.blur()" value=" ">
+<input type=text name="a3" size=2 onFocus="this.blur()" value=" ">
+<input type=button onClick="view(0)" value="View"><br>
+<input type=text name="b1" size=2 onFocus="this.blur()" value=" ">
+<input type=text name="b2" size=2 onFocus="this.blur()" value=" ">
+<input type=text name="b3" size=2 onFocus="this.blur()" value=" ">
+<input type=button onClick="view(1)" value="View"><br>
+<input type=text name="c1" size=2 onFocus="this.blur()" value=" ">
+<input type=text name="c2" size=2 onFocus="this.blur()" value=" ">
+<input type=text name="c3" size=2 onFocus="this.blur()" value=" ">
+<input type=button onClick="view(2)" value="View"><br>
+<input type=button onClick="stop(1)" value=" X " name="col1">
+<input type=button onClick="stop(2)" value=" X " name="col2">
+<input type=button onClick="stop(3)" value=" X " name="col3">
+         </td>
+<td valign=middle align=center>
+<input type=button onClick="begin()" value="Spin!"><p>
+<table bgcolor=FFFFFF border=1 cellspacing=0>
+<tr><td align=center valign=middle>"X" stops each wheel.<p>
+BG Color = <input type=text size=7 value="#FFFFFF" name=color>
+</td></tr>
+</table>
+</td></tr>
+</table>
+</form>
+
+</center>
+</BODY>
+</HTML>

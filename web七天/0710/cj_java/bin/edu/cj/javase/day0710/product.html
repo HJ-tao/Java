@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>product.html</title>
+    <script>
+       function del(){
+         var flag = false; //假定未找到对应的数字
+		
+		var nums = document.getElementsByName("pro");
+		alert(nums.length);
+		
+		for (var i = 0; i < nums.length; i++) {
+			if (nums[i].checked) {
+				
+				flag = true;
+				break;
+			} 
+		}
+		if (flag) {
+			alert("您可以放心删除了哦!");
+		} else {
+			alert("对不起!请选择要删除的水果!");
+		}
+       }
+    
+    </script>
+  </head>
+  
+  <body>
+ <a href="javascript: del()">删除</a><br/>
+    <form>
+        <input type="checkbox" name="pro" value="西瓜">西瓜<br/>
+        <input type="checkbox" name="pro" value="香蕉">香蕉<br/>
+        <input type="checkbox" name="pro" value="苹果">苹果<br/>
+        <input type="checkbox" name="pro" value="葡萄">葡萄<br/>
+    </form>
+  </body>
+</html>

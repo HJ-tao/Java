@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<LINK href="general.css" rel="stylesheet" type="text/css">
+
+<SCRIPT LANGUAGE="JavaScript">
+
+<!-- Original:  Randy Bennett (rbennett@thezone.net) -->
+<!-- Web Site:  http://home.thezone.net/~rbennett/utility/javahead.htm -->
+<!-- Begin
+function buildMenu() {
+speed=35;
+topdistance=100;
+items=6;
+y=-50;
+ob=1;
+if (navigator.appName == "Netscape") {
+v=".top=",dS="document.",sD="";
+}
+else {
+v=".pixelTop=",dS="",sD=".style";
+   }
+}
+function scrollItems() {
+if (ob<items+1) {
+objectX="object"+ob; y+=10; eval(dS + objectX + sD + v + y);
+if (y<topdistance) setTimeout("scrollItems()",speed);
+else y=-50, topdistance+=40, ob+=1, setTimeout("scrollItems()",speed);
+   }
+}
+// End -->
+</SCRIPT>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg onLoad="buildMenu(), scrollItems();">
+<center><BR>
+<div id="object1" style="position:absolute; visibility:show; left:25px; top:-50px; z-index:2">
+<table border=1 width=150 bgcolor=80FFFF>
+<td><center>
+<a href=http://yoursite.com/page1.html>Link 1!</a>
+</center></td>
+</table>
+</div>
+
+<div id="object2" style="position:absolute; visibility:show; left:25px; top:-50px; z-index:2">
+<table border=1 width=150 bgcolor=80FFFF>
+<td><center>
+<a href=http://yoursite.com/page2.html>Link 2!</a>
+</center></td>
+</table>
+</div>
+
+<div id="object3" style="position:absolute; visibility:show; left:25px; top:-50px; z-index:2">
+<table border=1 width=150 bgcolor=80FFFF>
+<td><center>
+<a href=http://yoursite.com/page3.html>Link 3!</a>
+</center></td>
+</table>
+</div>
+
+
+<div id="object4" style="position:absolute; visibility:show; left:25px; top:-50px; z-index:2">
+<table border=1 width=150 bgcolor=80FFFF>
+<td><center>
+<a href=http://yoursite.com/page4.html>Link 4!</a>
+</center></td>
+</table>
+</div>
+
+
+<div id="object5" style="position:absolute; visibility:show; left:25px; top:-50px; z-index:2">
+<table border=1 width=150 bgcolor=80FFFF>
+<td><center>
+<a href=http://yoursite.com/page5.html>Link 5!</a>
+</center></td>
+</table>
+</div>
+
+
+<div id="object6" style="position:absolute; visibility:show; left:25px; top:-50px; z-index:2">
+<table border=1 width=150 bgcolor=80FFFF>
+<td><center>
+<a href=http://yoursite.com/page6.html>Link 6!</a>
+</center></td>
+</table>
+</div>
+
+</center>
+</BODY>
+</HTML>

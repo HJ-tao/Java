@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<LINK href="general.css" rel="stylesheet" type="text/css">
+
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Randy Bennett (rbennett@thezone.net) -->
+<!-- Web Site:  http://home.thezone.net/~rbennett/utility/javahead.htm -->
+<!-- Begin
+function doit() {
+right_box1();
+}
+function hideit() {
+document.box1.visibility="hide"
+document.box2.visibility="hide"
+document.box3.visibility="hide"
+document.box4.visibility="hide"
+document.box5.visibility="hide"
+document.box6.visibility="hide"
+document.box7.visibility="hide"
+document.box8.visibility="hide"
+}
+function showit() {
+document.box1.visibility="show"
+document.box2.visibility="show"
+document.box3.visibility="show"
+document.box4.visibility="show"
+document.box5.visibility="show"
+document.box6.visibility="show"
+document.box7.visibility="show"
+document.box8.visibility="show"
+}
+function right_box1() {
+move1();
+if (document.box1.left<150) setTimeout("right_box1()",10);
+if (document.box1.left>=150) setTimeout("down_box1()",5);
+}
+function down_box1() {
+move2();
+if (document.box1.top<230) setTimeout("down_box1()",5);
+if (document.box1.top>=230) setTimeout("left_box1()",10);
+}
+function left_box1() {
+move3();
+if (document.box1.left>150) setTimeout("left_box1()",10);
+if (document.box1.left<=150) setTimeout("up_box1()",5);
+}
+function up_box1() {
+move4();
+if (document.box1.top>120) setTimeout("up_box1()",5);
+if (document.box1.top<=120) setTimeout("right_box1()",10);
+}
+function move1() {
+document.box1.offset(10,2)
+document.box2.offset(5,1)
+document.box3.offset(-10,2)
+document.box4.offset(-5,1)
+document.box5.offset(10,-2)
+document.box6.offset(5,-1)
+document.box7.offset(-10,-2)
+document.box8.offset(-5,-1)
+}
+function move2() {
+document.box1.offset(6,6)
+document.box2.offset(6,7)
+document.box3.offset(-6,6)
+document.box4.offset(-6,7)
+document.box5.offset(6,-6)
+document.box6.offset(6,-7)
+document.box7.offset(-6,-6)
+document.box8.offset(-6,-7)
+}
+function move3() {
+document.box1.offset(-10,-2)
+document.box2.offset(-5,-1)
+document.box3.offset(10,-2)
+document.box4.offset(5,-1)
+document.box5.offset(-10,2)
+document.box6.offset(-5,1)
+document.box7.offset(10,2)
+document.box8.offset(5,1)
+}
+function move4() {
+document.box1.offset(-6,-6)
+document.box2.offset(-6,-7)
+document.box3.offset(6,-6)
+document.box4.offset(6,-7)
+document.box5.offset(-6,6)
+document.box6.offset(-6,7)
+document.box7.offset(6,6)
+document.box8.offset(6,7)
+}
+// End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg onLoad="doit()">
+<center><BR>
+<div id="box1" style="position:absolute; align:center; align:center; visibility:show; left:5px; top:250px; z-index:1">
+o </div>
+<div id="box2" style="position:absolute; align:center; visibility:show; left:5px; top:250px; z-index:1">
+o </div>
+<div id="box3" style="position:absolute; align:center; visibility:show; left:5px; top:250px; z-index:1">
+o </div>
+<div id="box4" style="position:absolute; align:center; visibility:show; left:5px; top:250px; z-index:1">
+o </div>
+<div id="box5" style="position:absolute; align:center; visibility:show; left:5px; top:250px; z-index:1">
+o </div>
+<div id="box6" style="position:absolute; align:center; visibility:show; left:5px; top:250px; z-index:1">
+o </div>
+<div id="box7" style="position:absolute; align:center; visibility:show; left:5px; top:250px; z-index:1">
+o </div>
+<div id="box8" style="position:absolute; align:center; visibility:show; left:5px; top:250px; z-index:1">
+o </div>
+<div id="hideall" style="position:absolute; align:center; visibility:show; left:10px; top:10px; z-index:1">
+<table cellpadding=1 border=1><td><a href="javascript:hideit()">
+<font color=#0000FF>hide all</font></td></a></table>
+</div>
+<div id="showall" style="position:absolute; align:center; visibility:show; left:10px; top:200px; z-index:1">
+<table cellpadding=1 border=1><td><a href="javascript:showit()"><font color=#0000FF>show all</font></a></td></table>
+</div>
+
+
+</center>
+</BODY>
+</HTML>

@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<style>
+BODY
+{
+}
+.clsMenu
+{
+LEFT: 200px;
+POSITION: absolute;
+TOP: 300px;
+Z-INDEX: 9
+}
+.clsBlue
+{
+LEFT: 200px;
+POSITION: absolute;
+TOP: 300px;
+Z-INDEX: 8
+}
+.clsLink1
+{
+LEFT: 200px;
+POSITION: absolute;
+TOP: 300px;
+Z-INDEX: 10
+}
+.clsLink2
+{
+LEFT: 272px;
+POSITION: absolute;
+TOP: 300px;
+Z-INDEX: 10
+}
+.clsLink3
+{
+LEFT: 346px;
+POSITION: absolute;
+TOP: 300px;
+Z-INDEX: 10
+}
+</style>
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Daniel Dhillon (daniel@dhillon.com) -->
+<!-- Web Site:  http://www.daniel.dhillon.com -->
+
+<!-- Begin
+ie4 = ((navigator.appName == "Microsoft Internet Explorer") && (parseInt(navigator.appVersion) >= 4 ))
+ns4 = ((navigator.appName == "Netscape") && (parseInt(navigator.appVersion) >= 4 ))
+
+var FStart = "";
+var BStart = "";
+
+if (ns4) {
+layerRef="document.layers";
+styleRef="";
+} else {
+layerRef="document.all";
+styleRef=".style";
+}
+
+function movFwd(which, xstart, xfinish, ystart, yfinish, step, speed) {
+BStart = "";
+if (FStart == "") {
+FStart = xstart;
+}
+if (ie4 || ns4) {
+if (xstart < xfinish) {
+eval(layerRef + '["' + which +'"]' + styleRef + '.top = ystart');
+eval(layerRef + '["' + which +'"]' + styleRef + '.left = xstart');
+xstart = xstart + step;
+setTimeout("movFwd('" + which + "', " + xstart + ", " + xfinish + ", " + ystart + ", " + yfinish + ", " + step + ", " + speed + ")", speed);
+} else {
+setTimeout("movBwd('" + which + "', " + xfinish + ", " + FStart+", " + ystart + ", " + yfinish + ", " + step + ", " + speed + ")", speed);
+      }
+   }
+}
+
+function movBwd(which, xstart, xfinish, ystart, yfinish, step, speed) {
+FStart = "";
+if (BStart == "") {
+BStart = xstart;
+}
+if (ie4 || ns4) {
+if (xstart > xfinish) {
+eval(layerRef + '["' + which +'"]' + styleRef + '.top = ystart');
+eval(layerRef + '["' + which +'"]' + styleRef + '.left = xstart');
+xstart = xstart - step;
+setTimeout("movBwd('" + which + "', " + xstart + ", " + xfinish + ", " + ystart + ", " + yfinish + ", " + step + ", " + speed + ")", speed);
+} else {
+setTimeout("movFwd('" + which + "', " + xfinish + ", " + BStart + ", " + ystart + ", " + yfinish + ", " + step + ", " + speed + ")", speed);
+      }
+   }
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg onLoad="movFwd('bl_grad',200,346,300,300,2,15)">
+<center><BR><BR><BR>
+<img src="menu.gif" border=0 class="clsMenu">
+<img src="bl_grad.jpg" border=0 class="clsBlue" id="bl_grad">
+<a href="JavaScript:void(0)"><img src="blank.gif" height="16" width="55" border=0 class="clsLink1" alt=home></a>
+<a href="JavaScript:void(0)"><img src="blank.gif" height="16" width="55" border=0 class="clsLink2" alt="Links"></a>
+<a href="JavaScript:void(0)"><img src="blank.gif" height="16" width="54" border=0 class="clsLink3" alt="Contact"></a>
+
+</center>
+</BODY>
+</HTML>

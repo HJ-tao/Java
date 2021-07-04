@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+
+<!-- Begin
+function capsLc(){
+if (navigator.appVersion.substring(0,1)=="2"){
+navOld();
+}
+else navNew();
+}
+function navOld(){
+txt=document.isn.caps.value+" ";
+txt=txt.toLowerCase();
+txtl="";
+while ((txt.length>0)&&(txt.indexOf(" ")>-1)){
+pos=txt.indexOf(" ");
+wrd=txt.substring(0,pos);
+cmp=" "+wrd+" ";
+if (tst.indexOf(cmp)<0){
+ltr=wrd.substring(0,1);
+ltr=ltr.toUpperCase();
+wrd=ltr+wrd.substring(1,wrd.length);
+}
+txtl+=wrd+" ";
+txt=txt.substring((pos+1),txt.length);
+}
+ltr=txtl.substring(0,1);
+ltr=ltr.toUpperCase();
+txtl=ltr+txtl.substring(1,txtl.length-1);
+document.isn.caps.value=txtl;
+}
+function navNew(){
+txt=document.isn.caps.value+" ";
+txt=txt.toLowerCase();
+txtl="";
+punc=",.?!:;)'";
+punc+='"';
+ while ((txt.length>0)&&(txt.indexOf(" ")>-1)){
+pos=txt.indexOf(" ");
+wrd=txt.substring(0,pos);
+wrdpre="";
+if (punc.indexOf(wrd.substring(0,1))>-1){
+wrdpre=wrd.substring(0,1);
+wrd=wrd.substring(1,wrd.length);
+}
+cmp=" "+wrd+" ";
+for (var i=0;i<9;i++){
+p=wrd.indexOf(punc.substring(i,i+1));
+if (p==wrd.length-1){
+cmp=" "+wrd.substring(0,wrd.length-1)+" ";
+i=9;
+   }
+}
+if (cmp.indexOf(cmp)<0){
+ltr=wrd.substring(0,1);
+ltr=ltr.toUpperCase();
+wrd=ltr+wrd.substring(1,wrd.length);
+}
+txtl+=wrdpre+wrd+" ";
+txt=txt.substring((pos+1),txt.length);
+}
+ltr=txtl.substring(0,1);
+ltr=ltr.toUpperCase();
+txtl=ltr+txtl.substring(1,txtl.length-1);
+document.isn.caps.value=txtl;
+}
+// End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<FORM NAME="isn">
+<CENTER>
+<INPUT TYPE="text" NAME="caps" SIZE=40 VALUE="">
+<INPUT TYPE="button" NAME="html1" VALUE=" Submit " onClick="capsLc()">
+</FORM>
+
+</center>
+</BODY>
+</HTML>

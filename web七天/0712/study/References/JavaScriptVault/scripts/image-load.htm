@@ -1,0 +1,31 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+
+<!-- Begin
+function imageError(theImage) {
+msg = 'Error: The ' + theImage.name + ' image did not load properly.\n\n' +
+'The image failed to load from URL:\n' + theImage.src + '\n\nPlease hit ' +
+'click reload in your browser to try again.';
+alert(msg);
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR>
+Please note that in the script example we intentionally included a 'broken image' that fails to load properly to display the script in use.
+
+
+ <BR><BR>
+<img name="logo" src="missing-logo.jpg" border=2 onError="imageError(this)" onAbort="imageError(this)"><br>
+(We caused this image not to load on purpose!)
+
+</center>
+</BODY>
+</HTML>

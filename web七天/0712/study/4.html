@@ -1,0 +1,95 @@
+<html>
+   <head>
+   <title>
+     form表单的使用
+   </title>
+   </head>
+   <body>
+      <!-- 
+	     form表单的使用
+		 表单可以实现用户与程序之间的数据交互
+          通过form表单中的元素来设计出用于程序和用户之间进行交流的中间媒介的界面
+
+		  form表单的
+		  语法:
+		  <form name="" action="" method="" >
+              //对应的各种表单元素的使用。。。。
+		  </form>
+		 form表单的要素:
+		    name:即表单的对象名
+			action:指的是表单中对应的数据交由哪个程序去处理,习惯性称之为对应的动作
+			method:指表单提交数据时对应的提交方法 有两种方式
+			  1.Get方式提交——————默认的提交方式。get方式提交数据不安全,对应的数据在地址栏上可见
+			  且提交数据的长度一般不超过1kb
+			  2.Post方式提交——————在地址栏是不可见的，所以比较安全，提交数据的长度不受限制,如果是做文件上传首先要将对应的提交方法设置为post
+           文件上传对应的属性enctype="multipart/form-data"
+
+          
+		  form表单的常用元素有12种
+		  其中语法为 <INPUT TYPE="?" >这种的有10种.对应的问号所代表的元素分别如下：
+		   1.text——————文本框 默认就是文本框
+           2.password————密码框
+		   3.radio————单选按钮  注意!如果不要实现单选那么它们的名字要相同,如果要默认选中一项
+		   用到checked = "checked"即可
+		   4.checkbox___复选框（多选）它们的名字要相同,如果要默认选中一项
+		   用到checked = "checked"即可
+           5.button_____普通按钮,注意普通按钮不能提交数据,需要通过onclick事件去调用js函数实现相应的功能
+	       6.submit______提交按钮,可以将对应的表单数据交由form对应的action去处理
+		   7.reset_______重置按钮  用于还原form对应的数据原始状态，即清空重置
+		   8.file______文件域 用于文件上传
+		   9.hidden______ 隐藏域  用于将一些不想在页面上显示的数据进行隐藏,对应的数据是在页面中存在的
+		   只是看不到，起到保护数据安全的作用
+		   10.image _____图像域  是可以用图片代替提交按钮submit完成数据提交 通过src属性指定图片
+
+		   剩下的2种是独立的标签
+		   分别是多行文本框(文本域textarea)和下拉列表框(select)
+		   语法:
+		      <textarea>
+
+			  </textarea>
+
+
+			  <select>
+                  <option></option>
+				  .....
+			  </select>
+	  -->
+	  <h1>GET提交数据</h1>
+	  <FORM ACTION="http://www.baidu1.com" >
+		  UserName:<INPUT TYPE="text" NAME="uName"><BR>
+		  UserPass:<INPUT TYPE="password" NAME="uPass"><BR>
+		  <INPUT TYPE="submit" value="Login">
+		  <input type="image" src="images/1.jpg" width="80px" height="40px">
+		  <INPUT TYPE="reset" value="reset"><BR>
+	  </FORM>
+<hr/>
+	    <h1>post提交数据</h1>
+	  <FORM ACTION="http://www.baidu1.com" method="post" >
+		  UserName:<INPUT TYPE="text" NAME="uName"><BR>
+		  UserPass:<INPUT TYPE="password" NAME="uPass"><BR>
+		  <INPUT TYPE="submit" value="Login">
+		  <INPUT TYPE="reset" value="reset"><BR>
+	  </FORM>
+
+	  haha：<input><BR>
+	  <INPUT TYPE="radio" name="sex" checked = "checked" > 男 <INPUT TYPE="radio" name="sex"> 女 <BR>
+	   <INPUT TYPE="checkbox" name="hobby" checked = "checked" > 烹饪 <INPUT TYPE="checkbox" name="hobby"> 阅读 <BR>
+	    <INPUT TYPE="checkbox" name="hobby" checked = "checked" > 唱歌 <INPUT TYPE="checkbox" name="hobby"> 书法 <BR>
+
+		<INPUT TYPE="file"><BR>
+		<INPUT TYPE="hidden" value="100000000000"><BR>
+		<input type="image" src="images/1.jpg" width="80px" height="40px"><BR>
+
+		 <textarea rows="10" cols="50">
+
+			  </textarea>
+
+
+			  <select>
+                  <option>武汉</option>
+				  <option>荆州</option>
+				  <option>仙桃</option>
+				  <option>孝感</option>
+			  </select>
+   </body>
+</html>

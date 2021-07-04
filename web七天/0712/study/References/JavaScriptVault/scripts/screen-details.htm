@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<LINK href="general.css" rel="stylesheet" type="text/css">
+
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Begin
+var screen_width = null;
+var screen_height = null;
+var resolution = null;
+if (navigator.javaEnabled()) {
+var toolkit = java.awt.Toolkit.getDefaultToolkit();
+var screen_size = toolkit.getScreenSize();
+screen_width = screen_size.width;
+screen_height = screen_size.height;
+resolution = toolkit.getScreenResolution();
+}
+// End -->
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Begin
+if ((screen_width != null)
+&& (screen_height != null)
+&& (resolution != null)) {
+document.write('<center><h1>Monitor Details:</h1><br><hr><br>');
+document.write('Screen Width:  '+screen_width+'<BR>');
+document.write('Screen Height:  '+screen_height+'<BR>');
+document.write('Screen Resolution: '+resolution+'<BR>');
+document.write('</center>');
+}
+else {
+document.write('<center><P>');
+document.write('I am sorry but we could not determine<P>');
+document.write('the details of this screen.  You might<P>');
+document.write('not have Java enabled in this browser.<P>');
+document.write('</center>');
+}
+// End -->
+</SCRIPT>
+
+</center>
+</BODY>
+</HTML>

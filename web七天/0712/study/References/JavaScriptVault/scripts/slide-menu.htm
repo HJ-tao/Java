@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<LINK href="general.css" rel="stylesheet" type="text/css">
+
+<STYLE>
+#menuOut, #menuIn
+{
+position:absolute;
+left:-155px;
+width:160px;
+top:170px;
+border:1.5px solid green;
+background-color:yellow;
+layer-background-color:yellow;
+font:bold 12px Verdana;
+line-height:20px;
+}
+</STYLE>
+
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR>
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  qv247@hotmail.com -->
+<!-- Web Site:  http://majestix.cjb.com -->
+<!-- Begin
+if (document.all)
+document.write('<div id="menuIn" style="left:-150" onMouseover="pull()" onMouseout="draw()">')
+//  End -->
+</script>
+<layer id="menuOut" onMouseover="pull()" onMouseout="draw()">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Begin
+var siteName = new Array();
+var siteLink = new Array();
+siteName[0] = "New JavaScripts";
+siteName[1] = "Item 2";
+siteName[2] = "Item 3";
+siteName[3] = "Item 4";
+siteName[4] = "Item 5";
+siteName[5] = "Item 6";
+siteLink[0] = "http://myplace.50g.com";
+siteLink[1] = "link2";
+siteLink[2] = "link3";
+siteLink[3] = "link4";
+siteLink[4] = "link5";
+siteLink[5] = "link6";
+for (i = 0; i <= siteName.length - 1; i++)
+document.write('<a href=' + siteLink[i] + '>' + siteName[i] + '</a><br>');
+//  End -->
+</script>
+</layer>
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Begin
+function regenerate() {
+window.location.reload();
+}
+function regenerate2() {
+if (document.layers)
+setTimeout("window.onresize=regenerate", 400);
+}
+window.onload = regenerate2;
+if (document.all) {
+document.write('</div>');
+slideMenu = document.all.menuIn.style;
+boundryR = 0;
+boundryL = -150;
+}
+else {
+slideMenu = document.layers.menuOut;
+boundryR = 150;
+boundryL = 10;
+}
+function pull() {
+if (window.drawMenu)
+clearInterval(drawMenu);
+pullMenu = setInterval("pullEngine()", 50);
+}
+function draw() {
+clearInterval(pullMenu);
+drawMenu = setInterval("drawEngine()", 50);
+}
+function pullEngine() {
+if (document.all && slideMenu.pixelLeft < boundryR)
+slideMenu.pixelLeft += 5;
+else if(document.layers && slideMenu.left < boundryR)
+slideMenu.left += 5;
+else if (window.pullMenu)
+clearInterval(pullMenu);
+}
+function drawEngine() {
+if (document.all && slideMenu.pixelLeft > boundryL)
+slideMenu.pixelLeft -= 5;
+else if(document.layers && slideMenu.left > boundryL)
+slideMenu.left -= 5;
+else if (window.drawMenu)
+clearInterval(drawMenu);
+}
+//  End -->
+</script>
+
+Try the menu out for yourself!  Move your mouse over the yellow border to the left.
+
+</center>
+</BODY>
+</HTML>

@@ -1,0 +1,69 @@
+面向对象的概念
+
+关 键 字： abstract continue for new switch boolean default goto null 
+synchronized break do if package this byte double implements private 
+threadsafe byvalue else import protected throw case extends instanceof 
+public transient catch false int return true char final interface short 
+try class finally long static void const float native super while 
+其 它 保 留 词： 以 下 单 词 被 保 留 使 用： cast future generic inner operator outer rest var 
+
+这一章可以从抽象概念讲起--直到java中如何实现这些抽象的概念
+
+什么叫做面向对象编程(Object-Oriented-Programming),简称OOP，描述的是对象之间的相互作用。
+面向对象编程与面向过程编程的区别：
+过程化程序设计先确定算法，再确定数据结构；面向对象编程先确定数据结构，再确定运算。
+
+我们不关心细节内容，只想把别人的功能模块拿来主义
+
+世界万物皆对象 
+   狼孩  猪孩  
+类的概念--物以类聚，人以群分
+
+对象的概念---类群中具体的一个实体
+
+对象中存在--特性与功能(属性与方法)
+
+消息的传递----C语言中函数的相互调用
+老师讲课过程中点名同学起来回答问题---消息的传递
+面向对象中一切皆对象---消息的传递依靠对象之间的方法互相调用
+
+类的特点
+类是java的基本结构，它由两部分组成：成员变量和操纵变量或者完成某种动作的成员方法。每个类代表一种可以被其他类使用的基本类型。类的定义如下：
+[public] class ClassName [extends ClassName][implements InterfaceList]{
+/* 成员变量*/
+/*成员方法列表*/
+}
+
+编程技巧：
+设计一个类最难的部分是怎样去实现它。“有什么”和“做什么”这两个问题能帮助我们解决怎样确定成员的变量和成员方法问题。
+1。如果一个类“有什么”属性，那么这个类就需要一个成员变量去存储相应的信息，变量名代表将要存储的属性。
+2。如果一个类“做什么”动作，那么这个类就需要成员方法去实现这个动作，方法名代表要完成的动作。
+
+
+
+
+
+
+类的构造方法
+1。构造方法的名字和类名相同，并且没有返回值。
+2。构造方法主要用于为类的对象定义初始化状态。
+3。不能直接调用构造方法，必须通过new关键字来自动调用，从而创建类的实例。
+4。Java的类都要求有构造方法，如果没有定义构造方法，Java编译器会为我们提供一个缺省的构造方法，也就是不带参数的构造方法。
+
+new关键字的作用
+1。为对象分配内存空间。
+2。引起对象构造方法的调用。
+3。为对象返回一个引用。
+
+特殊变量this
+
+this变量代表对象本身，当类中有两个同名变量，一个属于类（类的成员变量）而另一个属于某个特定的方法（方法中的局部变量），使用this区分成员变量和局部变量，使用this简化构造函数的调用。
+
+
+
+
+
+
+
+包的概念---防止名字冲突
+

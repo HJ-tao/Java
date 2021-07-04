@@ -1,0 +1,39 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<LINK href="general.css" rel="stylesheet" type="text/css">
+
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Danny Mc Neill (danny@mc-neill.co.uk) -->
+<!-- Web Site:  http://www.mc-neill.co.uk -->
+<!-- Begin
+var description = new Array();
+description[0] = "Text shown when visitors mouse over the first link.";
+description[1] = "You can even embed <b>HTML</b> into the link description.";
+description[2] = "<i>Text shown when visitors mouse over the third link.</i>";
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<table border="0">
+<tr>
+<td valign=top width="160">
+<ul>
+<li><a onMouseOver="Words.innerHTML = description[0];" href="link1.htm">First Link</a>
+<li><a onMouseOver="Words.innerHTML = description[1];" href="link2.htm">Second Link</a>
+<li><a onMouseOver="Words.innerHTML = description[2];" href="link3.htm">Third Link</a>
+</ul>
+</td>
+<td width="600">
+<!-- Cell with the descriptions -->
+<a id="Words">This will be the info that visiters will see first it is changed when they mouseover the links. It returns when the page is reloaded.</a>
+</td>
+</tr>
+</table>
+
+</center>
+</BODY>
+</HTML>

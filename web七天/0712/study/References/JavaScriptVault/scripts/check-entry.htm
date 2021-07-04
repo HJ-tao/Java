@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+
+<!-- Begin
+function validate(){
+var invalid = " "; // Invalid character is a space
+
+if (document.submitform.filename.value.indexOf(invalid) > -1) {
+alert("Sorry, spaces are not allowed.");
+return false;
+}
+else {
+return true;
+   }
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+Try to select a file with a space in it's name or in it's path! <br><br>
+<form name=submitform onSubmit="return validate()">
+<input type=file name=filename>
+<p>
+<input type=submit value="Submit">
+</form>
+
+</center>
+</BODY>
+</HTML>

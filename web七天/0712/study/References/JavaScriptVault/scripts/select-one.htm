@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Mike Best (mike.best@hei-usa.com) -->
+<!-- Web Site:  http://www.hei-usa.com -->
+
+<!-- Begin
+function checkBoxValidate(cb) {
+for (j = 0; j < 8; j++) {
+if (eval("document.myform.ckbox[" + j + "].checked") == true) {
+document.myform.ckbox[j].checked = false;
+if (j == cb) {
+document.myform.ckbox[j].checked = true;
+         }
+      }
+   }
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<form name=myform>
+Selection 1<input type="checkbox" name="ckbox" onClick="javascript:checkBoxValidate(0)"><br>
+Selection 2<input type="checkbox" name="ckbox" onClick="javascript:checkBoxValidate(1)"><br>
+Selection 3<input type="checkbox" name="ckbox" onClick="javascript:checkBoxValidate(2)"><br>
+Selection 4<input type="checkbox" name="ckbox" onClick="javascript:checkBoxValidate(3)"><br>
+Selection 5<input type="checkbox" name="ckbox" onClick="javascript:checkBoxValidate(4)"><br>
+Selection 6<input type="checkbox" name="ckbox" onClick="javascript:checkBoxValidate(5)"><br>
+Selection 7<input type="checkbox" name="ckbox" onClick="javascript:checkBoxValidate(6)"><br>
+Selection 8<input type="checkbox" name="ckbox" onClick="javascript:checkBoxValidate(7)"><br>
+</form>
+
+</center>
+</BODY>
+</HTML>

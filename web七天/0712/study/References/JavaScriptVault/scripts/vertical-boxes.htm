@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Michael Tartaglia (stonedstan@hotmail.com) -->
+<!-- Web Site:  http://www.geocities.com/SiliconValley/Horizon/5235 -->
+
+<!-- Begin
+msg ="Hello, Look at my vertical scroller!";
+align="center";
+speed=250;
+up=true;
+spas=" ";
+for (a=0;a<=12;a++) {spas+=" "}
+msg=spas+msg+spas;
+j=eval(-1);
+stop=msg.length;
+document.write("<form name='form'><table border=0 cellspacing=0 "
++"cellpadding=0 align="+align+">");
+for (i=1;i<=13;i++) {
+document.write("<tr><td><input type=text name=\"box"+i+"\" size=1>");
+document.write("</td></tr>");
+}
+document.write("</table></form>");
+function scrollIt() {
+j++;
+with (document.form) {
+if ((j+12) <= stop) {
+box1.value = msg.charAt(j);
+box2.value = msg.charAt(j+1);
+box3.value = msg.charAt(j+2);
+box4.value = msg.charAt(j+3);
+box5.value = msg.charAt(j+4);
+box6.value = msg.charAt(j+5);
+box7.value = msg.charAt(j+6);
+box8.value = msg.charAt(j+7);
+box9.value = msg.charAt(j+8);
+box10.value = msg.charAt(j+9);
+box11.value = msg.charAt(j+10);
+box12.value = msg.charAt(j+11);
+box13.value = msg.charAt(j+12);
+} else {
+j=0;
+   }
+}
+setTimeout("scrollIt()",speed);
+}
+scrollIt();
+// End -->
+</SCRIPT>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+
+</center>
+</BODY>
+</HTML>

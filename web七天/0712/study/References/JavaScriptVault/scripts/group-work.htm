@@ -1,0 +1,31 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  mistermidget@hotmail.com -->  
+<!-- Begin
+function groupWork() {
+person1 = parseInt(document.workform.person1.value);
+person2 = parseInt(document.workform.person2.value);
+worktime = (person1*person2)/(person1+person2);
+document.workform.time.value = worktime;
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<form name=workform>
+Person one can do the job in <input type=text name=person1 size=5> hours.<br>
+Person two can do the same job in <input type=text name=person2 size=5> hours.<br>
+Together, they can do the job in <input type=text name=time size=10> hours.<br><br>
+<input type=button value="Solve!" name=solve onClick="groupWork()"><br>
+</form>
+
+</center>
+</BODY>
+</HTML>

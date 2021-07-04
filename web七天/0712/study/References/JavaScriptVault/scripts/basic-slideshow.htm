@@ -1,0 +1,63 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<LINK href="general.css" rel="stylesheet" type="text/css">
+
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Mike Canonigo (mike@canonigo.com) -->
+<!-- Web Site:  http://www.munkeehead.com -->
+<!-- Begin
+NewImg = new Array (
+"gecko.jpg",
+"lizard.jpg",
+"toad.jpg"
+);
+var ImgNum = 0;
+var ImgLength = NewImg.length - 1;
+
+//Time delay between Slides in milliseconds
+var delay = 3000;
+
+var lock = false;
+var run;
+function chgImg(direction) {
+if (document.images) {
+ImgNum = ImgNum + direction;
+if (ImgNum > ImgLength) {
+ImgNum = 0;
+}
+if (ImgNum < 0) {
+ImgNum = ImgLength;
+}
+document.slideshow.src = NewImg[ImgNum];
+   }
+}
+function auto() {
+if (lock == true) {
+lock = false;
+window.clearInterval(run);
+}
+else if (lock == false) {
+lock = true;
+run = setInterval("chgImg(1)", delay);
+   }
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR>
+<img src="toad.jpg" name="slideshow">
+<table>
+<tr>
+<td align="right"><a href="javascript:chgImg(-1)">Previous</a></td>
+<td align="center"><a href="javascript:auto()">Auto/Stop</a></td>
+<td align="left"><a href="javascript:chgImg(1)">Next</a></td>
+</tr>
+</table>
+
+</center>
+</BODY>
+</HTML>

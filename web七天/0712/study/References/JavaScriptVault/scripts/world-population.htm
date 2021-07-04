@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Ronnie Moore -->
+
+<!-- Begin
+var worldpop = 6080141683;
+// US Census estimate on 7/1/00
+m = 7
+d = 1
+yr = 2000
+
+var montharray=new Array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec");
+var today=new Date();
+var todayy=today.getYear();
+
+// Y2K Fix by Isaac Powell
+// http://onyx.idbsu.edu/~ipowell
+
+if ((navigator.appName == "Microsoft Internet Explorer") && (todayy < 2000))
+todayy="19" + todayy;
+if (navigator.appName == "Netscape")
+todayy = 1900 + todayy;
+function outputComma(number) { // (c) irt.org
+number = '' + number;
+if (number.length > 3) {
+var mod = number.length%3;
+var output = (mod > 0 ? (number.substring(0,mod)) : '');
+for (i=0 ; i < Math.floor(number.length/3) ; i++) {
+if ((mod ==0) && (i ==0))
+output += number.substring(mod+3*i,mod+3*i+3);
+else
+output += ',' + number.substring(mod+3*i,mod+3*i+3);
+}
+return (output);
+}
+else return number;
+}
+var todaym = today.getMonth();
+var todayd = today.getDate();
+var todaystring = new Date();
+var paststring = montharray[m-1]+" "+d+", "+yr;
+growth = Math.floor(2.6*(Math.round((Date.parse(todaystring)-Date.parse(paststring))/(1000))*1));
+document.write("<center>" + "World Population is estimated to be: <b>" + outputComma(worldpop+growth) + "</b></center>");
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+
+</center>
+</BODY>
+</HTML>

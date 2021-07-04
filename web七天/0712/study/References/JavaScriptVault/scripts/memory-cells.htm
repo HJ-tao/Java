@@ -1,0 +1,29 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<form name=form1>
+Enter Text - <input type=text name=textvalue size=25>
+<br>
+<br>
+Memory 1 - <input type=text name=mem1 size=25 onFocus="if (this.value == ''){this.value=(textvalue.value)}">
+<br>
+Memory 2 - <input type=text name=mem2 size=25 onFocus="if (this.value == ''){this.value=(textvalue.value)}">
+<br>
+Memory 3 - <input type=text name=mem3 size=25 onFocus="if (this.value == ''){this.value=(mem1.value + ' ' + textvalue.value)}">
+<br>
+(Easily add previous text values to the current text value.  Memory cell number 3 adds the value from the current memory cell to the first memory value.)
+<br>
+<br>
+<input type=reset value="Reset" name="B2">
+</form>
+
+</center>
+</BODY>
+</HTML>

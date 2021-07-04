@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Jon Bronisz (webmaster@frequencyzone.com) -->
+<!-- Web Site:  http://www.frequencyzone.com -->
+<!-- Begin
+function wavelength(freq, amount, form) {
+form.feet.value = amount / freq;
+form.inches.value = form.feet.value * 12;
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<form>
+<table>
+<tr>
+<td align=center>
+<input type=text size=8 value="" name=freq>MHz
+<input type=button value="WL"     onClick="wavelength(this.form.freq.value, 984, this.form);"> 
+<input type=button value="1/2 WL" onClick="wavelength(this.form.freq.value, 468, this.form);"> 
+<input type=button value="1/4 WL" onClick="wavelength(this.form.freq.value, 234, this.form);">
+</td>
+</tr>
+<tr>
+<td>
+ = <input type=text name=feet size=15> ft. (or <input type=text name=inches size=15> inches.)
+</td>
+</tr>
+</table>
+</form>
+
+</center>
+</BODY>
+</HTML>

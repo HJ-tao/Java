@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<LINK href="general.css" rel="stylesheet" type="text/css">
+
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Ronnie T. Moore, Editor, based on Select Option by: Selvi Narayanan -->
+<!-- Modified:  Mike Watts (mike.watts@watts-internet.com) -->
+<!-- Web Site:  http://www.watts-internet.com -->
+<!-- Begin
+site="http://myplace.50g.com";
+function combineMenus(frm, menu1, menu2) {
+with (frm) {
+for (var i = 0; i < document.menufrm.menu1.length; i++) {
+if (document.menufrm.menu1[i].checked) {
+str = document.menufrm.menu1[i].value;
+break;
+   }
+}
+for (var i = 0; i < document.menufrm.menu2.length; i++) {
+if (document.menufrm.menu2[i].checked) {
+str += document.menufrm.menu2[i].value;
+break;
+   }
+}
+url = site + "/" + str + ".html";
+window.location.href = url;
+   }
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR>
+<FORM NAME="menufrm">
+<INPUT TYPE="radio" NAME="menu1" VALUE="chevy" CHECKED>Chevy
+<INPUT TYPE="radio" NAME="menu1" VALUE="ford">Ford
+<INPUT TYPE="radio" NAME="menu1" VALUE="dodge">Dodge
+<INPUT TYPE="radio" NAME="menu1" VALUE="olds">Oldsmobile
+<P>
+<INPUT TYPE="radio" NAME="menu2" VALUE="1998" CHECKED>1998
+<INPUT TYPE="radio" NAME="menu2" VALUE="1999">1999
+<INPUT TYPE="radio" NAME="menu2" VALUE="2000">2000
+<INPUT TYPE="radio" NAME="menu2" VALUE="2001">2001
+<P>
+<INPUT TYPE="button" VALUE="Select" onClick="combineMenus(this.form, this.form.menu1, this.form.menu2)">
+</FORM>
+
+
+</center>
+</BODY>
+</HTML>

@@ -1,0 +1,207 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<LINK href="general.css" rel="stylesheet" type="text/css">
+
+<!-- Original:  David Sosnowski (support@codelifter.com) -->
+<!-- Web Site:  http://www.codelifter.com -->
+
+<!--
+Put the <style> script in the <head> of your page.
+Set up the border, background-color, padding, and
+font elements as needed. Leave the position as is.
+Width and height can be set as auto, or you can
+specify these in pixels.
+//-->
+
+<style>
+
+#menuShow{
+border: 1px solid #666666;
+background-color: #111111;
+padding: 13px;
+font-size: 13px;
+font-family: Verdana, Arial;
+position: absolute;
+width: auto;
+height: auto;
+}
+
+#menuSelect{
+border: 1px solid #666666;
+background-color: #111111;
+padding: 13px;
+font-size: 13px;
+font-family: Verdana, Arial;
+position: absolute;
+width: auto;
+height: auto;
+}
+
+</style>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<!--
+Place the two <div>'s below in the <body> of your code.
+(Normally, this will be immediately after the <body>
+tag.) The menuShow div will contain your links; change
+the text, links, and targets as needed.
+//-->
+
+<div id="menuSelect">
+<a href="#" onClick="moveOnMenu();moveOffSelector()">
+<img src="reddot.gif" width="28" height="28" border="0"></a>
+</div>
+<div id="menuShow">
+<a href="#" onClick="moveOffMenu();moveOnSelector()">
+<img src="reddot.gif" width="28" height="28" border="0"></a>
+<br>
+<br>
+<a href="http://www.codelifter.com">Menu Item A</a><br>
+<a href="http://www.codelifter.com">Menu Item B</a><br>
+<a href="http://www.codelifter.com">Menu Item C</a><br>
+<br>
+<a href="http://www.codelifter.com">Menu Item D</a><br>
+<a href="http://www.codelifter.com">Menu Item E</a><br>
+<br>
+<a href="http://www.codelifter.com">Menu Item F</a><br>
+<a href="http://www.codelifter.com">Menu Item G</a><br>
+<a href="http://www.codelifter.com">Menu Item H</a><br>
+</div>
+
+<!--
+Put the following script immediately *after* the
+<div>'s (above) in your page. Set the variables as
+indicated in the script.
+//-->
+
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  David Sosnowski (support@codelifter.com) -->
+<!-- Web Site:  http://www.codelifter.com -->
+
+
+
+
+<!-- Begin
+// (C) 2001 www.CodeLifter.com
+// http://www.codelifter.com
+// Free for all users, but leave in this header.
+
+// Set Show to "yes" to show the menu on start-up.
+// Set Show to "no" to show the selector on start-up.
+
+Show ="yes";
+
+// Set OffX in pixels to a negative number
+// somewhat larger than the width of the menu.
+
+var OffX = -150;
+
+// Set the PosX and PosY variables
+// to the location on the screen where the
+// menu should position (in pixels) when stopped.
+
+var PosX =  250;
+var PosY =  100;
+
+// Usually, use the settings shown; but you can
+// change the speed and the increment of motion
+// across the screen, below.
+
+var speed        = 1;
+var increment    = 1;
+var incrementNS4 = 5; // for slower NS4 browsers
+
+// do not edit below this line
+// ===========================
+
+var is_NS = navigator.appName=="Netscape";
+var is_Ver = parseInt(navigator.appVersion);
+var is_NS4 = is_NS&&is_Ver>=4&&is_Ver<5;
+var is_NS5up = is_NS&&is_Ver>=5;
+
+var MenuX = OffX;
+var SelX = PosX;
+var sPosX = PosX;
+var sOffX = OffX;
+
+if (Show == "yes") {
+sPosX = OffX;
+sOffX = PosX;
+MenuX = sOffX;
+SelX = sPosX;
+}
+
+if (is_NS4) {
+increment = incrementNS4;
+Lq = "document.layers.";
+Sq = "";
+eval(Lq+'menuSelect'+Sq+'.left=sPosX');
+eval(Lq+'menuShow'+Sq+'.left=sOffX');
+eval(Lq+'menuSelect'+Sq+'.top=PosY');
+eval(Lq+'menuShow'+Sq+'.top=PosY');
+} else {
+Lq = "document.all.";
+Sq = ".style";
+document.getElementById('menuSelect').style.left = sPosX+"px";
+document.getElementById('menuShow').style.left = sOffX+"px";
+document.getElementById('menuSelect').style.top = PosY+"px";
+document.getElementById('menuShow').style.top = PosY+"px";
+}
+
+function moveOnMenu() {
+if (MenuX < PosX) {
+MenuX = MenuX + increment;
+if (is_NS5up) {
+document.getElementById('menuShow').style.left = MenuX+"px";
+} else {
+eval(Lq+'menuShow'+Sq+'.left=MenuX');
+}
+setTimeout('moveOnMenu()',speed);
+   }
+}
+
+function moveOffMenu() {
+if (MenuX > OffX) {
+MenuX = MenuX - increment;
+if (is_NS5up) {
+document.getElementById('menuShow').style.left = MenuX+"px";
+} else {
+eval(Lq+'menuShow'+Sq+'.left=MenuX');
+}
+setTimeout('moveOffMenu()',speed);
+   }
+}
+
+function moveOffSelector() {
+if (SelX > OffX) {
+SelX = SelX - increment;
+if (is_NS5up) {
+document.getElementById('menuSelect').style.left = SelX+"px";
+} else {
+eval(Lq+'menuSelect'+Sq+'.left=SelX');
+}
+setTimeout('moveOffSelector()',speed);
+   }
+}
+
+function moveOnSelector() {
+if (SelX < PosX) {
+SelX = SelX + increment;
+if (is_NS5up) {
+document.getElementById('menuSelect').style.left = SelX+"px";
+} else {
+eval(Lq+'menuSelect'+Sq+'.left=SelX');
+}
+setTimeout('moveOnSelector()',speed);
+   }
+}
+//  End -->
+</script>
+
+</center>
+</BODY>
+</HTML>

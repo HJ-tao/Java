@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+
+function displayTemp(){
+if (document.forms[0].elements[1].checked){
+var tempVal = document.forms[0].yourInput.value
+var finalC = (tempVal-32)*5/9
+var finalTemp = Math.round(finalC) + " degrees Celcius"
+}
+if (document.forms[0].elements[2].checked){
+var tempVal = document.forms[0].yourInput.value
+var finalF = (tempVal*9/5)+32
+var finalTemp = Math.round(finalF) + " degrees Fahrenheit"
+}
+document.forms[1].result.value = finalTemp;
+}
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<FORM>
+<INPUT TYPE="text" name="yourInput" size=8 value="" onChange="displayTemp();">
+<INPUT TYPE="radio" Name="F" Size=1 onclick="displayTemp();">Fahrenheit
+<INPUT TYPE="radio" Name="F" Size=1 onclick="displayTemp();">Celsius
+</FORM>
+<P>
+<FORM name=buttons>
+<Br>
+<Br>
+Is Equal to:<P>
+<INPUT TYPE="text" Name="result" Size=30 Value="">
+</FORM>
+
+</center>
+</BODY>
+</HTML>

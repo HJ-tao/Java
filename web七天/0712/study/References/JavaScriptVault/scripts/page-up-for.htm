@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+
+<!-- Begin
+function HowLongSince(startmonth, startdate, startyear) {
+sdate=startdate;
+smonth=startmonth-1;
+syear=startyear;
+var DaysInMonth = new Array(31,28,31,30,31,30,31,31,30,31,30,31);
+today = new Date()
+var thisyear = today.getFullYear();
+var thismonth = today.getMonth();
+var thisdate = today.getDate();
+mstart = new Date(syear,(smonth==12?1:smonth+1),1);
+days1 = (mstart - new Date(syear,smonth,sdate))/(24*60*60*1000)-1;
+mend = new Date(thisyear,thismonth,1);
+days2 = (new Date(thisyear,thismonth,thisdate) - mend)/(24*60*60*1000)+1;
+dayst = days1 + days2;
+if (dayst >= DaysInMonth[smonth])  {
+AddOneMonth = 1;
+dayst -= DaysInMonth[smonth];
+}
+else AddOneMonth = 0;
+ydiff1 = thisyear-mstart.getFullYear();
+mdiff1 = thismonth-mstart.getMonth()+AddOneMonth;
+if (mdiff1 >11) { mdiff1=0; ydiff1++; }
+if (mdiff1 < 0) { mdiff1 = mdiff1 + 12; ydiff1--; }
+temp = (ydiff1==0?"":(ydiff1==1?ydiff1+" year and ":ydiff1 + " years, "));
+temp += (mdiff1==0?"0 months, and ":(mdiff1==1?mdiff1+" month, and ":mdiff1+" months, and "));
+temp += (dayst==0?"no days":(dayst==1 ? " 1 day." : dayst + " days." ));
+return temp;
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Begin
+document.write("The JavaScript Source has been up for ");
+document.write("<font color=red>");
+document.write(HowLongSince(06,15,97));
+// this is the date your site was created.  day,month,year
+document.write("</font>");
+// End -->
+</script>
+
+</center>
+</BODY>
+</HTML>

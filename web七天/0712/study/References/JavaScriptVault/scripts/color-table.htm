@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Begin
+function changeBackground(hexNumber) {
+document.bgColor=hexNumber
+}
+prefix="#"
+rnum1=0
+bnum1=0
+gnum1=0
+rnum2=0
+bnum2=0
+gnum2=0
+hexNumber2="#000000";
+rcount=0;
+bcount=0;
+gcount=0;
+function num2hex(num) {
+if (num==15) return "f";
+else if (num==14) return "e";
+else if (num==13) return "d";
+else if (num==12) return "c";
+else if (num==11) return "b";
+else if (num==10) return "a";
+else if (num==9) return "9";
+else if (num==8) return "8";
+else if (num==7) return "7";
+else if (num==6) return "6";
+else if (num==5) return "5";
+else if (num==4) return "4";
+else if (num==3) return "3";
+else if (num==2) return "2";
+else if (num==1) return "1";
+else return "0";
+}
+function changeBackground2(number) {
+if(number == 1) {
+rnum1=rcount%16;
+if (rcount <15) {
+rcount=rcount+1;
+  }
+}
+if(number == 2) {
+gnum1=gcount%16;
+if (gcount <15) {
+gcount=gcount+1;
+  }
+}
+if(number == 3) {
+bnum1=bcount%16;
+if (bcount <15) {
+bcount=bcount+1;
+  }
+}
+if(number == 4) {
+rnum1=rcount%16;
+if (rcount > 0) {
+rcount=rcount-1;
+  }
+}
+if(number == 5) {
+gnum1=gcount%16;
+if (gcount > 0) {
+gcount=gcount-1;
+  }
+}
+if(number == 6) {
+bnum1=bcount%16;
+if (bcount > 0) {
+bcount=bcount-1;
+  }
+ }
+hexNumber2 = prefix+num2hex(rnum1)+num2hex(rnum2)+num2hex(gnum1)+num2hex(gnum2)+num2hex(bnum1)+num2hex(bnum2);
+  document.bgColor=hexNumber2
+}
+// End -->
+</SCRIPT>
+
+</HEAD>
+
+<BODY Bgcolor=#E0E0E0>
+<center><BR><BR><BR>
+<FORM METHOD="POST" NAME="background">
+<TABLE WIDTH=350 BORDER="3" CELLPADDING="3">
+<TR>
+<TD Align=center><INPUT TYPE="button" VALUE="Red" ONCLICK="changeBackground('#FF0000')"></TD>
+<TD Align=center><INPUT TYPE="button" VALUE="Green" ONCLICK="changeBackground('#00FF00')"></TD>
+<TD Align=center><INPUT TYPE="button" VALUE="Blue" ONCLICK="changeBackground('#0000FF')"></TD>
+<TD Align=center><INPUT TYPE="button" VALUE="White" ONCLICK="changeBackground('#FFFFFF')"></TD>
+<TD Align=center><INPUT TYPE="button" VALUE="Black" ONCLICK="changeBackground('#000000')"></TD>
+<TD Align=center><INPUT TYPE="button" VALUE="Grey" ONCLICK="changeBackground('##E0E0E0')"></TD>
+</TR>
+</TABLE>
+<TABLE WIDTH=350 BORDER="3" CELLPADDING="3">
+<TR><TD><center>Variable Background Color Changer</center></TD>
+</TR>
+</TABLE>
+<TABLE WIDTH=350 BORDER="3" CELLPADDING="3">
+<TR>
+<TD Align=center><INPUT TYPE="button" VALUE="+ Red" ONCLICK="changeBackground2(1)"><P>
+<INPUT TYPE="button" VALUE="- Red" ONCLICK="changeBackground2(4)"></TD>
+<TD Align=center><INPUT TYPE="button" VALUE="+ Green" ONCLICK="changeBackground2(2)"><P>
+<INPUT TYPE="button" VALUE="- Green" ONCLICK="changeBackground2(5)"></TD>
+<TD Align=center><INPUT TYPE="button" VALUE="+ Blue" ONCLICK="changeBackground2(3)"><P>
+<INPUT TYPE="button" VALUE="- Blue" ONCLICK="changeBackground2(6)"></TD>
+</TR>
+</TABLE>
+<TABLE WIDTH=350 BORDER="3" CELLPADDING="3">
+<TR>
+<TD><center>Keep pressing buttons to change color<BR>
+(The color will start as black)</center></TD>
+</TR>
+</TABLE>
+</FORM>
+
+</center>
+</BODY>
+</HTML>

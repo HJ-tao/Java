@@ -1,0 +1,39 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Ronnie T. Moore -->
+<!-- Web Site:  The JavaScript Source -->
+
+<!-- Begin
+function initMail(form) {
+text = "Check out this page:  " + window.location;
+form.message.value = "Hi " + form.sendto.value + " (" + form.to.value + "):\n\n"
+ + text + "\n\nYour Friend,\n" + form.sendername.value + "(" + form.senderemail.value + ")";
+return (form.to.value != "");
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<form name=emailform method=post action="http://cgi.freedback.com/mail.pl" target="_new" onSubmit="return initMail(this);">
+<input type=hidden name=subject value="** Check Out This Site! **">
+<input type=hidden name=message value="">
+<table>
+<tr><td colspan=2 align=center>Tell a friend about this page!</td></tr>
+<tr><td>Their Name:</td><td><input type=text name=sendto></td></tr>
+<tr><td>Their Email:</td><td><input type=text name=to></td></tr>
+<tr><td>Your Name:</td><td><input type=text name=sendername></td></tr>
+<tr><td>Your Email:</td><td><input type=text name=senderemail></td></tr>
+<tr><td colspan=2 align=center><input type=submit value="Ok!"></td></tr>
+</table>
+</form>
+
+</center>
+</BODY>
+</HTML>

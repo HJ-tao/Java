@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Mike McGrath (mike_mcgrath@lineone.net) -->
+<!-- Web Site:  http://website.lineone.net/~mike_mcgrath -->
+
+<!-- Begin
+function ignoreSpaces(string) {
+var temp = "";
+string = '' + string;
+splitstring = string.split(" ");
+for(i = 0; i < splitstring.length; i++)
+temp += splitstring[i];
+return temp;
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR>
+
+Or, try entering a string with spaces in this box. <BR>
+<pre>
+Before:  String = x xx xxx xxxx<br>
+ After:  String = <script language="JavaScript">
+document.write(ignoreSpaces("x xx xxx xxxx"));
+</script>
+</pre>
+</center>
+
+<!-- Or, here is another example, in a form -->
+
+<p>
+
+<center>
+Or, try entering a string with spaces in this box.
+<form>
+<input type=text size=25 onBlur="this.value=ignoreSpaces(this.value);">
+<input type=button value="Ok">
+</form>
+
+</center>
+</BODY>
+</HTML>

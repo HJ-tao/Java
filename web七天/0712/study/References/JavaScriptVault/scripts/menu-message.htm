@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Stephanie M. Clarkson  (thespian@sleepingcat.com) -->
+<!-- Web Site:  http://www.sleepingcat.com -->
+<!-- Begin
+var messages = new Array(6);
+messages[0] = "";
+messages[1] = "Have you ever seen anything like this before?";
+messages[2] = "Can you imagine how you could use it on your site?";
+messages[3] = "It's great for sharing lots of information.";
+messages[4] = "And doesn't take up much space! ";
+messages[5] = "So, get the code and put it on your site!";
+function messageReveal() {
+var messageindex = document.messageForm.messagePick.selectedIndex
+document.messageForm.messageField.value = messages[messageindex];
+}
+// End -->
+</SCRIPT>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<form name="messageForm">
+<select name="messagePick" OnChange="messageReveal()">
+<option value="0">The Menu Message
+<option>Seen this before?
+<option>Possible uses?
+<option>Shares Information
+<option>Saves space
+<option>Get the code!
+</select>
+<br><p>
+<textarea name="messageField" rows=6 cols=50 wrap=virtual></textarea>
+</form>
+
+</center>
+</BODY>
+</HTML>

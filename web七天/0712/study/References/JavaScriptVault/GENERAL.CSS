@@ -1,0 +1,20 @@
+BODY	{background-color: #c0c0c0 ; color: black ; font-size:11pt;font-weight:bold}
+
+A {text-decoration:none;}
+A:link {color:#0078C0;font-weight:bold; font-size:10pt}
+A:visited {color:#0078C0;font-weight:bold; font-size:10pt}
+A:hover {color:red;font-weight:bold; font-size:10pt}
+A:active {color:blue;font-weight:bold; font-size:10pt}
+
+A.other:link {color:#0078c0;font:bold 12pt}
+A.other:visited {color:black;font:bold 12pt}
+A.other:hover {color:red;font:bold 12pt}
+A.other:active {color:yellow;font:bold 12pt}
+
+P.heading {color:red; font-weight:bold; font-size:12pt;font-family:sans-serif}
+P.heading2 {color:white; font-weight:bold; font-size:10pt;font-family:sans-serif}
+
+dt {color : #000080;font-weight:bold; font-size:10pt}
+
+dd {color:black; font-size:8pt;font-family:sans-serif}
+

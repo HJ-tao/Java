@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Ben McFarlin (mcfarlin@netscape.net) -->
+<!-- Web Site:  http://sites.netscape.net/mcfarlin -->
+<!-- Begin
+function populate(objForm,selectIndex) {
+timeA = new Date(objForm.year.options[objForm.year.selectedIndex].text, objForm.month.options[objForm.month.selectedIndex].value,1);
+timeDifference = timeA - 86400000;
+timeB = new Date(timeDifference);
+var daysInMonth = timeB.getDate();
+for (var i = 0; i < objForm.day.length; i++) {
+objForm.day.options[0] = null;
+}
+for (var i = 0; i < daysInMonth; i++) {
+objForm.day.options[i] = new Option(i+1);
+}
+document.f1.day.options[0].selected = true;
+}
+function getYears() {
+
+// You can easily customize what years can be used
+var years = new Array(1997,1998,1999,2000,2001,2005)
+
+for (var i = 0; i < document.f1.year.length; i++) {
+document.f1.year.options[0] = null;
+}
+timeC = new Date();
+currYear = timeC.getFullYear();
+for (var i = 0; i < years.length; i++) {
+document.f1.year.options[i] = new Option(years[i]);
+}
+document.f1.year.options[2].selected=true;
+}
+window.onload = getYears;
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<form name=f1>
+<table border=0>
+<tr>
+<td align=center>
+<select name=year onChange="populate(this.form,this.form.month.selectedIndex);">
+<option selected value=99>1999</option>
+<option value=00>2000</option>
+<option value=01>2001</option>
+<option value=02>2002</option>
+</select>
+
+<select name=month onChange="populate(this.form,this.selectedIndex);">
+<option value=01>January</option>
+<option value=02>February</option>
+<option value=03>March</option>
+<option value=04>April</option>
+<option value=05>May</option>
+<option value=06>June</option>
+<option value=07>July</option>
+<option value=08>August</option>
+<option value=09>September</option>
+<option value=10>October</option>
+<option value=11>November</option>
+<option value=12>December</option>
+</select>
+
+<select name=day>
+<option>  </option>
+<option>  </option>
+<option>  </option>
+<option>  </option>
+<option>  </option>
+<option>  </option>
+<option>  </option>
+</select>
+</td>
+</tr>
+</table>
+</form>
+</center>
+</BODY>
+</HTML>
