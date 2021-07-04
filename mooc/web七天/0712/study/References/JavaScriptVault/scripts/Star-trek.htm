@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg BODY onload="stardate()">
+<center><BR><BR><BR>
+<script language="JavaScript">
+var timerID = 0;
+function stardate() {
+ now = new Date();
+ nowMonth = now.getMonth();
+ nowDate = now.getDate();
+ nowYear = now.getYear() + 1900;
+ nowHour = now.getHours();
+ nowMinute = now.getMinutes();
+ nowSecond = now.getSeconds();
+ now = null;
+ var Elapsed = nowSecond + 60 * (nowMinute) + 3600 * (nowHour) +86400 * (nowDate - 1)
+ if (nowMonth>10) {var Elapsed = Elapsed + (86400*334)}
+  else if (nowMonth>9) {var Elapsed = Elapsed + (86400*304)}
+  else if (nowMonth>8) {var Elapsed = Elapsed + (86400*273)}
+  else if (nowMonth>7) {var Elapsed = Elapsed + (86400*243)}
+  else if (nowMonth>6) {var Elapsed = Elapsed + (86400*212)}
+  else if (nowMonth>5) {var Elapsed = Elapsed + (86400*181)}
+  else if (nowMonth>4) {var Elapsed = Elapsed + (86400*151)}
+  else if (nowMonth>3) {var Elapsed = Elapsed + (86400*120)}
+  else if (nowMonth>2) {var Elapsed = Elapsed + (86400*90)}
+  else if (nowMonth>1) {var Elapsed = Elapsed + (86400*59)}
+  else if (nowMonth>0) {var Elapsed = Elapsed + (86400*31)}
+ if (nowYear>2100) {var nowYear = nowYear-1900}
+ var thisyear = Math.round(Elapsed / 315.36) / 100
+ var lpyra= Math.round(nowYear/400)
+ var lpyrb= nowYear/400
+ if (lpyra=lpyrb) {
+ if (nowMonth>2) {var Elapsed = Elapsed + (86400)}
+ }
+ var issue = Math.round(((nowYear-2323)/100)-.5);
+ var yearspast = (nowYear - (2323+(issue * 100))) * 1000
+ var total = thisyear+yearspast
+ if (nowMinute<10) {var mns="0"} else {var mns=""}
+ if (nowSecond<10) {var scs="0"} else {var scs=""}
+ var Temp2= '['+issue+']  '+total+'    '+nowHour+':'+mns+nowMinute+':'+scs+nowSecond
+ document.stardate.stardate.value = Temp2
+ timerID = setTimeout("stardate()",1000);
+}
+</script>
+
+
+<form name="stardate">
+<input face="Terminal" size=35 name="stardate" scrolling="no" scrollable="no"></form>
+
+</center>
+</BODY>
+</HTML>

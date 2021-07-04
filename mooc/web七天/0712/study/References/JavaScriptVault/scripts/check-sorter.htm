@@ -1,0 +1,172 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Tom Folkes (tfolkes@cpcug.org) -->
+<!-- Begin
+function dates(datea,dateb){
+var yeara = 1 * datea.substring(6,8);
+var yearb = 1 * dateb.substring(6,8);
+if (yeara > yearb) return true;
+if (yeara < yearb) return false;
+
+var montha = 1 * datea.substring(0,2);
+var monthb = 1 * dateb.substring(0,2);
+if (montha > monthb) return true;
+if (montha < monthb) return false;
+
+var daya = 1 * datea.substring(3,5);
+var dayb = 1 * dateb.substring(3,5);
+if (daya > dayb) return true;
+return false;
+}
+
+function exchange(i,form){
+/* This function swaps the information in the various cells */
+document.forms[6].check.value = document.forms[i].check.value;
+document.forms[i].check.value = document.forms[i+1].check.value;
+document.forms[i+1].check.value = document.forms[6].check.value;
+document.forms[6].units.value = document.forms[i].units.value;
+document.forms[i].units.value = document.forms[i+1].units.value;
+document.forms[i+1].units.value = document.forms[6].units.value;
+document.forms[6].amount.value = document.forms[i].amount.value;
+document.forms[i].amount.value = document.forms[i+1].amount.value;
+document.forms[i+1].amount.value = document.forms[6].amount.value;
+document.forms[6].presented.value = document.forms[i].presented.value;
+document.forms[i].presented.value = document.forms[i+1].presented.value;
+document.forms[i+1].presented.value = document.forms[6].presented.value;
+}
+
+function amountSort(form){
+/* orders the table by amount */
+for (var j = 0; j<5; j++){
+for(var i=0; i<5; i++){
+var l = 1 * i + 1;
+if(1 * document.forms[i].amount.value > 1 * document.forms[i+1].amount.value) {
+exchange(i,form);
+         }
+      }
+   }
+}
+
+function checkSort(form){
+/* orders the table by check number */
+for (var j = 0; j<5; j++){
+for(var i=0; i<5; i++){
+var l = 1 * i + 1;
+if(1 * document.forms[i].check.value > 1 * document.forms[i+1].check.value){
+exchange(i,form);
+         }
+      }
+   }
+}
+
+function dateSort(form){
+/* orders the table by date */
+for (var j = 0; j<5; j++){
+for(var i=0; i<5; i++){
+var l = 1 * i + 1;
+if(dates(document.forms[i].units.value,document.forms[i+1].units.value)){
+exchange(i,form);
+         }
+      }
+   }
+}
+
+function presentSort(form){
+/* orders the table by presenter */
+for (var j = 0; j<5; j++){
+for(var i=0; i<5; i++){
+var l = 1 * i + 1;
+if(document.forms[i].presented.value >document.forms[i+1].presented.value){
+exchange(i,form);
+         }
+      }
+   }
+}
+
+// End -->
+</SCRIPT>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg >
+<center><BR>
+<table border=4>
+
+<form method=post>
+<tr>
+<td><div align=center> <input type="button" value="DATE" onclick=dateSort(this.form)> </div></td>
+<td><div align=center> <input type="button" value="CK #" onClick=checkSort(this.form)> </div></td>
+<td><div align=center> <input type="button" value="AMOUNT" onClick=amountSort(this.form)> </div></td>
+<td><div align=center> <input type="button" value="PAID TO" onClick=presentSort(this.form)> </div></td>
+</tr>
+<tr>
+<td><input type=text name=units size=8 value=12/07/95></td>
+<td><input type=text name=check size=6 value=3></td>
+<td><input type=text name=amount size=9 value=99.10></td>
+<td><input type=text name=presented size=20 value="Sears"></td>
+</tr>
+</form>
+
+<form method=post>
+<tr>
+<td><input type=text name=units size=8 value=11/05/95></td>
+<td><input type=text name=check size=6 value=7></td>
+<td><input type=text name=amount size=9 value=12.01></td>
+<td><input type=text name=presented size=20 value="Holiday Inn"></td>
+</tr>
+</form>
+
+<form method=post>
+<tr>
+<td><input type=text name=units size=8 value=11/03/95></td>
+<td><input type=text name=check size=6 value=1></td>
+<td><input type=text name=amount size=9 value=1.08></td>
+<td><input type=text name=presented size=20 value="McDonalds"></td>
+</tr>
+</form>
+
+<form method=post>
+<tr>
+<td><input type=text name=units size=8 value=12/01/94></td>
+<td><input type=text name=check size=6 value=33></td>
+<td><input type=text name=amount size=9 value=22.05></td>
+<td><input type=text name=presented size=20 value="IBM"></td>
+</tr>
+</form>
+
+<form method=post>
+<tr>
+<td><input type=text name=units size=8 value=12/23/95></td>
+<td><input type=text name=check size=6 value=22></td>
+<td><input type=text name=amount size=9 value=11.95></td>
+<td><input type=text name=presented size=20 value="American Airlines"></td>
+</tr>
+</form>
+
+<form method=post>
+<tr>
+<td><input type=text name=units size=8 value=12/26/95> </td>
+<td><input type=text name=check size=6 value=11></td>
+<td><input type=text name=amount size=9 value=22.65></td>
+<td><input type=text name=presented size=20 value="Disney Land"></td>
+</tr>
+</form>
+
+</table>
+</center>
+
+<form method=post>
+<tr>
+<td><input type=hidden name=units size=5></td>
+<td><input type=hidden name=check size=6></td>
+<td><input type=hidden name=amount size=5></td>
+<td><input type=hidden name=presented size=20></td>
+<tr>
+</form>
+
+</center>
+</BODY>
+</HTML>

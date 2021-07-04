@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+
+<!-- Begin
+var display_text  = "Here is the common scroll  -  except, "
++ " this one runs in a text box rather than the status bar. "
++ " There is more cool stuff like this on TJS !!  "
+var display_text;
+var place;
+var meter;
+var out = " ";
+var place = 50;
+function scroll_text() {
+for (meter = 0; meter < place; meter++) {
+out += " "}
+if (place >= 0)
+out += display_text
+else out = display_text.substring(-place,display_text.length)
+document.scroll_form.field.value = out
+out = " "
+place--
+if (place < -(display_text.length)) {
+place = 50
+}
+setTimeout('scroll_text()',100)
+}
+// End -->
+</SCRIPT>
+
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<FORM NAME="scroll_form">
+<input type="button" name="button_one" value="Start" onClick="scroll_text()">
+<input type="text" name="field" size="50">
+</FORM>
+
+</center>
+</BODY>
+</HTML>

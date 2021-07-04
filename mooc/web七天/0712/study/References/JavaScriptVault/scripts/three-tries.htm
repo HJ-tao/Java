@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+
+
+
+
+<!-- Begin
+function password() {
+var testV = 1;
+var pass1 = prompt('Please Enter Your Password','');
+while (testV < 3) {
+if (!pass1) 
+history.go(-1);
+if (pass1 == "password") {
+alert('You Got it Right!');
+
+<!-- STEP TWO: Change protectedpage.html to your protected page  -->
+
+//  Change the following URL to your protected filename
+
+window.open('protectedpage.html');
+break;
+} 
+testV+=1;
+var pass1 = 
+prompt('Access Denied - Password Incorrect, Please Try Again.','Password');
+}
+if (pass1!="password" & testV ==3)               
+history.go(-1);
+return " ";
+}
+// End -->
+</SCRIPT>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<FORM>
+<input type="button" value="Enter Password Protected Area" onClick="password()">
+</FORM>
+
+</center>
+</BODY>
+</HTML>

@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Dale Anderson (skinnycowboy@hotmail.com) -->
+<!-- Web Site:  http://www.skinnycowboy.com -->
+
+<!-- Begin
+var expDays = 30;	// set this value to however many days you want your cookies to last
+function setCookie(name, val) {
+var exp = new Date();
+var cookieTimeToLive = exp.getTime() + (expDays * 24 * 60 * 60 * 1000);
+exp.setTime(cookieTimeToLive);
+document.cookie = name + "=" + escape(val) + "; expires=" + exp.toGMTString();
+}
+function getCookie(name) {
+var cookieNameLen = name.length;
+var cLen = document.cookie.length;
+var i = 0;
+var cEnd;
+var myStringToReturn;
+var myStringToReturnLen;
+while (i < cLen) {
+var j = i + cookieNameLen;
+if (document.cookie.substring(i,j) == name) {
+cEnd = document.cookie.indexOf(";",j);
+if (cEnd == -1) {
+cEnd = document.cookie.length;
+}
+myStringToReturn = unescape(document.cookie.substring(j,cEnd));
+myStringToReturnLen = myStringToReturn.length;
+myStringToReturn = myStringToReturn.substring(1,myStringToReturnLen+1);
+return myStringToReturn;
+}
+i++;
+}
+return "";
+}
+function setDefaultValues() {
+var strCookieName, strCookieVal;
+var iFormsCount = 0;
+var iElementsCount = 0;
+for(iFormsCount=0;iFormsCount < document.forms.length;iFormsCount++) {
+for(iElementsCount=0; iElementsCount < document.forms[iFormsCount].elements.length; iElementsCount++) {
+strCookieName = document.forms[iFormsCount].elements[iElementsCount].name;
+strCookieVal = getCookie(strCookieName);
+if (strCookieVal != null && !(isNaN(strCookieVal)) && strCookieVal != '') {
+document.forms[iFormsCount].elements[iElementsCount].selectedIndex = strCookieVal;
+         }
+      }
+   }
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg onLoad="setDefaultValues()">
+<center><BR><BR><BR>
+<form>
+<select name=select onChange="setCookie(this.name,this.selectedIndex)">
+<option>Choice 1</option>
+<option>Choice 2</option>
+<option>Choice 3</option>
+<option>Choice 4</option>
+</select>
+</form>
+<br>Just make a selection then refresh this page.
+
+</center>
+</BODY>
+</HTML>

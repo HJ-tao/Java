@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<LINK href="general.css" rel="stylesheet" type="text/css">
+
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Randy Bennett (rbennett@thezone.net) -->
+<!-- Web Site:  http://home.thezone.net/~rbennett/utility/javahead.htm -->
+<!-- Begin
+function checkVersion4() {
+var x = navigator.appVersion;
+y = x.substring(0,4);
+if (y>=4) setVariables();moveOB();
+}
+
+function setVariables() {
+if (navigator.appName == "Netscape") {
+h=".left=";v=".top=";dS="document.";sD="";
+}
+else{
+h=".pixelLeft=";v=".pixelTop=";dS="";sD=".style";
+}
+objectX="object11"
+XX=-70;
+YY=-70;
+OB=11;
+}
+
+function setObject(a) {
+objectX="object"+a;
+OB=a;
+XX=eval("xpos"+a);
+YY=eval("ypos"+a);
+}
+
+function getObject() {
+if (isNav) document.captureEvents(Event.MOUSEMOVE);
+}
+
+function releaseObject() {
+if (isNav) document.releaseEvents(Event.MOUSEMOVE);
+check="no";
+objectX="object11";
+document.close();
+}
+
+function moveOB() {
+eval(dS + objectX + sD + h + Xpos);
+eval(dS + objectX + sD + v + Ypos);
+}
+
+var isNav = (navigator.appName.indexOf("Netscape") !=-1);
+var isIE = (navigator.appName.indexOf("Microsoft") !=-1);
+nsValue=(document.layers);
+check="no";
+function MoveHandler(e) {
+Xpos = (isIE) ? event.clientX : e.pageX;
+Ypos = (nsValue) ? e.pageY : event.clientY;
+if (check=="no") {
+diffX=XX-Xpos;
+diffY=YY-Ypos;
+check="yes";
+if (objectX=="object11") check="no";
+}
+Xpos+=diffX;
+Ypos+=diffY;
+if (OB=="1") xpos1=Xpos,ypos1=Ypos;
+moveOB();
+}
+if (isNav) {
+document.captureEvents(Event.CLICK);
+document.captureEvents(Event.DBLCLICK);
+}
+xpos1=50;  // make this the left pixel value for object1 below
+ypos1=50;  // make this the top pixel value for object1 below
+xpos11 = -50;
+ypos11 = -50;
+Xpos=5;
+Ypos=5;
+document.onmousemove = MoveHandler;
+document.onclick = getObject;
+document.ondblclick = releaseObject;
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg OnLoad="checkVersion4()">
+<center><BR><BR><BR>
+<b>Click on "Moveable Menu" to pick<br>
+ it up and Double Click to drop it!</b>
+<br>
+<div id="object1" style="position:absolute; visibility:show; left:50px; top:50px; z-index:2">
+<table border=1 cellpadding=5>
+<tr>
+<td bgcolor=eeeeee><a href="javascript:void(0)" onmousedown="setObject(1)">Movable Menu</a></td>
+</tr>
+<tr>
+<td>
+<br>
+<A HREF="javascript:void(0)">Menu Item # 1</A><br>
+<A HREF="javascript:void(0)">Menu Item # 2</a><br>
+<A HREF="javascript:void(0)">Menu Item # 3</a>
+</td>
+</tr>
+</table>
+</div>
+
+<div id="object11" style="position:absolute; visibility:show; left:-70px; top:-70px; z-index:2">
+</div>
+
+</center>
+</BODY>
+</HTML>

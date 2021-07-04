@@ -1,0 +1,51 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<LINK href="general.css" rel="stylesheet" type="text/css">
+
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Sebastian Bender (sebastianbender@hotmail.com) -->
+<!-- Web Site:  http://behp2.tripod.com -->
+<!-- Begin
+var ostat = false;
+function scrollstop() {
+news.scrollAmount = 0;
+ostat = true;
+}
+function scrollplay() {
+news.scrollAmount = 5;
+ostat = false;
+}
+function scrolldir() {
+mid = screen.width / 2;
+mouse = event.x;
+if(mouse > mid) {
+if(ostat == false) {
+speed = (mouse - mid) / 25;
+news.scrollAmount = speed;
+}
+news.direction = "right";
+}
+else {
+if(ostat == false) {
+speed = (mid - mouse) / 25;
+news.scrollAmount = speed;
+}
+news.direction = "left";
+   }
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg onMouseMove="scrolldir()">
+<center><BR><BR><BR>
+<marquee name=news id=news behavior=scroll direction=left scrollamount=5 scrolldelay=1 hspace=0 vspace=0 onmouseover="scrollstop()" onmouseout="scrollplay()">
+<b>Add this JavaScript to your site!</b>
+</marquee>
+<br><br>
+(Move your mouse from one side to the other to control scrolling direction and speed.)
+</center>
+</BODY>
+</HTML>

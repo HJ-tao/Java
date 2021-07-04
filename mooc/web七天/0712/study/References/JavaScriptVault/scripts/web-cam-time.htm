@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Chris Herrod (christopher_herrod@hotmail.com) -->
+<!-- Web Site:  http://members.nbci.com/chris_herrod -->
+<!-- Begin
+var x = 121;
+var y = 1;
+function Reload() {
+x = x - y;
+document.form1.clock.value = "reload in " + x + " seconds";
+timerID = setTimeout("Reload()", 1000);
+}
+var timerID = null;
+var timerRunning = false;
+function stopclock() {
+if(timerRunning) clearTimeout(timerID);
+timerRunning = false;
+}
+function showtime() {
+var now = new Date();
+var hours = now.getHours();
+var minutes = now.getMinutes();
+var timeValue = "" + ((hours >12) ? hours -12 :hours);
+if (timeValue == "0") timeValue = 12;
+timeValue += ((minutes < 10) ? ":0" : ":") + minutes;
+timeValue += (hours >= 12) ? " P.M." : " A.M.";
+document.form2.time.value = "The current time is " + timeValue;
+timerID = setTimeout("showtime()",1000);
+timerRunning = true;
+}
+function startclock() {
+stopclock();
+showtime();
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg onLoad="Reload();startclock()">
+<center><BR><BR>
+Unfortunately there is no demo is available, but try it out. This is a great JavaScript! <BR>
+<table border=10 width="320">
+<tr align=center valign=center>
+<td align=center valign=center width="320" height="240">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Chris Herrod (christopher_herrod@hotmail.com) -->
+<!-- Web Site:  http://members.nbci.com/chris_herrod -->
+
+
+<!-- Begin
+var address ="" ;
+var time = new Date();
+var ab = time.getHours();
+if ( ab >= 6 && ab < 22) {
+address = "http://yourdomain.com/online.jpg";
+}
+else {
+address = "http://yourdomain.com/offline.jpg";
+}
+document.write("<img src='" + address + "'>");
+//  End -->
+</script>
+</td>
+</tr>
+<tr align=center valign=center>
+<td align=center valign=center width="320">
+<form name="form1">
+<input type=text name="clock" size=30 value="Web Cam is Loading...">
+</form>
+</td>
+</tr>
+<tr align=center valign=center>
+<td align=center valign=center width="320">
+<form name="form2">
+<input type=text name="time" size=30>
+</form>
+</td>
+</tr>
+</table>
+
+</center>
+</BODY>
+</HTML>

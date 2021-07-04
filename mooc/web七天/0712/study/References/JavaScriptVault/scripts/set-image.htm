@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<LINK href="general.css" rel="stylesheet" type="text/css">
+
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Ronnie T. Moore, Editor -->
+<!-- Web Site:  The JavaScript Source -->
+<!-- Begin
+var toad = new Image();
+var lizard = new Image();
+var gecko = new Image();
+
+toad.src = "toad.jpg";
+lizard.src = "lizard.jpg";
+gecko.src = "gecko.jpg";
+
+function doButtons(picimage) {
+eval("document['picture'].src = " + picimage + ".src");
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><br><br>
+<table border=1>
+<tr><td>
+<center><h2>Places I've been:</h2></center>
+<p>
+<li><a href = "http://www.toad.com" onmouseover = "doButtons('toad')">Toad<p>
+
+<li><a href = "http://www.lizard.gov" onmouseover = "doButtons('lizard')">Lizard<p>
+
+<li><a href = "http://www.gecko.com" onmouseover = "doButtons('gecko')">Gecko<p>
+
+<td>
+<img name=picture src="blank.gif" width=330 height=190 border=0></td>
+</tr>
+</table>
+
+
+</center>
+</BODY>
+</HTML>

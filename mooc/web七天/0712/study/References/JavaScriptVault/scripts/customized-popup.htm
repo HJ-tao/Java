@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<LINK href="general.css" rel="stylesheet" type="text/css">
+
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Begin
+function popupPage(l, t, w, h) {
+var windowprops = "location=no,scrollbars=no,menubars=no,toolbars=no,resizable=yes" +
+",left=" + l + ",top=" + t + ",width=" + w + ",height=" + h;
+
+var URL = "http://www.yahoo.com";
+popup = window.open(URL,"MenuPopup",windowprops);
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR>
+<table>
+<tr>
+
+<td>
+
+<form name=popupform>
+<pre>
+Customize Your Popup Window!<br>
+Distance from left edge:  <input type=text name=left size=2 maxlength=4> pixels
+Distance from top edge:   <input type=text name=top size=2 maxlength=4> pixels
+
+Width of popup window:    <input type=text name=width size=2 maxlength=4> pixels
+Height of popup window:   <input type=text name=height size=2 maxlength=4> pixels
+</pre>
+<input type=button value="Open the Popup!" onClick="popupPage(this.form.left.value, this.form.top.value, this.form.width.value, this.form.height.value)">
+</form>
+</td>
+
+</tr>
+</table>
+
+
+</center>
+</BODY>
+</HTML>

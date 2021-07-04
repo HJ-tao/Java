@@ -1,0 +1,63 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Begin
+var Today=new Date();
+var ThisDay=Today.getDay();
+var ThisDate=Today.getDate();
+var ThisMonth=Today.getMonth()+1;
+var ThisYear=Today.getFullYear();  //included if you wish to insert the year
+function DayTxt (DayNumber) {
+var Day=new Array();
+Day[0]="Sunday";
+Day[1]="Monday";
+Day[2]="Tuesday";
+Day[3]="Wednesday";
+Day[4]="Thursday";
+Day[5]="Friday";
+Day[6]="Saturday";
+return Day[DayNumber];
+}
+var DayName=DayTxt(ThisDay);
+function MonthTxt (MonthNumber) {
+var Month=new Array();
+Month[1]="January";
+Month[2]="February";
+Month[3]="March";
+Month[4]="April";
+Month[5]="May";
+Month[6]="June";
+Month[7]="July";
+Month[8]="August";
+Month[9]="September";
+Month[10]="October";
+Month[11]="November";
+Month[12]="December";
+return Month[MonthNumber];
+}
+var MonthName=MonthTxt(ThisMonth);
+var d = new Date();
+var h = d.getHours();
+document.write("<TABLE BORDER=3 BGCOLOR=WHITE  WIDTH=75 HEIGHT=85 align=left>"+"<TD>"+"<p align=center>"+"<font size=-2 >"+DayName+"<br>"+"<font color=orangered size=+3 >"+ThisDate+"</font>"+"<br>"+MonthName+"<br>"+"</b>"+"</font>"+"</p>"+"</TD>"+"</TR>"+"</TABLE>");
+if (h < 2) document.write("<P ALIGN=center>"+"<b>"+"Good morning! Yes, it's way past midnight."+"</b>"+"</P>");
+else if (h < 3) document.write("<P ALIGN=center>"+"<b>"+"Good morning! Up early or working late?"+"</b>"+"</P>");
+else if (h < 7) document.write("<P ALIGN=center>"+"<b>"+"Good morning! Up bright and early!"+"</b>"+"</P>");
+else if (h < 12) document.write("<P ALIGN=center>"+"<b>"+"Good morning!"+"</b>"+"</P>");
+else if (h < 17) document.write("<P ALIGN=center>"+"<b>"+"Good afternoon!"+"</b>"+"</P>");
+else if (h < 23) document.write("<P ALIGN=center>"+"<b>"+"Good evening!"+"</b>"+"</P>");
+else document.write("<P ALIGN=center>"+"<b>"+"A late good evening! Not much left of it now."+"</b>"+"</P>");
+//  End -->
+</script>
+
+</center>
+</BODY>
+</HTML>

@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original: wsabstract.com -->
+
+<!-- Begin
+function checkrequired(which) {
+var pass=true;
+if (document.images) {
+for (i=0;i<which.length;i++) {
+var tempobj=which.elements[i];
+if (tempobj.name.substring(0,8)=="required") {
+if (((tempobj.type=="text"||tempobj.type=="textarea")&&
+tempobj.value=='')||(tempobj.type.toString().charAt(0)=="s"&&
+tempobj.selectedIndex==0)) {
+pass=false;
+break;
+         }
+      }
+   }
+}
+if (!pass) {
+shortFieldName=tempobj.name.substring(8,30).toUpperCase();
+alert("Please make sure the "+shortFieldName+" field was properly completed.");
+return false;
+}
+else
+return true;
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<form onSubmit="return checkrequired(this)">
+
+<input type="text" name="requiredname">
+<br>
+<input type="text" name="requiredemail">
+<br>
+<select name="requiredhobby">
+<option selected>Pick an option!
+<option>1
+<option>2
+<option>3
+</select>
+<br>
+<textarea name="requiredcomments"></textarea>
+<br>
+<input type=submit value="Submit">
+</form>
+
+
+<!-- The first option in your pulldown menus must be set to 'selected' !! -->
+
+
+</center>
+</BODY>
+</HTML>

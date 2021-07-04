@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Cyanide_7 (leo7278@hotmail.com) -->
+<!-- Web Site:  http://www7.ewebcity.com/cyanide7 -->
+
+<!-- Begin
+function formatCurrency(num) {
+num = num.toString().replace(/\$|\,/g,'');
+if(isNaN(num))
+num = "0";
+sign = (num == (num = Math.abs(num)));
+num = Math.floor(num*100+0.50000000001);
+cents = num%100;
+num = Math.floor(num/100).toString();
+if(cents<10)
+cents = "0" + cents;
+for (var i = 0; i < Math.floor((num.length-(1+i))/3); i++)
+num = num.substring(0,num.length-(4*i+3))+','+
+num.substring(num.length-(4*i+3));
+return (((sign)?'':'-') + '$' + num + '.' + cents);
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<form name=currencyform>
+Enter a number then click the button: <input type=text name=input size=10 value="1000434.23">
+<input type=button value="Convert" onclick="this.form.input.value=formatCurrency(this.form.input.value);">
+<br><br>
+or enter a number and click another field: <input type=text name=input2 size=10 value="1000434.23" onBlur="this.value=formatCurrency(this.value);">
+</form>
+
+</center>
+</BODY>
+</HTML>

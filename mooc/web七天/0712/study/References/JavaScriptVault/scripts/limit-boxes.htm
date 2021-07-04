@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Glenn Wang (brief@ix.netcom.com) -->
+<!-- Web Site:  http://capsule.bayside.net/ -->
+<!-- Modified by Ronnie T. Moore (The JavaScript Source) -->
+<!-- Begin
+function countChoices(obj) {
+max = 2; // max. number allowed at a time
+
+box1 = obj.form.box1.checked;  // your checkboxes here
+box2 = obj.form.box2.checked;
+box3 = obj.form.box3.checked;  // add more if necessary
+
+count = (box1 ? 1 : 0) + (box2 ? 1 : 0) + (box3 ? 1 : 0);
+// If you have more checkboxes on your form
+// add more  (box_ ? 1 : 0)  's separated by '+'
+
+if (count > max) {
+alert("Oops!  You can only choose up to " + max + " choices! \nUncheck an option if you want to pick another.");
+obj.checked = false;
+   }
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<form>
+Please choose up to 2 sections:
+<p>
+<input type=checkbox name=box1 onClick="countChoices(this)">Section 1
+<p>
+<input type=checkbox name=box2 onClick="countChoices(this)">Section 2
+<p>
+<input type=checkbox name=box3 onClick="countChoices(this)">Section 3
+<p>
+</form>
+
+</center>
+</BODY>
+</HTML>

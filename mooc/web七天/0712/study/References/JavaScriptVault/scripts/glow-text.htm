@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<LINK href="general.css" rel="stylesheet" type="text/css">
+
+<style>
+.F1 {filter: glow(Color=#FF8000,Strength=10);
+     width=200px;
+     height=200px;}
+.F2 {filter: glow(Color=#00FF00,Strength=9);
+     width=150px;
+     height=200px;}
+.F3 {filter: glow(Color=#0080FF,Strength=12);
+     width=250px;
+     height=200px;}
+</style>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  CodeLifter.com (support@codelifter.com) -->
+<!-- Web Site:  http://www.codelifter.com -->
+<!-- Begin
+var rate = 1000
+// do not edit below this line
+var i = 0;
+var F = 'F1';
+function doThing() {
+if (document.getElementById&&document.all) {
+ok = true;
+i++;
+if (i==1) F = 'F1';
+if (i==2) F = 'F2';
+if (i==3) F = 'F3';
+YammaYamma.className = F;
+if (i > 2) i = 0;
+timer = setTimeout('doThing()', rate);
+   }
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg onLoad="doThing()">
+<center><BR><BR><BR>
+<table width="250" cellspacing="0" cellpadding="10">
+<tr>
+<td>
+<center>
+<font face="Courier" size="5" color="#FFFFFF">
+<p id="YammaYamma">
+<b>My Place - The best site on the net...ho-hum!</b>
+</p>
+</font>
+</center>
+</td>
+</tr>
+</table>
+
+</center>
+</BODY>
+</HTML>

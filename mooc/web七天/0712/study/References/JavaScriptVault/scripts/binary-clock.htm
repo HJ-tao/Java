@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+
+<SCRIPT LANGUAGE="JavaScript">
+
+<!-- Begin
+
+<!-- Original:  Mark Lockwood (sy161e.net@namezero.com) -->
+<!-- Web Site:  http://www.sy161e.net -->
+function syeClock() {
+if (!document.layers && !document.all)
+return;
+timePortion = new Array;
+maxLength = new Array;
+var runTime = new Date();
+timePortion[0] = runTime.getHours();
+timePortion[1] = runTime.getMinutes();
+timePortion[2] = runTime.getSeconds();
+maxLength[0] = 5;
+maxLength[1] = 6;
+maxLength[2] = 6;
+var decValue = 0;
+var decMod = 0;
+var temp = "";
+var hoursBackground = "#7B7BB5";
+var minutesBackground = "#4D5487";
+var secondsBackground = "#424A63";
+var colonBackground = "#000000";
+var textColor = "#FFFFFF";
+for (var curPor = 0; curPor <= 2; curPor++) {
+decValue = timePortion[curPor];
+timePortion[curPor] = "";
+while (decValue != 0) {
+decMod = decValue % 2;
+decValue = Math.floor(decValue / 2);
+timePortion[curPor] = decMod + timePortion[curPor];
+}
+if (timePortion[curPor].length < maxLength[curPor]) {
+for (var i = 1; i <= maxLength[curPor] - timePortion[curPor].length; i++) {
+temp += "0";
+   }
+}
+timePortion[curPor] = temp + timePortion[curPor];
+temp = "";
+}
+movingtime = '<table border="0" cellpadding="0" cellspacing="0"><tr><td bgcolor='+ hoursBackground  +'><font color='+ textColor +'>' + timePortion[0] + '</font></td><td bgcolor='+ colonBackground +'>:</td><td bgcolor='+ minutesBackground +'><font color='+ textColor +'>' + timePortion[1] + '</font></td><td bgcolor='+ colonBackground +'>:</td><td bgcolor='+ secondsBackground +'><font color='+ textColor +'>' + timePortion[2] + '</font></td></tr></table>';
+if (document.layers) {
+document.layers.clock.document.write(movingtime);
+document.layers.clock.document.close();
+}
+else if (document.all) {
+clock.innerHTML = movingtime;
+}
+setTimeout("syeClock()", 1000)
+}
+window.onload = syeClock;
+//  End -->
+</script>
+
+
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+Binary Time<br>
+<span id="clock" style="position:relative;"></span>
+
+</center>
+</BODY>
+</HTML>

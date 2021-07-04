@@ -1,0 +1,66 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<LINK href="general.css" rel="stylesheet" type="text/css">
+
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Kulesh S. (linklist@meshage.net) -->
+<!-- Web Site:  http://meshage.net/scribble -->
+<!-- Begin
+function LinkList() {
+var myheader = "<head><title>Links In "+document.title+"</title></head>";
+myheader = myheader + "<body>";
+var myfont = "<font style=\"font: 8pt Verdana, Arial, Helvetica, Sans-serif; line-height:18pt;\" face=\"verdana, tahoma, geneva\" size=\"-1\" >";
+var mytext = "<center><b>Links in " + document.title + "</b><ol></center>";
+var myendfont = "</font>";
+var myendheader = "</body>";
+
+windowprops = "menubars=no,location=no,toolbars=no,scrollbars=yes,"+"width=350,height=400,top=50,left=50";
+self.name = "main";
+
+if(document.all) {
+for (i=0; i<document.links.length; i++) {
+if(document.links[i].innerText)
+if(document.links[i].innerText != " ")
+mytext += "<li><a target='_new' href="+document.links[i]+">"+document.links[i].innerText+"</a><br>";
+else
+mytext += "<li><a target='_new' href="+document.links[i]+">"+document.links[i]+"</a><br>" ;
+   }
+}
+else {
+for (i=0; i<document.links.length; i++) {
+if(document.links[i].text) {
+if(((document.links[i].text).indexOf("javascript:")) == -1) {
+mytext += "<li><a target='_new' href="+document.links[i]+">"+document.links[i].text+"</a><br>" ;
+   }
+}
+else { }
+   }
+}
+mytext = mytext + "</ol><center><a href='javascript:window.close()'>close</a></center><BR>";
+
+linkswin = window.open("","",windowprops);
+with (linkswin.document) {
+open();
+write(myheader + myfont + mytext + myendfont + myendheader);
+close();
+   }
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<a href="javascript:LinkList();">List all links on this page</a>
+<br>
+or
+<br>
+<form>
+<input type=button onClick="LinkList();" value="List all links on this page">
+</form>
+
+</center>
+</BODY>
+</HTML>

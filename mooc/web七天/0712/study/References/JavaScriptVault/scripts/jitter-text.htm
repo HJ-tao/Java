@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Michael Tartaglia (stonedstan@hotmail.com) -->
+<!-- Web Site:  http://travel.to/html-hell
+
+<!-- Begin
+dw=0;   //change in width;
+dh=0;   //change in height;
+function jitter() {
+w = (Math.round(Math.random()*10)%5)-2; dw+=w;
+h = (Math.round(Math.random()*10)%5)-2; dh+=h;
+if (dh>10) {h=(0-11);dh=0;}
+else if (dh<(0-10)) {h=11;dh=0;}
+if (dw>10) {w=(0-11);dw=0;}
+else if (dw<(0-10)) {w=11;dw=0;}
+vers = parseInt(navigator.appVersion);
+if (vers>=4) {
+if (navigator.appName=="Netscape") {
+document.jitterText.left+=w;
+document.jitterText.top+=h;
+}
+else if (navigator.appName=="Microsoft Internet Explorer") {
+document.all.jitterText.style.pixelLeft+=w;
+document.all.jitterText.style.pixelTop+=h;
+}
+setTimeout("jitter()",100);
+}
+else {} // browser can't view effect
+}
+// End -->
+</SCRIPT>
+<STYLE TYPE="text/css">
+#jitterText {
+position: absolute; left: 0; top: 300; font-size:24pt;
+background:white; color:red; }
+</STYLE>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg OnLoad="jitter()">
+<center><BR><BR><BR>
+<DIV ID="jitterText">
+<center> This text jiggles more than gelatin !! </center>
+</DIV>
+
+
+</center>
+</BODY>
+</HTML>

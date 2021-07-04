@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Ryan A. Somma (ryan@waygate.com) -->
+<!-- Web Site:  http://www.waygate.com -->
+
+<!-- Begin
+function stringFilter (input) {
+s = input.value;
+filteredValues = "1234567890";     // Characters stripped out
+var i;
+var returnString = "";
+for (i = 0; i < s.length; i++) {  // Search through string and append to unfiltered values to returnString.
+var c = s.charAt(i);
+if (filteredValues.indexOf(c) == -1) returnString += c;
+}
+input.value = returnString;
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR>
+<BR>
+<font face=arial size=-2>
+<p>This demo form will filter out all numeric values from the form below.  Enter a combination of alpha and numeric characters and click "Submit" to view the results.
+</font>
+<form name=thisform method=post action="" onSubmit="">
+<input type=text size=14 maxlength=14 name=inputField>
+<br>
+<input type=button value="Submit" onClick="stringFilter(inputField);">
+<input type=reset value="Reset">
+</form>
+
+</center>
+</BODY>
+</HTML>

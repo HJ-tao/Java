@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+
+<!-- Begin
+function scrollit(seed) {
+var m1  = "Welcome to my website!  ";
+var m2  = "..... You can find all the scripts you need here! ";
+var m3  = "......Enjoy ";
+var m4  = "";
+var msg=m1+m2+m3+m4;
+var out = " ";
+var c   = 1;
+if (seed > 100) {
+seed--;
+cmd="scrollit("+seed+")";
+timerTwo=window.setTimeout(cmd,100);
+}
+else if (seed <= 100 && seed > 0) {
+for (c=0 ; c < seed ; c++) {
+out+=" ";
+}
+out+=msg;
+seed--;
+window.status=out;
+cmd="scrollit("+seed+")";
+timerTwo=window.setTimeout(cmd,100);
+}
+else if (seed <= 0) {
+if (-seed < msg.length) {
+out+=msg.substring(-seed,msg.length);
+seed--;
+window.status=out;
+cmd="scrollit("+seed+")";
+timerTwo=window.setTimeout(cmd,100);
+}
+else {
+window.status=" ";
+timerTwo=window.setTimeout("scrollit(100)",75);
+      }
+   }
+}
+// End -->
+</SCRIPT>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg onLoad="scrollit(100)">
+<center><BR><BR><BR>
+
+</center>
+</BODY>
+</HTML>

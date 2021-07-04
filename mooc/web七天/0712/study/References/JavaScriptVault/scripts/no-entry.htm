@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+
+<!-- Begin
+function noEntry() {
+mt=document.form.entry.value;
+if ((mt.length<1)||(mt.substring(0,6)=="******")) {
+alert("I'm sorry. This entry must be "
++"completed before I can submit this form"
++" for processing.");
+document.form.entry.value="******Please Complete This Entry";
+document.form.entry.focus();
+return false;
+}
+else { return true; }
+}
+// End -->
+</SCRIPT>
+
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR>
+Change the form's ACTION in this scriptto point to your Form Mail CGI-Script.
+<BR>
+<form name="form" action="/cgi-bin/your-form-processor.pl" onsubmit="return noEntry()">
+<center>
+<input type="text" name="entry" size=40><br>
+<input type="submit" name="button" value="submit">
+</center>
+</form>
+
+</center>
+</BODY>
+</HTML>

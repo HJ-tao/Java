@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+
+<!-- Begin
+function getCookie(name){
+var cname = name + "=";
+var dc = document.cookie;
+if (dc.length > 0) {
+begin = dc.indexOf(cname);
+if (begin != -1) {
+begin += cname.length;
+end = dc.indexOf(";", begin);
+if (end == -1) end = dc.length;
+return unescape(dc.substring(begin, end));
+}
+}
+return null;
+}
+function setCookie(name, value) {
+var now = new Date();
+var then = new Date(now.getTime() + 31536000000);
+document.cookie = name + "=" + escape(value) + "; expires=" + then.toGMTString() + "; path=/";
+}
+function getInfo(form) {
+form.info.value = "Browser Information: " + navigator.userAgent;
+}
+function getValue(element) {
+var value = getCookie(element.name);
+if (value != null) element.value = value;
+}
+function setValue(element) {
+setCookie(element.name, element.value);
+}
+function fixElement(element, message) {
+alert(message);
+element.focus();
+}
+function isMailReady(form) {
+var passed = false;
+if (form.fullname.value == "") {
+fixElement(form.fullname, "Please include your name.");
+}
+else if (form.email.value.indexOf("@") == -1 ||
+form.email.value.indexOf(".") == -1) {
+fixElement(form.email, "Please include a proper email address.");
+}
+else if (form.message.value == "") {
+fixElement(form.message, "Please include a message.");
+}
+else {
+getInfo(form);
+passed = true;
+}
+return passed;
+}
+// End -->
+</SCRIPT>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<FORM NAME = "mail" ACTION = "mailto:youremailaddress.com" METHOD = "POST" ENCTYPE = "text/plain" onSubmit = "return isMailReady(this);">
+<INPUT TYPE = "hidden" NAME = "info">
+<TABLE BORDER = 0 CELLPADDING = 5 CELLSPACING = 0>
+<TR>
+<TD>
+Your Name:
+<P>
+<INPUT TYPE = "TEXT" NAME = "fullname" onFocus = "getValue(this)" onBlur = "setValue(this)">
+</TD>
+<TD>
+Your Email Address:
+<P>
+<INPUT TYPE = "TEXT" NAME = "email" onFocus = "getValue(this)" onBlur = "setValue(this)">
+</TD>
+</TR>
+<TR>
+<TD COLSPAN = "2">
+Enter your Message:
+<P>
+<TEXTAREA ROWS = "8" COLS = "38" NAME = "message">
+</TEXTAREA>
+</TD>
+</TR>
+<TR>
+<TD COLSPAN = "2">
+<INPUT TYPE = "SUBMIT" VALUE = " Submit ">
+<INPUT TYPE = "RESET" VALUE = " Cancel ">
+</TD>
+</TR>
+</TABLE>
+</FORM>
+
+</center>
+</BODY>
+</HTML>

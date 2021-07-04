@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Tarjei Davidsen (the@rescueteam.com) -->
+
+<!-- Begin
+var max=0;
+function textlist() {
+max=textlist.arguments.length;
+for (i=0; i<max; i++)
+this[i]=textlist.arguments[i];
+}
+tl = new textlist(
+"This is the newsticker. Great for giving visitors information. And lot's of it.",
+"Infinite lines to write on, and an easy configuration - overall it's a breeze :-)",
+"You can configure the messages and the size of the textarea, neat!",
+"Internet Explorers can also see our newsticker backround and text color. But that will probably only work with IE.",
+"Signed Tarjei Davidsen; StG member."
+);
+
+var x = 0; pos = 0;
+var l = tl[0].length;
+function textticker() {
+document.tickform.tickfield.value = tl[x].substring(0, pos) + "_";
+if(pos++ == l) {
+pos = 0;
+setTimeout("textticker()", 2000);
+if(++x == max) x = 0;
+l = tl[x].length;
+} else
+setTimeout("textticker()", 50);
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg OnLoad="textticker()">
+<center><BR><BR><BR>
+<form name=tickform>
+<textarea name=tickfield rows=3 cols=38 style="background-color: rgb(0,0,0); color: rgb(255,255,255); cursor: default; font-family: Arial; font-size: 12px" wrap=virtual>The news will appear here when the page has finished loading.</textarea>
+</form>
+
+</center>
+</BODY>
+</HTML>

@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<LINK href="general.css" rel="stylesheet" type="text/css">
+
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Michael C. Hundt (mchundt@nglic.com) -->
+<!-- Web Site:  http://www.cinet.net/~mhundt/mystuff.htm -->
+<!-- Begin
+var malename = new Array(
+"Allen","Bob","Carlton",
+"David","Ernie","Foster",
+"George","Howard","Ian",
+"Jeffery","Kenneth","Lawrence",
+"Michael","Nathen","Orson",
+"Peter","Quinten","Reginald",
+"Stephen","Thomas","Morris",
+"Victor","Walter","Xavier",
+"Charles","Anthony","Gordon",
+"Percy","Conrad","Quincey",
+"Armand","Jamal","Andrew",
+"Matthew","Mark","Gerald"
+)
+var femalename = new Array(
+"Alice","Bonnie","Cassie",
+"Donna","Ethel","Grace",
+"Heather","Jan","Katherine",
+"Julie","Marcia","Patricia",
+"Mabel","Jennifer","Dorthey",
+"Mary Ellen","Jacki","Jean",
+"Betty","Diane","Annette",
+"Dawn","Jody","Karen",
+"Mary Jane","Shannon","Stephanie",
+"Kathleen","Emily","Tiffany",
+"Angela","Christine","Debbie",
+"Karla","Sandy","Marilyn",
+"Brenda","Hayley","Linda"
+)
+var lastname = new Array(
+"Adams","Bowden","Conway",
+"Darden","Edwards","Flynn",
+"Gilliam","Holiday","Ingram",
+"Johnson","Kraemer","Hunter",
+"McDonald","Nichols","Pierce",
+"Sawyer","Saunders","Schmidt",
+"Schroeder","Smith","Douglas",
+"Ward","Watson","Williams",
+"Winters","Yeager","Ford",
+"Forman","Dixon","Clark",
+"Churchill","Brown","Blum",
+"Anderson","Black","Cavenaugh",
+"Hampton","Jenkins","Prichard"
+)
+var r = 0;
+var i = 0;
+function RandomName(nameform) {
+r = Math.floor(Math.random() * lastname.length);
+if(nameform.gender.options[1].selected == true) {
+i = Math.floor(Math.random() * femalename.length);
+nameform.first.value=femalename[i]
+nameform.last.value=lastname[r]
+}
+else {
+i = Math.floor(Math.random() * malename.length);
+nameform.first.value=malename[i]
+nameform.last.value=lastname[r]
+   }
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<form>
+<table width=300>
+<tr>
+<td align=center colspan=2>
+<select name=gender size=1>
+<option value="Male">Male
+<option value="Female">Female
+</select>
+<input type=button name=generate value="Generate Name" onClick="RandomName(this.form)">
+</td>
+</tr>
+<tr>
+<td align=center><b>First Name:</b></td>
+<td align=center><input type=text name=first size=15></td>
+</tr>
+<tr>
+<td align=center><b>Last Name:</b></td>
+<td align=center><input type=text name=last size=15></td>
+</tr>
+</table>
+</form>
+
+</center>
+</BODY>
+</HTML>

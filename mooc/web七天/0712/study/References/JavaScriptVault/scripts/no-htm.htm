@@ -1,0 +1,45 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+
+<!-- Begin
+function Del(Word) {
+a = Word.indexOf("<");
+b = Word.indexOf(">");
+len = Word.length;
+c = Word.substring(0, a);
+if(b == -1)
+b = a;
+d = Word.substring((b + 1), len);
+Word = c + d;
+tagCheck = Word.indexOf("<");
+if(tagCheck != -1)
+Word = Del(Word);
+return Word;
+}
+function Check() {
+ToCheck = document.form.text.value;
+Checked = Del(ToCheck);
+document.form.text.value = Checked;
+return true;
+}
+// End -->
+</SCRIPT>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<form action="some-script.cgi" name=form onSubmit="return Check()">
+<textarea cols="50" rows="6" name="text"></textarea>
+<br>
+<input type="submit" value="Submit Entry">
+</form>
+
+
+</center>
+</BODY>
+</HTML>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>product.html</title>
+    <script>
+       function del(){
+          //1.document.表单名称.元素对象名.value;
+          //2.document.getElementById("对应元素的Id").value;
+          //3.document.getElementsByName("对应元素的对象名"),此时对应结果为一个集合对象
+          //,就是一个数组Array,可以通过下标的方式去引用对应的对象
+          //var str = document.getElementById("xg").value;
+         
+         //4.document.getElementsByTagName("对应元素的标签象名"),此时对应结果为一个集合对象
+         
+          var str = document.getElementsByTagName("input")[0].value;
+          alert(str);
+       }
+    
+    </script>
+  </head>
+  
+  <body>
+ <a href="javascript: del()">删除</a><br/>
+    <form>
+     <input type="checkbox" id="xg" name="pro" value="葡萄">葡萄<br/>
+        <input type="checkbox" id="xg" name="pro" value="西瓜">西瓜<br/>
+        <input type="checkbox" id="xj" name="pro" value="香蕉">香蕉<br/>
+        <input type="checkbox" id="xg" name="pro" value="苹果">苹果<br/>
+       
+    </form>
+  </body>
+</html>

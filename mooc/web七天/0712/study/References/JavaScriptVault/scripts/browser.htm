@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<LINK href="general.css" rel="stylesheet" type="text/css">
+
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Rick Johnson (frj11@ev1.net) -->
+<!-- Web Site:  http://rickjohnson.tripod.com -->
+<!-- Begin
+function writeLayer(text) {
+document.frames['myFrame'].location.href = text;
+document.addrForm.location.value = text;
+}
+function setLayer(text) {
+if (text.indexOf("http://",0) <= 0)
+text = "http://" +text;
+document.frames['myFrame'].location.href = text;
+document.addrForm.location.value = text;
+}
+function onLoad(text) {
+if (text != "Microsoft Internet Explorer") {
+alert("netscape not supported");
+history.back();
+}
+return true;
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg onLoad="onLoad(navigator.appName)">
+<center>
+<iframe src="about:blank" width=80% height=80% id=myFrame></iframe>
+<center>
+<form name=addrForm>
+<input type=button value="Link" onClick="writeLayer('../')">
+<input type=button value="Link" onClick="writeLayer('../')">
+<input type=button value="Link" onClick="writeLayer('about:blank')">
+Location:
+<input type=text name=location value="Type any URL here then press Go" onFocus="this.value=''" size=35>
+<input type=button value="Go" onClick="setLayer(document.addrForm.location.value)">
+</form>
+
+
+</center>
+</BODY>
+</HTML>

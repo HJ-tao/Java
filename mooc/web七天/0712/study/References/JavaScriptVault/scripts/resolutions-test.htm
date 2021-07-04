@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Patrick Friedl (pfriedl@nebulus.org) -->
+<!-- Web Site:  http://www.nebulus.org -->
+
+<!-- Begin
+var testWin;
+function resTest(w,h) {
+frm = document.forms[0];
+urlF = frm.testURL.value;
+if(urlF == "" || urlF == "http://") {
+alert('Please enter a URL');
+frm.testURL.focus();
+return false;
+}
+if(w == null) {
+w = frm.customw.value;
+if(w == "" || !Number(w) || w < 100) {
+alert('Please enter a valid Width');
+frm.customw.value = "";
+frm.customw.focus();
+return false;
+   }
+}
+if(h == null) {
+h = frm.customh.value;
+if(h == "" || !Number(h) || h < 100) {
+alert('Please enter a valid Height');
+frm.customh.value = "";
+frm.customh.focus();
+return false;
+   }
+}
+properties  = "width=" + w;
+properties += ",height=" + h;
+properties += ",scrollbars=1,toolbar=1,location=1";
+properties += ",directories=1,status=1,menubar=1";
+properties += ",resizable=1,left=0,top=0";
+if(testWin && !testWin.closed) {
+testWin.close();
+}
+testWin = window.open(urlF,"TestRes",properties);
+if(navigator.appName.indexOf("Netscape") != -1) {
+testWin.outerWidth = w;
+testWin.outerHeight = h;
+}
+frm.innerDim.value  = "Test Resolution: " + w + "x" + h + "\n";
+if(navigator.appName.indexOf("Netscape") != -1) {
+frm.innerDim.value += "Window Inner Width: " + testWin.innerWidth + "\n";
+frm.innerDim.value += "Window Inner Height: " + testWin.innerHeight + "\n\n";
+}
+else {
+frm.innerDim.value += "IE does not allow access to the window properties of ";
+frm.innerDim.value += "pages on a different domain. Below are some general ";
+frm.innerDim.value += "inner dimensions:\n\n";
+frm.innerDim.value += "window      document\n";
+frm.innerDim.value += "640x480  -> 615x314\n";
+frm.innerDim.value += "800x600  -> 775x434\n";
+frm.innerDim.value += "1024x768 -> 999x602\n\n";
+frm.innerDim.value += "For a custom resolution, you\'ll need to get a ";
+frm.innerDim.value += "screen grab of the new window, paste it to your ";
+frm.innerDim.value += "favorite graphics program, then measuer the size ";
+frm.innerDim.value += "of the content area.\n\n";
+}
+frm.innerDim.value += "To ensure that you\'ve tested properly, be sure ";
+frm.innerDim.value += "to make all your toolbars and window chrome viewable. ";
+frm.innerDim.value += "Be sure to test with both major browsers (IE and Netscape), ";
+frm.innerDim.value += "as each one will have different inner document dimensions!";
+this.focus();
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<form>
+URL: <input type=text name="testURL" SIZE="25" value="http://">
+<br><br>
+Width: <input type=text name="customw" SIZE="4">
+Height: <input type=text name="customh" SIZE="4">
+<input type=button value="Test" onClick="resTest()">
+<br>
+<b>OR</b>
+<br>
+<input type=button value="640 x 480" onClick="resTest('640','480')">
+<input type=button value="800 x 600" onClick="resTest('800','600')">
+<input type=button value="1024 x 768" onClick="resTest('1024','768')">
+<br><br>
+<TEXTAREA NAME="innerDim" rows="10" cols="40" wrap="physical">The test window inner dimensions will be displayed here.</TEXTAREA>
+</form>
+
+</center>
+</BODY>
+</HTML>

@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Pankaj Mittal (pankajm@writeme.com) -->
+<!-- Web Site:  http://www.fortunecity.com/lavendar/lavender/21 -->
+
+<!-- Begin
+function small_window(myurl) {
+var newWindow;
+var props = 'scrollBars=yes,resizable=yes,toolbar=no,menubar=no,location=no,directories=no,width=300,height=200';
+newWindow = window.open(myurl, "Add_from_Src_to_Dest", props);
+}
+// Adds the list of selected items selected in the child
+// window to its list. It is called by child window to do so.
+function addToParentList(sourceList) {
+destinationList = window.document.forms[0].parentList;
+for(var count = destinationList.options.length - 1; count >= 0; count--) {
+destinationList.options[count] = null;
+}
+for(var i = 0; i < sourceList.options.length; i++) {
+if (sourceList.options[i] != null)
+destinationList.options[i] = new Option(sourceList.options[i].text, sourceList.options[i].value );
+   }
+}
+// Marks all the items as selected for the submit button.
+function selectList(sourceList) {
+sourceList = window.document.forms[0].parentList;
+for(var i = 0; i < sourceList.options.length; i++) {
+if (sourceList.options[i] != null)
+sourceList.options[i].selected = true;
+}
+return true;
+}
+
+// Deletes the selected items of supplied list.
+function deleteSelectedItemsFromList(sourceList) {
+var maxCnt = sourceList.options.length;
+for(var i = maxCnt - 1; i >= 0; i--) {
+if ((sourceList.options[i] != null) && (sourceList.options[i].selected == true)) {
+sourceList.options[i] = null;
+      }
+   }
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR>
+This script also requires the <b>MODIFY.HTML</b> file in the <b>FORMS</b> directory.
+<BR>
+<form method=post>
+<table border=1 bgcolor="#ffffcc">
+<tr>
+<td>
+<select size=5 name=parentList multiple>
+</select>
+</td>
+</tr>
+<tr>
+<td align=center>
+<input type=button value="Add Item" onclick = "javascript:small_window('modify.html');">
+<input type=button value="Delete Item" onclick = "javascript:deleteSelectedItemsFromList(parentList);">
+</td>
+</tr>
+</table>
+</form>
+
+</center>
+</BODY>
+</HTML>

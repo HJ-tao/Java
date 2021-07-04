@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Sergio Mottura (sergio1@onebox.com) -->
+<!-- Web Site:  http://www.bassprotips.com -->
+<!-- Modified:  Benjamin Wright, Editor -->
+
+<!-- Begin
+var i = 0;
+var done = 0;
+var totalSecs = 10;
+function SecondPast() {
+if(totalSecs != null) timerId = setTimeout("SecondPast()", 1000);
+if(i < totalSecs) {
+i += 1;
+document.clock.seconds.value = totalSecs - i;
+   }
+}
+function doSub() {
+if(i < totalSecs) {
+done = true;
+}
+else {
+alert("Sorry, you exceeded the time limit.");
+done = false;
+}
+return done;
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg onLoad="SecondPast()">
+<center><BR><BR><BR>
+<form name="clock" onSubmit="return doSub();">
+Time Remaining:
+<input type=text name="seconds" value="0" size=6>
+<br>
+<br>
+<input type=textbox name="info" value="Test to submit">
+<input type=submit value="Submit">
+</form>
+
+</center>
+</BODY>
+</HTML>

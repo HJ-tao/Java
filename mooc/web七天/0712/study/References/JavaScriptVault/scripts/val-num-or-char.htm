@@ -1,0 +1,38 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+
+<!-- Begin
+function validate(field) {
+var valid = "abcdefghijklmnopqrstuvwxyz0123456789"
+var ok = "yes";
+var temp;
+for (var i=0; i<field.value.length; i++) {
+temp = "" + field.value.substring(i, i+1);
+if (valid.indexOf(temp) == "-1") ok = "no";
+}
+if (ok == "no") {
+alert("Invalid entry!  Only characters and numbers are accepted!");
+field.focus();
+field.select();
+   }
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<form onSubmit="http://your-web-site-address-here.com/script.cgi">
+<input type=text name="entry" onBlur="validate(this)">
+<br>
+<input type=submit value="Submit Form">
+</form>
+
+</center>
+</BODY>
+</HTML>

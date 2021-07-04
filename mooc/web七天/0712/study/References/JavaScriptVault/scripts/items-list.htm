@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<FORM name="history">
+<INPUT name="command" type="text" value="">
+<INPUT type="button" value="Add to List" onclick="f_store(document.history.command.value)">
+<INPUT name="history" type="button" value="Show List" onclick="f_print()">
+</FORM>
+<P>
+<SCRIPT language="JavaScript">
+<!-- hide it ...
+function MakeArray( n ) {
+if( n <= 0 ) {
+this.length = 0;
+return this;
+}
+this.length = n;
+for( var i = 1; i <= n; i++ ) {
+this[ i ] = 0;
+}
+return this;
+}
+var history = new MakeArray( 15 );
+var index = 0;
+var cmmnd = 1;
+function f_store( sTR ) {
+var i;
+if( index >= history.length ) {
+for( i = 1; i < history.length; i++ )
+history[i-1] = history[i];
+index = history.length - 1;
+}
+history[ index ] = cmmnd + ":" + sTR;
+++cmmnd;
+++index;
+document.history.command.value="";
+}
+function f_print() {
+var allCmmnds, i;
+allCmmnds = "";
+for( i = 0; i < index; i++ )
+allCmmnds += history[i] + "\n";
+alert( allCmmnds );
+}
+// End -->
+</SCRIPT>
+
+</center>
+</BODY>
+</HTML>

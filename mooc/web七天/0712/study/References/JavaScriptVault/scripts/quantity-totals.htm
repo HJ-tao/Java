@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Paul DeBrino (irandd@aol.com) -->
+
+<!-- Begin
+function checkChoice(whichbox) {
+with (whichbox.form) {
+if (isNaN(whichbox.value)) {
+whichbox.value = whichbox.priorval;
+whichbox.focus();
+}
+whichbox.value = Math.abs(whichbox.value);
+var dec = whichbox.value.indexOf('.', 1)
+if (dec > 0) {
+alert('No decimal places allowed for \"' +whichbox.name +'\" !');
+whichbox.value = whichbox.priorval;
+whichbox.focus();
+}
+hiddentotal.value = eval(hiddentotal.value) - eval(whichbox.price * whichbox.priorval);
+whichbox.priorval = whichbox.value;
+hiddentotal.value = eval(hiddentotal.value) + eval(whichbox.price * whichbox.value);
+return(formatCurrency(hiddentotal.value));
+   }
+}
+function formatCurrency(num) {
+<!-- Function courtesy of:  Cyanide_7 (leo7278@hotmail.com) -->
+<!-- Web Site:  http://www7.ewebcity.com/cyanide7 -->
+num = num.toString().replace(/\$|\,/g,'');
+if(isNaN(num)) num = "0";
+cents = Math.floor((num * 100 + 0.5) % 100);
+num = Math.floor((num * 100 + 0.5) / 100).toString();
+if(cents < 10) cents = "0" + cents;
+for (var i = 0; i < Math.floor((num.length - (1 + i)) / 3); i++)
+num = num.substring(0,num.length - (4 * i + 3))+','+num.substring(num.length-(4 * i + 3));
+return ("$" + num + "." + cents);
+}
+function InitForm() {
+document.myform.total.value = '$0';
+document.myform.hiddentotal.value = 0;
+for (xx = 0; xx < document.myform.elements.length; xx++) {
+if (document.myform.elements[xx].type == 'text') {
+document.myform.elements[xx].value = 0;
+   }
+}
+for (xx=0; xx < document.myform2.elements.length; xx++) {
+if (document.myform2.elements[xx].type == 'text') {
+document.myform2.elements[xx].value = 0;
+      }
+   }
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg onLoad="InitForm()">
+<center><BR><BR><BR>
+<table>
+<tr>
+<td>
+<form name=myform>
+<pre>
+<b>Example 1</b>
+Steak    $15.25     <input type=text name=Steak   size=3 value=0 priorval=0 price="15.25" onChange="this.form.total.value=checkChoice(this);">
+Chicken  $12.39     <input type=text name=Chicken size=3 value=0 priorval=0 price="12.39" onChange="this.form.total.value=checkChoice(this);">
+Sushi    $18.75     <input type=text name=Sushi   size=3 value=0 priorval=0 price="18.75" onChange="this.form.total.value=checkChoice(this);">
+<br>
+Your total is:  <input type="text" name="total" value="" size=8 readonly><input type=hidden name=hiddentotal value=0>
+</pre>
+</form>
+<hr width="100%" noshsde>
+<form name=myform2>
+<pre>
+<b>Example 2</b>
+Tea      $  .50     <input type=text name=Tea    size=3 value=0 priorval=0 price=".50"  onChange="this.form.total.value=checkChoice(this);">
+Cola     $  .79     <input type=text name=Cola   size=3 value=0 priorval=0 price=".79"  onChange="this.form.total.value=checkChoice(this);">
+Coffee   $ 1.75     <input type=text name=Coffee size=3 value=0 priorval=0 price="1.75" onChange="this.form.total.value=checkChoice(this);">
+<br>
+Your total is:  <input type="text" name="total" value="" size=8 readonly><input type=hidden name=hiddentotal value=0>
+</pre>
+</form>
+</td>
+</tr>
+</table>
+
+</center>
+</BODY>
+</HTML>

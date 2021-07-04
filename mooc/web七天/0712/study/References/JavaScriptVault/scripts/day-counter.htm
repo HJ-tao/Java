@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Michael Mann (pres@manninc.com) -->
+<!-- Web Site:  http://www.manninc.com -->
+<!-- Begin
+var now = new Date();
+var month = now.getMonth();
+var date = now.getDate();
+var day = now.getDay();
+var year = now.getYear();
+m = new Array("January","February","March","April","May","June","July",
+"August","September","October","November","Decemeber");
+d = new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
+if (year < 2000) year = year + 1900;
+//End of Month Calculations
+var monarr = new Array(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
+// check for leap year
+if (((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0)) monarr[1] = "29";
+//Finds the First Day for the Current Month
+while (date != 1){
+date = date - 1;
+day = day - 1;
+if (day < 0) day = day + 7;
+}
+//Counts Number of Wednesdays in the Current Month
+weekday = 0;
+while (date != monarr[month]){
+date = date + 1;
+day = day + 1;
+if (day > 6)
+day = 7 - day;
+if (d[day] == "Wednesday")
+weekday = weekday + 1;
+}
+//Fix For Months beginning on a Wednesday
+if (d[day] == "Wednesday") weekday = weekday + 1;
+document.write (m[month] + " contains " + weekday + " " + d[3] + "s");//  End -->
+</script>
+
+</center>
+</BODY>
+</HTML>

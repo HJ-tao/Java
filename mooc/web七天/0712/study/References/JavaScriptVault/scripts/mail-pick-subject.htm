@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+
+<!-- Begin
+function getCookie(name){
+var cname = name + "=";
+var dc = document.cookie;
+if (dc.length > 0) {
+begin = dc.indexOf(cname);
+if (begin != -1) {
+begin += cname.length;
+end = dc.indexOf(";", begin);
+if (end == -1) end = dc.length;
+return unescape(dc.substring(begin, end));
+   }
+}
+var blank = "";
+return blank;
+}
+function setCookie(name, value, expires) {
+document.cookie = name + "=" + escape(value) +
+((expires != null) ? "; expires=" + expires.toGMTString() : "")
++ "; path=/";
+}
+function setName() {
+var expdate = new Date ();
+expdate.setTime (expdate.getTime() + (24 * 60 * 60 * 1000 * 365));
+var prompt=i = document.Mail.name.value;
+setCookie("name", i, expdate);
+}
+function getName() {
+if(getCookie("name") != null) {
+document.Mail.Name.value = getCookie("emailname");
+   }
+}
+function getInfo() {
+var now= new Date();
+document.Mail.Info.value = "Browser: " + navigator.userAgent;
+document.Mail.Info.value += "Date:" + now;
+}
+function checkMultiple() {
+if (getCookie("emailsent") == 'true') return true;
+else return false;
+}
+function process() {
+setCookie("emailsent", "true");
+with (document.Mail) {
+if (Subject.selectedIndex == 1) action = "mailto:antispammer@earthling.net?subject=TJS - Comment";
+else if (Subject.selectedIndex == 2) action = "mailto:antispammer@earthling.net?subject=TJS - Question";
+else if (Subject.selectedIndex == 3) action = "mailto:antispammer@earthling.net?subject=TJS - Suggestion";
+else if (Subject.selectedIndex == 4) action = "mailto:antispammer@earthling.net?subject=TJS - Broken Link";
+else action = "mailto:antispammer@earthling.net?subject=TJS - Other";
+   }
+}
+function formCheck() {
+var passed = false;
+with (document.Mail) {
+if (Subject.selectedIndex == 0) {
+alert("Please pick a subject.");
+Subject.focus();
+}
+else if (Name.value == "") {
+alert("Please inlcude your name.");
+Name.focus();
+}
+else if (checkMultiple()) {
+if (confirm("You just sent an e-mail from this form, are you sure you want to send another?")) {
+process();
+passed = true;
+   }
+}
+else {
+process();
+passed = true;
+   }
+}
+return passed;
+}
+// End -->
+</SCRIPT>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<FONT FACE = "Times"  SIZE = 3>
+Any thing you would like to tell us?  Any comments, suggestions, or questions?
+<BR>
+<DD>
+If you are using Internet Explorer or would rather mail directly, then click <A HREF = "mailto:antispammer@earthling.net?subject=TJS - Mail">here</A>.
+</DD>
+<BR>
+<FORM NAME = "Mail" ACTION = "mailto:antispammer@earthling.net?subject=TJS - Form" METHOD = "POST" ENCTYPE = "text/plain" onSubmit="return formCheck();">
+<INPUT TYPE = "hidden" SIZE = 0 NAME = "Info">
+<TABLE BORDER = 0 CELLPADDING = 10 CELLSPACING = 0>
+<TR><TD>
+Name:
+<INPUT TYPE = "text" NAME = "Name" onChange = "setName()">
+</TD><TD ALIGN = RIGHT >
+Subject:
+<SELECT NAME = "Subject">
+<OPTION SELECT>Please Select A Subject</OPTION>
+<OPTION>1. Comment</OPTION>
+<OPTION>2. Question</OPTION>
+<OPTION>3. Suggestion</OPTION>
+<OPTION>4. Broken Link</OPTION>
+<OPTION>5. None of the above</OPTION>
+</SELECT>
+</TD></TR>
+
+<TR>
+<TD COLSPAN = 2>
+Comments, questions, suggestions, broken links, anything!! :
+<BR><BR>
+<TEXTAREA NAME = "Comments, Suggestions" COLS = 75 ROWS = 6>
+</TEXTAREA>
+</TD>
+</TR>
+</TABLE>
+
+<CENTER>
+<TABLE>
+<TR>
+<TD align=center>
+<INPUT TYPE = "submit" VALUE = "Send">
+</TD>
+</TR>
+</TABLE>
+</FORM>
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Begin
+getInfo();
+getName();
+// End -->
+</SCRIPT>
+</FONT>
+
+</center>
+</BODY>
+</HTML>

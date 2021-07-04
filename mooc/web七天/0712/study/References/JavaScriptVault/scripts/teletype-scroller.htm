@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<LINK href="general.css" rel="stylesheet" type="text/css">
+
+<STYLE>
+.telestyle {
+position:absolute;
+visibility:visible;
+font-size:8pt;
+font-family:Arial;
+font-weight:normal;
+color:#000066;
+top:300px;
+left: 60px;
+height: 32px;
+width: 500px;
+filter:alpha(opacity=100);
+}
+</STYLE>
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  John O'Brien (obrien@lis.net.au) -->
+<!-- Web Site:  http://www.lis.net.au/~obrien -->
+
+
+
+
+<!-- Begin
+var message = "Try this script today!"
+var character = 0;
+var to_print = "";
+var ypos = 300;
+var next = 0 ;
+var fade = 100 ;
+var next_message = new Array() ;
+next_message[0] = "The JavaScript Source"
+next_message[1] = "Is your site slow...uninteresting...static? JavaScript™ can bring your pages to life!"
+next_message[2] = "Add this script to your site!"
+next_message[3] = "Do your pages take an age to load?"
+next_message[4] = "Try this script today!"
+function doText(text) {
+if (document.all) {
+if (character <= text.length - 1) {
+to_print += text.charAt(character);
+teletext.innerHTML = to_print;
+character++;
+}
+else
+scrollIt();
+}
+setTimeout("doText(message)", 100);
+}
+function scrollIt() {
+if (ypos >= 260) {
+ypos -= 1;
+fade -= 4;
+if (ypos < 265) {
+teletext.innerHTML = "" ;
+   }
+}
+else {
+ypos = 300;
+character = 0;
+to_print = "";
+nextMessage();
+fade = 100;
+}
+teletext.style.top = ypos;
+teletext.filters.alpha.opacity = fade;
+}
+function nextMessage() {
+message = next_message[next]
+if (next == 4) {
+next = 0;
+}
+else
+next++;
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg onLoad="doText(message)">
+<center><BR><BR><BR>
+<DIV ID=teletext CLASS="telestyle">
+</DIV>
+
+</center>
+</BODY>
+</HTML>

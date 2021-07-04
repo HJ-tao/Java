@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Seth Baker (sethgbaker@yahoo.com) -->
+<!-- Web Site:  http://www.geocities.com/sethgbaker -->
+<!-- Begin
+function verifyForm(form) {
+with (form) {
+if (!wrist.value || isNaN(wrist.value) ) {
+return false;
+}
+var chest = wrist.value * 6.5;
+chestsize.value = chest;
+waistsize.value = chest * .7;
+hipsize.value = chest * .85;
+bicepsize.value = chest * .36;
+forearmsize.value = chest * .29;
+thighsize.value = chest * .53;
+calvesize.value = chest * .34;
+necksize.value = chest * .37;
+return false;
+   }
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<form onSubmit="return verifyForm(this);">
+<table border=1 cellpadding=5>
+<tr>
+<td align=center>
+<pre>
+<center>Male Body Calculator</center>
+
+Wrist Size:  <input type=text name=wrist size=4> Inches 
+
+<input type=submit value="Calculate">
+
+Your ideal body measurements are:
+
+Chest Size:   <input type=text size=4 name=chestsize>  Forearm Size: <input type=text size=4 name=forearmsize>
+Waist Size:   <input type=text size=4 name=waistsize>  Thigh Size:   <input type=text size=4 name=thighsize>
+Hip Size:     <input type=text size=4 name=hipsize>  Calve Size:   <input type=text size=4 name=calvesize>
+Bicep Size:   <input type=text size=4 name=bicepsize>  Neck Size:    <input type=text size=4 name=necksize>
+</pre>
+</td>
+</tr>
+</table>
+
+</center>
+</BODY>
+</HTML>

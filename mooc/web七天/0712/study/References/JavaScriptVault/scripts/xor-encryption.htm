@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<META NAME="Generator" CONTENT="TextPad 4.4">
+<LINK href="general.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Original:  Terry Yuen (kaiser40@yahoo.com) -->
+
+
+
+
+<!-- Begin
+var allowedChars = " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~€‚ƒ„…†‡ˆ‰Š‹ŒŽ‘’“”•–—˜™š›œžŸ ¡¢£¤¥¦§¨©ª«¬­®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿ";
+function CharToDec(Character) {
+var pos = allowedChars.indexOf(Character.charAt(0));
+if(pos == -1) {
+window.status += Character;
+pos = 0;
+}
+return pos;
+}
+function DecToBin(Decimal) {
+var i = 0;
+var Bin = "";
+while(Decimal > Math.pow(2, i)) {
+i++;
+}
+for (var i = i; i >= 0; i--) {
+if (Decimal >= Math.pow(2, i)) {
+Decimal -= Math.pow(2, i);
+Bin += "1";
+} else Bin += "0";
+}
+return Bin;
+}
+function ExclusiveOr(input1, input2) {
+var output = "";
+while(input1.length < input2.length) {
+input1 = "0" + input1;
+}
+while(input1.length > input2.length) {
+input2 = "0" + input2;
+}
+if (input1.length == input2.length) {
+for (var i=0; i<input1.length; i++) {
+output += (input1.charAt(i) != input2.charAt(i)) ? "1" : "0";
+}
+} else alert("XOR Operation Error.");
+return output;
+}
+function BinToDec(Binary) {
+var Dec = 0;
+for(var i=0; i<=Binary.length; i++) {
+Dec += Math.pow(2,i) * Binary.charAt((Binary.length - 1) - i);
+}
+return Dec;
+}
+function DecToChar(Decimal) {
+if (Decimal > allowedChars.length) {
+Decimal = 0;
+}
+var pos = allowedChars.charAt(Decimal);
+return pos;
+}
+function BlockEncrypt(input1, input2) {
+var output = "";
+if (input1.length == input2.length) {
+for (var i = 0; i < input1.length; i++) {
+output += DecToChar(BinToDec(ExclusiveOr(DecToBin(CharToDec(input1.charAt(i))), DecToBin(CharToDec(input2.charAt(i))))));
+   }
+} else alert("Block Encryption Error.");
+return output;
+}
+
+/*   Function:  Encrypts data.
+   Parameters:  2 parameters:  (text string, key)
+      Returns:  Encrypted string
+
+Decrypt the string by running function twice.
+*/
+function EncryptString(plainText, key) {
+var cipherText = "";
+var textBlock, keyBlock = "";
+var keyRotationPos = 0;
+var beforePos, afterPos = 0;
+var blockSize = 48;
+var key = hashKey(key);
+while(afterPos < plainText.length) {
+beforePos = 0;
+afterPos = blockSize;
+if(afterPos < plainText.length) {
+afterPos = plainText.length;
+}
+textBlock = plainText.substring(beforePos, afterPos);
+keyBlock = key.substring(keyRotationPos, key.length);
+while(keyBlock.length < textBlock.length) {
+keyBlock += key;
+}
+keyBlock = keyBlock.substring(0, textBlock.length);
+keyRotationPos = keyBlock.length % key.length;
+cipherText += BlockEncrypt(textBlock, keyBlock);
+beforePos = afterPos;
+afterPos += blockSize;
+}
+return cipherText;
+}
+function hashKey(key) {
+var hash = "";
+for (var i = 0; i < key.length; i++) {
+hash += DecToChar((CharToDec(key.charAt(i)) + i) % allowedChars.length);
+}
+return hash;
+}
+//  End -->
+</script>
+
+</HEAD>
+
+<BODY Background=../graphics/grayback.jpg>
+<center><BR><BR><BR>
+<form name=box>
+<table cellpadding=0 cellspacing=0 border=0>
+<tr>
+<td colspan=3>
+<textarea wrap=soft cols=40 rows=5 wrap=virtual name=ipt></textarea>
+</td>
+</tr>
+<tr height=50>
+<td align=center>
+<input type=button onclick="document.box.ipt.value=EncryptString(document.box.ipt.value,document.box.pwd.value);" value="Encrypt / Decrypt"><br>
+... using password:  <input type=text name=pwd value="password">
+</td>
+</tr>
+</table>
+</form>
+
+</center>
+</BODY>
+</HTML>
